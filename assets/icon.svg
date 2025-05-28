@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+    <rect width="256" height="256" rx="32" fill="#2D2D2D"/>
+    <text x="128" y="160" font-family="Arial" font-size="120" fill="#FFFFFF" text-anchor="middle">MSO</text>
+    <path d="M64 80 L192 80 M64 128 L192 128 M64 176 L192 176" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round"/>
+</svg> 
