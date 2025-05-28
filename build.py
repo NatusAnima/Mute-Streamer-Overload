@@ -60,34 +60,15 @@ def convert_svg_to_ico():
     # Create assets directory if it doesn't exist
     os.makedirs('assets', exist_ok=True)
     
-    # Convert SVG to PNG first
-    png_path = 'assets/icon.png'
-    svg_path = 'assets/icon.svg'
+    # Use the 256x256 icon for the executable
+    ico_path = 'assets/icon_256x256.ico'
     
-    if not os.path.exists(svg_path):
-        logger.error(f"Icon SVG not found at {svg_path}")
+    if not os.path.exists(ico_path):
+        logger.error(f"Executable icon not found at {ico_path}")
         return None
         
-    try:
-        # Convert SVG to PNG
-        svg2png(url=svg_path, write_to=png_path, output_width=256, output_height=256)
-        
-        # Convert PNG to ICO
-        ico_path = 'assets/icon.ico'
-        img = Image.open(png_path)
-        
-        # Create ICO with multiple sizes
-        sizes = [(16,16), (32,32), (48,48), (64,64), (128,128), (256,256)]
-        img.save(ico_path, format='ICO', sizes=sizes)
-        
-        # Clean up temporary PNG
-        os.remove(png_path)
-        
-        logger.info("Icon conversion completed successfully!")
-        return ico_path
-    except Exception as e:
-        logger.error(f"Error converting icon: {e}")
-        return None
+    logger.info("Using existing icon for executable")
+    return ico_path
 
 def build_exe():
     """Build the executable"""

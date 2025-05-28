@@ -3,7 +3,11 @@ from PyQt6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QTextEdit,
                             QPushButton, QLabel, QHBoxLayout, QSpinBox, QApplication,
                             QGroupBox, QGridLayout)
 from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtGui import QKeySequence, QShortcut, QFont
+from PyQt6.QtGui import QKeySequence, QShortcut, QFont, QIcon
+from PyQt6.QtSvg import QSvgRenderer
+from PyQt6.QtGui import QPixmap, QPainter
+import os
+from pathlib import Path
 
 from mute_streamer_overload.core.input_handler import InputHandler
 from mute_streamer_overload.ui.overlay_window import OverlayWindow
@@ -19,6 +23,34 @@ class MuteStreamerOverload(QMainWindow):
         self.setWindowTitle("Mute Streamer Overload")
         self.setMinimumSize(800, 600)
         self.setStyleSheet(MAIN_WINDOW_STYLE)
+        
+        # Set window icon
+        assets_dir = Path(__file__).parent.parent.parent / 'assets'
+        
+        # Use the appropriate icon size for the window
+        # 32x32 is a good size for window icons
+        icon_path = assets_dir / 'icon_32x32.ico'
+        if not icon_path.exists():
+            # Try 16x16 as fallback
+            icon_path = assets_dir / 'icon_16x16.ico'
+            if not icon_path.exists():
+                # Try 48x48 as fallback
+                icon_path = assets_dir / 'icon_48x48.ico'
+                if not icon_path.exists():
+                    # Fallback to SVG if no ICO files exist
+                    svg_path = assets_dir / 'icon.svg'
+                    if svg_path.exists():
+                        # Convert SVG to QIcon
+                        renderer = QSvgRenderer(str(svg_path))
+                        pixmap = QPixmap(32, 32)  # Size for window icon
+                        pixmap.fill(Qt.GlobalColor.transparent)
+                        painter = QPainter(pixmap)
+                        renderer.render(painter)
+                        painter.end()
+                        self.setWindowIcon(QIcon(pixmap))
+                    return
+        
+        self.setWindowIcon(QIcon(str(icon_path)))
         
         # Create central widget and layout
         central_widget = QWidget()
@@ -300,15 +332,16 @@ class MuteStreamerOverload(QMainWindow):
             if hasattr(self, 'overlay_window'):
                 self.overlay_window.close()
             
-            # Stop the web server
-            stop_server()
+            # Stop the web server - this is the only place we stop the server
+            try:
+                stop_server()
+            except Exception as e:
+                print(f"Error stopping server: {e}")
+                # Continue with shutdown even if server stop fails
             
             # Accept the close event
             event.accept()
-            
-            # Force quit the application
-            QApplication.quit()
         except Exception as e:
             print(f"Error during shutdown: {e}")
-            # Force quit even if there's an error
-            QApplication.quit() 
+            # Accept the close event even if there's an error
+            event.accept() 

@@ -18,7 +18,8 @@ def main():
     
     # Set up application shutdown
     def cleanup():
-        stop_server()
+        # The window's closeEvent will handle server shutdown
+        # We just need to ensure the application quits
         app.quit()
     
     # Connect the aboutToQuit signal to our cleanup function
@@ -27,5 +28,5 @@ def main():
     # Start the application event loop
     sys.exit(app.exec())
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main() 

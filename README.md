@@ -47,8 +47,8 @@ mute-streamer-overload
 
 2. Running the main script directly:
 ```bash
-python main.py
-```
+   python main.py
+   ```
 
 ### Using the Desktop Overlay
 

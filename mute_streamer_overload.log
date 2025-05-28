@@ -38,3 +38,1827 @@
 2025-05-28 19:36:21,421 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
 2025-05-28 19:36:21,421 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\static
 2025-05-28 19:36:21,425 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 19:43:16,980 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload
+2025-05-28 19:43:16,981 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 19:43:16,981 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\static
+2025-05-28 19:43:17,079 - comtypes.client._code_cache - INFO - Could not import comtypes.gen, trying to create it.
+2025-05-28 19:43:17,079 - comtypes.client._code_cache - INFO - Created comtypes.gen directory: 'c:\Users\iyave\Desktop\Mute Streamer Overload\.venv\Lib\site-packages\comtypes\gen'
+2025-05-28 19:43:17,079 - comtypes.client._code_cache - INFO - Writing __init__.py file: 'c:\Users\iyave\Desktop\Mute Streamer Overload\.venv\Lib\site-packages\comtypes\gen\__init__.py'
+2025-05-28 19:43:17,087 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'c:\Users\iyave\Desktop\Mute Streamer Overload\.venv\Lib\site-packages\comtypes\gen'
+2025-05-28 19:43:17,099 - comtypes.client._generate - INFO - Could not import comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4: No module named 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4'
+2025-05-28 19:43:17,103 - comtypes.client._generate - INFO - # Generating comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4
+2025-05-28 19:43:17,203 - comtypes.client._generate - INFO - # Generating comtypes.gen.SpeechLib
+2025-05-28 19:43:17,211 - comtypes.client._generate - INFO - Could not import comtypes.gen._00020430_0000_0000_C000_000000000046_0_2_0: No module named 'comtypes.gen._00020430_0000_0000_C000_000000000046_0_2_0'
+2025-05-28 19:43:17,212 - comtypes.client._generate - INFO - # Generating comtypes.gen._00020430_0000_0000_C000_000000000046_0_2_0
+2025-05-28 19:43:17,219 - comtypes.client._generate - INFO - # Generating comtypes.gen.stdole
+2025-05-28 19:43:17,465 - mute_streamer_overload.tts.tts_manager - WARNING - No female voice found, using default voice
+2025-05-28 19:43:17,481 - mute_streamer_overload.web.web_server - INFO - Starting Flask server...
+2025-05-28 19:43:17,481 - mute_streamer_overload.web.web_server - ERROR - Template directory not found: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 19:43:19,481 - mute_streamer_overload.web.web_server - ERROR - Server thread died immediately
+2025-05-28 19:45:00,840 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload
+2025-05-28 19:45:00,840 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 19:45:00,840 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\static
+2025-05-28 19:45:00,891 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'c:\\Users\\iyave\\Desktop\\Mute Streamer Overload\\.venv\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-05-28 19:45:00,891 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'c:\Users\iyave\Desktop\Mute Streamer Overload\.venv\Lib\site-packages\comtypes\gen'
+2025-05-28 19:45:00,961 - mute_streamer_overload.tts.tts_manager - WARNING - No female voice found, using default voice
+2025-05-28 19:45:00,965 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 19:45:05,626 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload
+2025-05-28 19:45:05,626 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 19:45:05,626 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\static
+2025-05-28 19:45:05,674 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\iyave\\Desktop\\Mute Streamer Overload\\.venv\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-05-28 19:45:05,674 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\iyave\Desktop\Mute Streamer Overload\.venv\Lib\site-packages\comtypes\gen'
+2025-05-28 19:45:05,743 - mute_streamer_overload.tts.tts_manager - WARNING - No female voice found, using default voice
+2025-05-28 19:45:05,744 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 19:46:08,504 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload
+2025-05-28 19:46:08,504 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 19:46:08,505 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\static
+2025-05-28 19:46:08,555 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'c:\\Users\\iyave\\Desktop\\Mute Streamer Overload\\.venv\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-05-28 19:46:08,555 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'c:\Users\iyave\Desktop\Mute Streamer Overload\.venv\Lib\site-packages\comtypes\gen'
+2025-05-28 19:46:08,624 - mute_streamer_overload.tts.tts_manager - WARNING - No female voice found, using default voice
+2025-05-28 19:46:08,627 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 19:47:06,899 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload
+2025-05-28 19:47:06,899 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 19:47:06,899 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\static
+2025-05-28 19:47:06,949 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'c:\\Users\\iyave\\Desktop\\Mute Streamer Overload\\.venv\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-05-28 19:47:06,949 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'c:\Users\iyave\Desktop\Mute Streamer Overload\.venv\Lib\site-packages\comtypes\gen'
+2025-05-28 19:47:07,017 - mute_streamer_overload.tts.tts_manager - WARNING - No female voice found, using default voice
+2025-05-28 19:47:07,020 - mute_streamer_overload.main - INFO - Starting web server...
+2025-05-28 19:47:07,020 - mute_streamer_overload.web.web_server - INFO - Starting Flask server...
+2025-05-28 19:47:07,020 - mute_streamer_overload.web.web_server - ERROR - Template directory not found: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 19:47:09,020 - mute_streamer_overload.web.web_server - ERROR - Server thread died immediately
+2025-05-28 19:47:09,020 - mute_streamer_overload.main - ERROR - Failed to start web server
+2025-05-28 19:47:09,021 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 19:48:19,681 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload
+2025-05-28 19:48:19,682 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\templates
+2025-05-28 19:48:19,682 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\static
+2025-05-28 19:48:19,730 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'c:\\Users\\iyave\\Desktop\\Mute Streamer Overload\\.venv\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-05-28 19:48:19,731 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'c:\Users\iyave\Desktop\Mute Streamer Overload\.venv\Lib\site-packages\comtypes\gen'
+2025-05-28 19:48:19,797 - mute_streamer_overload.tts.tts_manager - WARNING - No female voice found, using default voice
+2025-05-28 19:48:19,799 - mute_streamer_overload.main - INFO - Starting web server...
+2025-05-28 19:48:19,799 - mute_streamer_overload.web.web_server - INFO - Starting Flask server...
+2025-05-28 19:48:19,800 - mute_streamer_overload.web.web_server - INFO - Starting server on http://127.0.0.1:5000
+2025-05-28 19:48:19,807 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-28 19:48:19,807 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-28 19:48:21,802 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:48:21] "GET /health HTTP/1.1" 200 -
+2025-05-28 19:48:21,802 - mute_streamer_overload.web.web_server - INFO - Server health check passed
+2025-05-28 19:48:21,803 - mute_streamer_overload.web.web_server - INFO - Server thread started successfully
+2025-05-28 19:48:21,803 - mute_streamer_overload.main - INFO - Starting GUI application...
+2025-05-28 19:48:28,699 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:48:28] "GET / HTTP/1.1" 200 -
+2025-05-28 19:48:28,770 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:48:28] "GET /socket.io/?EIO=4&transport=polling&t=6izj2vak HTTP/1.1" 200 -
+2025-05-28 19:48:28,796 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:48:28] "[33mGET /settings HTTP/1.1[0m" 404 -
+2025-05-28 19:48:28,797 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:48:28] "POST /socket.io/?EIO=4&transport=polling&t=6izjf6rc&sid=rllX8cRAP3irH5j-AAAA HTTP/1.1" 200 -
+2025-05-28 19:48:28,799 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:48:28] "GET /socket.io/?EIO=4&transport=polling&t=6izjfn80&sid=rllX8cRAP3irH5j-AAAA HTTP/1.1" 200 -
+2025-05-28 19:48:28,807 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:48:28] "GET /socket.io/?EIO=4&transport=polling&t=6izk4rnw&sid=rllX8cRAP3irH5j-AAAA HTTP/1.1" 200 -
+2025-05-28 19:48:58,797 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:48:58] "GET /health HTTP/1.1" 200 -
+2025-05-28 19:49:08,867 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload
+2025-05-28 19:49:08,867 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\templates
+2025-05-28 19:49:08,868 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\static
+2025-05-28 19:49:08,981 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'c:\\Users\\iyave\\Desktop\\Mute Streamer Overload\\.venv\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-05-28 19:49:08,981 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'c:\Users\iyave\Desktop\Mute Streamer Overload\.venv\Lib\site-packages\comtypes\gen'
+2025-05-28 19:49:09,085 - mute_streamer_overload.tts.tts_manager - WARNING - No female voice found, using default voice
+2025-05-28 19:49:09,086 - __main__ - INFO - Starting web server...
+2025-05-28 19:49:09,088 - mute_streamer_overload.web.web_server - INFO - Starting Flask server...
+2025-05-28 19:49:09,088 - mute_streamer_overload.web.web_server - INFO - Starting server on http://127.0.0.1:5000
+2025-05-28 19:49:09,099 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-28 19:49:09,100 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-28 19:49:11,094 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:11] "GET /health HTTP/1.1" 200 -
+2025-05-28 19:49:11,095 - mute_streamer_overload.web.web_server - INFO - Server health check passed
+2025-05-28 19:49:11,095 - mute_streamer_overload.web.web_server - INFO - Server thread started successfully
+2025-05-28 19:49:11,095 - __main__ - INFO - Starting GUI application...
+2025-05-28 19:49:11,107 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:11] "GET / HTTP/1.1" 200 -
+2025-05-28 19:49:12,873 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:12] "GET /socket.io/?EIO=4&transport=polling&t=PSNp4Qc HTTP/1.1" 200 -
+2025-05-28 19:49:13,024 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:13] "[33mGET /settings HTTP/1.1[0m" 404 -
+2025-05-28 19:49:14,134 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:14] "POST /socket.io/?EIO=4&transport=polling&t=PSNp4jL&sid=Z_tc4jAtA0U22MvrAAAC HTTP/1.1" 200 -
+2025-05-28 19:49:14,319 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:14] "GET /socket.io/?EIO=4&transport=polling&t=PSNp4n2&sid=Z_tc4jAtA0U22MvrAAAC HTTP/1.1" 200 -
+2025-05-28 19:49:20,475 - mute_streamer_overload.web.web_server - INFO - Stopping Flask server...
+2025-05-28 19:49:20,478 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:20] "[35m[1mGET /health HTTP/1.1[0m" 503 -
+2025-05-28 19:49:21,428 - mute_streamer_overload.web.web_server - INFO - Stopping Flask server...
+2025-05-28 19:49:21,431 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:21] "[35m[1mGET /health HTTP/1.1[0m" 503 -
+2025-05-28 19:49:25,490 - mute_streamer_overload.web.web_server - WARNING - Server thread did not stop gracefully
+2025-05-28 19:49:25,490 - mute_streamer_overload.web.web_server - INFO - Flask server stopped
+2025-05-28 19:49:25,492 - mute_streamer_overload.main - INFO - Application shutting down...
+2025-05-28 19:49:25,521 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 19:49:26,432 - mute_streamer_overload.web.web_server - WARNING - Server thread did not stop gracefully
+2025-05-28 19:49:26,464 - mute_streamer_overload.web.web_server - INFO - Flask server stopped
+2025-05-28 19:49:26,473 - __main__ - INFO - Application shutting down...
+2025-05-28 19:49:27,045 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 19:49:32,133 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload
+2025-05-28 19:49:32,133 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\templates
+2025-05-28 19:49:32,134 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\static
+2025-05-28 19:49:32,230 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'c:\\Users\\iyave\\Desktop\\Mute Streamer Overload\\.venv\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-05-28 19:49:32,230 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'c:\Users\iyave\Desktop\Mute Streamer Overload\.venv\Lib\site-packages\comtypes\gen'
+2025-05-28 19:49:32,322 - mute_streamer_overload.tts.tts_manager - WARNING - No female voice found, using default voice
+2025-05-28 19:49:32,324 - __main__ - INFO - Starting web server...
+2025-05-28 19:49:32,325 - mute_streamer_overload.web.web_server - INFO - Starting Flask server...
+2025-05-28 19:49:32,325 - mute_streamer_overload.web.web_server - INFO - Starting server on http://127.0.0.1:5000
+2025-05-28 19:49:32,335 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-28 19:49:32,336 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-28 19:49:32,371 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:32] "GET /health HTTP/1.1" 200 -
+2025-05-28 19:49:32,992 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:32] "GET /socket.io/?EIO=4&transport=polling&t=PSNp9Kx HTTP/1.1" 200 -
+2025-05-28 19:49:32,999 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:32] "POST /socket.io/?EIO=4&transport=polling&t=PSNp9L0&sid=tMNywp9O7MNnIIVOAAAA HTTP/1.1" 200 -
+2025-05-28 19:49:33,000 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:33] "GET /socket.io/?EIO=4&transport=polling&t=PSNp9L1&sid=tMNywp9O7MNnIIVOAAAA HTTP/1.1" 200 -
+2025-05-28 19:49:33,208 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:33] "GET /socket.io/?EIO=4&transport=polling&t=6kd91t0f HTTP/1.1" 200 -
+2025-05-28 19:49:33,213 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:33] "POST /socket.io/?EIO=4&transport=polling&t=6kd95a85&sid=zbodq7dBtquZh9LoAAAC HTTP/1.1" 200 -
+2025-05-28 19:49:33,217 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:33] "GET /socket.io/?EIO=4&transport=polling&t=6kd9676s&sid=zbodq7dBtquZh9LoAAAC HTTP/1.1" 200 -
+2025-05-28 19:49:34,333 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:34] "GET /health HTTP/1.1" 200 -
+2025-05-28 19:49:34,335 - mute_streamer_overload.web.web_server - INFO - Server health check passed
+2025-05-28 19:49:34,335 - mute_streamer_overload.web.web_server - INFO - Server thread started successfully
+2025-05-28 19:49:34,336 - __main__ - INFO - Starting GUI application...
+2025-05-28 19:49:37,246 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:37] "GET /socket.io/?EIO=4&transport=websocket&sid=zbodq7dBtquZh9LoAAAC HTTP/1.1" 200 -
+2025-05-28 19:49:37,259 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:37] "GET / HTTP/1.1" 200 -
+2025-05-28 19:49:37,318 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:37] "GET /socket.io/?EIO=4&transport=polling&t=6kgf6hnq HTTP/1.1" 200 -
+2025-05-28 19:49:37,321 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:37] "[33mGET /settings HTTP/1.1[0m" 404 -
+2025-05-28 19:49:37,341 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:37] "POST /socket.io/?EIO=4&transport=polling&t=6kgfkmld&sid=Ij8GtuGtRLyIbcI6AAAE HTTP/1.1" 200 -
+2025-05-28 19:49:37,342 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:37] "GET /socket.io/?EIO=4&transport=polling&t=6kgfknxm&sid=Ij8GtuGtRLyIbcI6AAAE HTTP/1.1" 200 -
+2025-05-28 19:49:42,936 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:49:42] "GET /health HTTP/1.1" 200 -
+2025-05-28 19:50:07,343 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:50:07] "GET /health HTTP/1.1" 200 -
+2025-05-28 19:50:30,502 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload
+2025-05-28 19:50:30,502 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\templates
+2025-05-28 19:50:30,502 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\static
+2025-05-28 19:50:30,532 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\iyave\\Desktop\\Mute Streamer Overload\\.venv\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-05-28 19:50:30,533 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\iyave\Desktop\Mute Streamer Overload\.venv\Lib\site-packages\comtypes\gen'
+2025-05-28 19:50:30,608 - mute_streamer_overload.tts.tts_manager - WARNING - No female voice found, using default voice
+2025-05-28 19:50:30,612 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 19:51:52,254 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload
+2025-05-28 19:51:52,255 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\templates
+2025-05-28 19:51:52,255 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\static
+2025-05-28 19:51:52,353 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'c:\\Users\\iyave\\Desktop\\Mute Streamer Overload\\.venv\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-05-28 19:51:52,354 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'c:\Users\iyave\Desktop\Mute Streamer Overload\.venv\Lib\site-packages\comtypes\gen'
+2025-05-28 19:51:52,450 - mute_streamer_overload.tts.tts_manager - WARNING - No female voice found, using default voice
+2025-05-28 19:51:52,451 - __main__ - INFO - Starting web server...
+2025-05-28 19:51:52,453 - mute_streamer_overload.web.web_server - INFO - Starting Flask server...
+2025-05-28 19:51:52,453 - mute_streamer_overload.web.web_server - INFO - Starting server on http://127.0.0.1:5000
+2025-05-28 19:51:52,463 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-28 19:51:52,463 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-28 19:51:52,533 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:52] "GET /socket.io/?EIO=4&transport=polling&t=6ncjqodw HTTP/1.1" 200 -
+2025-05-28 19:51:52,542 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:52] "GET /socket.io/?EIO=4&transport=polling&t=6ncrdva5&sid=P_dvR6bUYwg-n3OLAAAA HTTP/1.1" 200 -
+2025-05-28 19:51:52,780 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:52] "POST /socket.io/?EIO=4&transport=polling&t=6ncrc95k&sid=P_dvR6bUYwg-n3OLAAAA HTTP/1.1" 200 -
+2025-05-28 19:51:54,460 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:54] "GET /health HTTP/1.1" 200 -
+2025-05-28 19:51:54,461 - mute_streamer_overload.web.web_server - INFO - Server health check passed
+2025-05-28 19:51:54,462 - mute_streamer_overload.web.web_server - INFO - Server thread started successfully
+2025-05-28 19:51:54,462 - __main__ - INFO - Starting GUI application...
+2025-05-28 19:51:54,631 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:54] "[33mGET /settings HTTP/1.1[0m" 404 -
+2025-05-28 19:51:55,282 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:55] "GET /socket.io/?EIO=4&transport=polling&t=PSNpi4F HTTP/1.1" 200 -
+2025-05-28 19:51:55,285 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:55] "POST /socket.io/?EIO=4&transport=polling&t=PSNpi4J&sid=qvJfrVP98L65v6YRAAAC HTTP/1.1" 200 -
+2025-05-28 19:51:55,289 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:55] "GET /socket.io/?EIO=4&transport=polling&t=PSNpi4J.0&sid=qvJfrVP98L65v6YRAAAC HTTP/1.1" 200 -
+2025-05-28 19:51:58,254 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:58] "GET /socket.io/?EIO=4&transport=websocket&sid=P_dvR6bUYwg-n3OLAAAA HTTP/1.1" 200 -
+2025-05-28 19:51:58,272 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:58] "GET / HTTP/1.1" 200 -
+2025-05-28 19:51:58,329 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:58] "GET /socket.io/?EIO=4&transport=polling&t=6nh85hih HTTP/1.1" 200 -
+2025-05-28 19:51:58,348 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:58] "POST /socket.io/?EIO=4&transport=polling&t=6nh8i25d&sid=FNcsox5MR-LNsmR_AAAE HTTP/1.1" 200 -
+2025-05-28 19:51:58,351 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:58] "GET /socket.io/?EIO=4&transport=polling&t=6nh8iszz&sid=FNcsox5MR-LNsmR_AAAE HTTP/1.1" 200 -
+2025-05-28 19:51:59,053 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:59] "GET /socket.io/?EIO=4&transport=websocket&sid=FNcsox5MR-LNsmR_AAAE HTTP/1.1" 200 -
+2025-05-28 19:51:59,062 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:59] "GET / HTTP/1.1" 200 -
+2025-05-28 19:51:59,113 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:59] "GET /socket.io/?EIO=4&transport=polling&t=6nhtw0kp HTTP/1.1" 200 -
+2025-05-28 19:51:59,129 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:59] "POST /socket.io/?EIO=4&transport=polling&t=6nhu8oxj&sid=_r7VVMtlttaogjUQAAAG HTTP/1.1" 200 -
+2025-05-28 19:51:59,131 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:51:59] "GET /socket.io/?EIO=4&transport=polling&t=6nhu8xcc&sid=_r7VVMtlttaogjUQAAAG HTTP/1.1" 200 -
+2025-05-28 19:52:06,193 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:52:06] "[33mPOST /settings HTTP/1.1[0m" 404 -
+2025-05-28 19:52:06,194 - mute_streamer_overload.ui.main_window - ERROR - Failed to update settings: <!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+
+2025-05-28 19:52:12,929 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:52:12] "GET /health HTTP/1.1" 200 -
+2025-05-28 19:52:29,153 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:52:29] "GET /health HTTP/1.1" 200 -
+2025-05-28 19:52:30,540 - mute_streamer_overload.web.web_server - INFO - Stopping Flask server...
+2025-05-28 19:52:30,544 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 19:52:30] "[35m[1mGET /health HTTP/1.1[0m" 503 -
+2025-05-28 19:52:35,545 - mute_streamer_overload.web.web_server - WARNING - Server thread did not stop gracefully
+2025-05-28 19:52:35,685 - mute_streamer_overload.web.web_server - INFO - Flask server stopped
+2025-05-28 19:52:35,689 - __main__ - INFO - Application shutting down...
+2025-05-28 19:52:36,326 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:05:11,340 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload
+2025-05-28 20:05:11,341 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 20:05:11,341 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\static
+2025-05-28 20:05:11,409 - mute_streamer_overload.web.web_server - INFO - Starting Flask server...
+2025-05-28 20:05:11,409 - mute_streamer_overload.web.web_server - ERROR - Template directory not found: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 20:05:13,410 - mute_streamer_overload.web.web_server - ERROR - Server thread died immediately
+2025-05-28 20:06:12,524 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload
+2025-05-28 20:06:12,524 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 20:06:12,524 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\static
+2025-05-28 20:06:12,561 - mute_streamer_overload.web.web_server - INFO - Starting Flask server...
+2025-05-28 20:06:12,561 - mute_streamer_overload.web.web_server - ERROR - Template directory not found: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 20:06:14,562 - mute_streamer_overload.web.web_server - ERROR - Server thread died immediately
+2025-05-28 20:06:14,565 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:07:04,125 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload
+2025-05-28 20:07:04,125 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 20:07:04,126 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\static
+2025-05-28 20:07:04,195 - mute_streamer_overload.web.web_server - INFO - Starting Flask server...
+2025-05-28 20:07:04,196 - mute_streamer_overload.web.web_server - ERROR - Template directory not found: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 20:07:06,196 - mute_streamer_overload.web.web_server - ERROR - Server thread died immediately
+2025-05-28 20:08:20,285 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload
+2025-05-28 20:08:20,285 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 20:08:20,285 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\static
+2025-05-28 20:08:20,322 - mute_streamer_overload.web.web_server - INFO - Starting Flask server...
+2025-05-28 20:08:20,323 - mute_streamer_overload.web.web_server - ERROR - Template directory not found: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 20:08:22,323 - mute_streamer_overload.web.web_server - ERROR - Server thread died immediately
+2025-05-28 20:08:22,326 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:08:52,415 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web
+2025-05-28 20:08:52,416 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\templates
+2025-05-28 20:08:52,416 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\static
+2025-05-28 20:08:52,453 - mute_streamer_overload.web.web_server - INFO - Starting Flask server...
+2025-05-28 20:08:52,453 - mute_streamer_overload.web.web_server - INFO - Starting server on http://127.0.0.1:5000
+2025-05-28 20:08:52,787 - mute_streamer_overload.web.web_server - INFO - Starting Flask development server with eventlet
+2025-05-28 20:08:54,457 - mute_streamer_overload.web.web_server - INFO - Server health check passed
+2025-05-28 20:08:54,457 - mute_streamer_overload.web.web_server - INFO - Server thread started successfully
+2025-05-28 20:09:48,583 - mute_streamer_overload.web.web_server - INFO - Stopping Flask server...
+2025-05-28 20:09:53,595 - mute_streamer_overload.web.web_server - WARNING - Server thread did not stop gracefully
+2025-05-28 20:09:53,595 - mute_streamer_overload.web.web_server - INFO - Flask server stopped
+2025-05-28 20:09:53,595 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,596 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,596 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,596 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,596 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,597 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,597 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,597 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,597 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,597 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,598 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,598 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,598 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,598 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,598 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,599 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,599 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,599 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,599 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,599 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,599 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,600 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,600 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,600 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,600 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,600 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,601 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,601 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,601 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,601 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,601 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,601 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,602 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,602 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,602 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,602 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,602 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,602 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,603 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,603 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,603 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,603 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,603 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,603 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,604 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,604 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,604 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,604 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,604 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,604 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,604 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,605 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,605 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,605 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,605 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,605 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,606 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,606 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,606 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,606 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,606 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,606 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,607 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,607 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,607 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,607 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,607 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,607 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,607 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,608 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,608 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,608 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,608 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,609 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,609 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,609 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,609 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,609 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,609 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,609 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,610 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,610 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,610 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,610 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,610 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,610 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,611 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,611 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,611 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,611 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,611 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,612 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,612 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,612 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,612 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,612 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,612 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,613 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,613 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,613 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,613 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,613 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,613 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,614 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,614 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,614 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,615 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,615 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,615 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,615 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,615 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,616 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,616 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,616 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,616 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,616 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,616 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,617 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,617 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,617 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,617 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,617 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,618 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,618 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,618 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,618 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,618 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,618 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,619 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,619 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,619 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,619 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,619 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,619 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,620 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,620 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,620 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,620 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,620 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,620 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,621 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,621 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,621 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,621 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,621 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,621 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,622 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,622 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,622 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,622 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,623 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,623 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,623 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,623 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,624 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,624 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,624 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,624 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,624 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,625 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,625 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,625 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,625 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,625 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,625 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,626 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,626 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,626 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,626 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,626 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,626 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,626 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,626 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,626 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,627 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,627 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,627 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,627 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,627 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,627 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,628 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,628 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,628 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,628 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,628 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,628 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,629 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,629 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,629 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,629 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,629 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,629 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,630 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,630 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,630 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,630 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,630 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,630 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,630 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,631 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,631 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,631 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,631 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,631 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,631 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,632 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,632 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,632 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,632 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,632 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,632 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,632 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,633 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,633 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,633 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,633 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,633 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,633 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,633 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,634 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,634 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,634 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,634 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,634 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,634 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,634 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,636 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,636 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,637 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,637 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,637 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,637 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,637 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,638 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,638 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,638 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,638 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,638 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,638 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,639 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,639 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,639 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,639 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,639 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,639 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,640 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,640 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,640 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,640 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,640 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,640 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,641 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,641 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,641 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,641 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,641 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,642 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,642 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,642 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,642 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,642 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,642 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,643 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,643 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,643 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,643 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,643 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,643 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,644 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,644 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,644 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,644 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,644 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,644 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,644 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,644 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,645 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,645 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,645 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,645 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,645 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,645 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,646 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,646 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,646 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,646 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,646 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,647 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,647 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,647 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,647 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,647 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,648 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,648 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,648 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,648 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,648 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,648 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,648 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,649 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,649 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,649 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,649 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,649 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,650 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,650 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,650 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,650 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,650 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,650 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,651 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,651 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,651 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,651 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,651 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,651 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,652 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,652 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,652 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,652 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,652 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,653 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,653 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,653 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,653 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,653 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,654 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,654 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,654 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,654 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,654 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,655 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,655 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,655 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,655 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,655 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,656 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,656 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,656 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,656 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,656 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,656 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,656 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,656 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,656 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,657 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,657 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,657 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,657 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,657 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,657 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,658 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,658 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,658 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,658 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,658 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,658 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,659 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,659 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,659 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,659 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,659 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,659 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,660 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,660 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,660 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,660 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,660 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,660 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,661 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,661 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,661 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,661 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,661 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,661 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,661 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,662 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,662 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,662 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,662 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,662 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,662 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,663 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,663 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,663 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,663 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,663 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,664 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,664 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,664 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,665 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,665 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,665 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,666 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,666 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,666 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,666 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,666 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,666 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,667 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,667 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,667 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,667 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,667 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,667 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,667 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,668 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,668 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,668 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,668 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,668 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,669 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,669 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,669 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,669 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,669 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,669 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,670 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,670 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,670 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,670 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,670 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,670 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,671 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,671 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,671 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,671 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,671 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,671 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,671 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,671 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,672 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,672 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,672 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,672 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,672 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,672 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,673 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,673 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,673 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,673 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,673 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,673 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,674 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,674 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,674 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,675 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,675 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,675 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,675 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,675 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,675 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,676 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,676 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,676 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,676 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,676 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,676 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,677 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,677 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,677 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,677 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,677 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,677 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,678 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,678 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,678 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,678 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,678 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,679 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,679 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,679 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,679 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,679 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,679 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,680 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,680 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,680 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,680 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,680 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,680 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,681 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,681 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,681 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,681 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,681 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,681 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,682 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,682 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,682 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:53,682 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:09:54,728 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web
+2025-05-28 20:09:54,728 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\templates
+2025-05-28 20:09:54,728 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\static
+2025-05-28 20:09:54,765 - mute_streamer_overload.web.web_server - INFO - Creating server thread...
+2025-05-28 20:09:54,765 - mute_streamer_overload.web.web_server - INFO - Starting server thread...
+2025-05-28 20:09:54,765 - mute_streamer_overload.web.web_server - INFO - Starting Flask server...
+2025-05-28 20:09:54,765 - mute_streamer_overload.web.web_server - INFO - Waiting for server to initialize...
+2025-05-28 20:09:54,765 - mute_streamer_overload.web.web_server - INFO - Current working directory: C:\Users\iyave\Desktop\Mute Streamer Overload
+2025-05-28 20:09:54,765 - mute_streamer_overload.web.web_server - INFO - Starting server on http://127.0.0.1:5000
+2025-05-28 20:09:54,766 - mute_streamer_overload.web.web_server - INFO - Creating Flask application...
+2025-05-28 20:09:54,766 - mute_streamer_overload.web.web_server - INFO - Configuring SocketIO with eventlet...
+2025-05-28 20:09:55,058 - mute_streamer_overload.web.web_server - INFO - SocketIO configured successfully
+2025-05-28 20:09:55,059 - mute_streamer_overload.web.web_server - INFO - Starting Flask development server with eventlet
+2025-05-28 20:09:56,766 - mute_streamer_overload.web.web_server - INFO - Performing server health check...
+2025-05-28 20:09:56,766 - mute_streamer_overload.web.web_server - INFO - Attempting to connect to http://127.0.0.1:5000/health
+2025-05-28 20:09:56,770 - mute_streamer_overload.web.web_server - INFO - Health check response: 200 - {"message":"Server is running","status":"ok"}
+
+2025-05-28 20:09:56,771 - mute_streamer_overload.web.web_server - INFO - Server health check passed
+2025-05-28 20:09:56,771 - mute_streamer_overload.web.web_server - INFO - Server thread started successfully
+2025-05-28 20:11:16,280 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web
+2025-05-28 20:11:16,281 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\templates
+2025-05-28 20:11:16,281 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\static
+2025-05-28 20:11:16,321 - mute_streamer_overload.web.web_server - INFO - Creating server thread...
+2025-05-28 20:11:16,321 - mute_streamer_overload.web.web_server - INFO - Starting server thread...
+2025-05-28 20:11:16,321 - mute_streamer_overload.web.web_server - INFO - Starting Flask server...
+2025-05-28 20:11:16,322 - mute_streamer_overload.web.web_server - INFO - Waiting for server to initialize...
+2025-05-28 20:11:16,322 - mute_streamer_overload.web.web_server - INFO - Current working directory: C:\Users\iyave\Desktop\Mute Streamer Overload
+2025-05-28 20:11:16,322 - mute_streamer_overload.web.web_server - INFO - Starting server on http://127.0.0.1:5000
+2025-05-28 20:11:16,322 - mute_streamer_overload.web.web_server - INFO - Creating Flask application...
+2025-05-28 20:11:16,323 - mute_streamer_overload.web.web_server - INFO - Configuring SocketIO with threading...
+2025-05-28 20:11:16,323 - mute_streamer_overload.web.web_server - INFO - SocketIO configured successfully
+2025-05-28 20:11:16,324 - mute_streamer_overload.web.web_server - ERROR - Port 5000 is already in use
+2025-05-28 20:11:17,166 - mute_streamer_overload.web.web_server - INFO - Stopping Flask server...
+2025-05-28 20:11:18,323 - mute_streamer_overload.web.web_server - ERROR - Server thread died immediately
+2025-05-28 20:11:18,323 - mute_streamer_overload.web.web_server - ERROR - Server thread exception:
+NoneType: None
+2025-05-28 20:11:18,326 - mute_streamer_overload.web.web_server - INFO - Stopping Flask server...
+2025-05-28 20:11:18,330 - mute_streamer_overload.web.web_server - INFO - Flask server stopped
+2025-05-28 20:11:22,179 - mute_streamer_overload.web.web_server - WARNING - Server thread did not stop gracefully
+2025-05-28 20:11:22,179 - mute_streamer_overload.web.web_server - INFO - Flask server stopped
+2025-05-28 20:11:22,179 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,180 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,180 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,180 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,180 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,180 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,181 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,181 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,181 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,181 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,181 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,182 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,182 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,182 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,182 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,182 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,182 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,183 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,183 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,183 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,183 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,184 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,184 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,184 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,184 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,184 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,184 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,185 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,185 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,185 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,185 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,185 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,186 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,186 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,186 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,186 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,186 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,186 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,186 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,187 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,187 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,187 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,187 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,187 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,187 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,188 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,188 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,188 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,188 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,188 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,188 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,188 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,189 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,189 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,189 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,189 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,189 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,189 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,190 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,190 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,190 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,190 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,190 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,190 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,190 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,190 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,191 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,191 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,191 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,191 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,191 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,191 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,192 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,192 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,192 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,192 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,192 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,192 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,192 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,193 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,193 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,193 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,194 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,194 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,194 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,194 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,195 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,195 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,195 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,195 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,195 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,196 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,196 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,196 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,196 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,196 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,196 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,196 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,197 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,197 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,197 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,197 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,197 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,197 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,197 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,198 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,198 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,198 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,198 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,198 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,198 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,198 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,198 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,198 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,199 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,199 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,199 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,199 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,199 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,199 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,200 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,200 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,200 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,200 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,200 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,200 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,200 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,201 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,201 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,201 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,202 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,202 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,202 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,202 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,202 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,202 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,203 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,203 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,203 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,203 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,203 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,203 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,203 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,204 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,204 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,204 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,204 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,204 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,204 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,204 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,205 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,205 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,205 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,205 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,205 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,206 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,206 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,206 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,206 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,207 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,207 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,207 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,207 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,207 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,207 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,207 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,208 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,208 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,208 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,208 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,208 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,208 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,208 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,208 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,208 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,209 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,209 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,209 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,209 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,209 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,210 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,210 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,210 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,210 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,210 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,210 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,210 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,211 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,211 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,211 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,211 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,211 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,211 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,212 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,212 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,212 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,212 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,212 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,212 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,213 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,213 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,213 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,213 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,213 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,213 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,213 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,214 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,214 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,214 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,214 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,214 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,214 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,215 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,215 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,215 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,215 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,215 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,215 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,215 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,216 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,216 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,216 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,216 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,216 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,216 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,216 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,216 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,216 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,218 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,218 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,218 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,218 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,218 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,219 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,219 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,219 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,219 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,219 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,219 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,220 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,220 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,220 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,220 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,220 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,220 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,221 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,221 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,221 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,221 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,221 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,221 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,221 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,222 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,222 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,222 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,222 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,222 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,222 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,223 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,223 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,223 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,223 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,223 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,223 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,224 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,224 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,224 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,224 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,224 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,224 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,224 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,225 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,225 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,225 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,225 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,225 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,225 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,226 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,226 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,226 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,226 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,226 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,226 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,227 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,227 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,227 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,227 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,227 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,227 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,228 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,228 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,228 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,228 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,228 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,228 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,228 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,228 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,228 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,229 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,229 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,229 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,229 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,229 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,229 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,230 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,230 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,230 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,230 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,230 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,230 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,231 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,231 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,231 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,231 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,231 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,231 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,232 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,232 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,232 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,232 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,232 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,233 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,233 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,234 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,234 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,234 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,235 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,235 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,235 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,235 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,235 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,236 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,236 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,236 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,236 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,236 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,236 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,237 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,237 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,237 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,237 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,237 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,237 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,237 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,238 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,238 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,238 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,238 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,238 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,238 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,238 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,238 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,238 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,238 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,239 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,239 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,239 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,239 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,239 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,240 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,240 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,240 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,240 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,240 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,240 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,241 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,241 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,241 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,241 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,241 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,241 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,242 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,242 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,242 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,242 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,242 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,242 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,242 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,243 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,243 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,243 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,244 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,244 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,244 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,244 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,244 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,244 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,245 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,245 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,245 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,245 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,245 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,245 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,246 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,246 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,246 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,246 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,246 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,246 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,247 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,247 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,247 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,247 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,247 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,247 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,248 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,248 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,248 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,248 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,248 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,248 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,249 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,249 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,249 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,249 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,249 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,249 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,250 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,250 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,250 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,250 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,250 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,250 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,251 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,251 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,251 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,251 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,251 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,251 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,252 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,252 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,252 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,252 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,252 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,252 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,252 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,252 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,253 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,253 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,253 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,253 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,253 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,253 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,254 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,254 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,254 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,255 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,255 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,255 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,255 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,255 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,255 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,255 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,255 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,255 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,256 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,256 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,256 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,256 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,256 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,256 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,257 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,257 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,257 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,257 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,257 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,257 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,257 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,258 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,258 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,258 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,258 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,258 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,258 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,258 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,259 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,259 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,259 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,259 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,259 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,259 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,260 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,260 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,260 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,260 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,260 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,260 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,261 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,261 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,261 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:22,261 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:11:28,500 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web
+2025-05-28 20:11:28,500 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\templates
+2025-05-28 20:11:28,500 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\static
+2025-05-28 20:11:28,567 - mute_streamer_overload.web.web_server - INFO - Creating server thread...
+2025-05-28 20:11:28,568 - mute_streamer_overload.web.web_server - INFO - Starting server thread...
+2025-05-28 20:11:28,569 - mute_streamer_overload.web.web_server - INFO - Waiting for server to initialize...
+2025-05-28 20:11:28,569 - mute_streamer_overload.web.web_server - INFO - Starting Flask server...
+2025-05-28 20:11:28,569 - mute_streamer_overload.web.web_server - INFO - Current working directory: C:\Users\iyave\Desktop\Mute Streamer Overload
+2025-05-28 20:11:28,570 - mute_streamer_overload.web.web_server - INFO - Starting server on http://127.0.0.1:5000
+2025-05-28 20:11:28,570 - mute_streamer_overload.web.web_server - INFO - Creating Flask application...
+2025-05-28 20:11:28,571 - mute_streamer_overload.web.web_server - INFO - Configuring SocketIO with threading...
+2025-05-28 20:11:28,571 - mute_streamer_overload.web.web_server - INFO - SocketIO configured successfully
+2025-05-28 20:11:28,573 - mute_streamer_overload.web.web_server - INFO - Starting Flask development server with threading
+2025-05-28 20:11:28,580 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-28 20:11:28,581 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-28 20:11:28,638 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:11:28] "GET /health HTTP/1.1" 200 -
+2025-05-28 20:11:28,792 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:11:28] "GET /socket.io/?EIO=4&transport=polling&t=7cjkplhj HTTP/1.1" 200 -
+2025-05-28 20:11:28,901 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:11:28] "POST /socket.io/?EIO=4&transport=polling&t=7ckd6qiy&sid=-uiJTsNrtwkl6deFAAAA HTTP/1.1" 200 -
+2025-05-28 20:11:29,054 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:11:29] "GET /socket.io/?EIO=4&transport=polling&t=7ckd7kc8&sid=-uiJTsNrtwkl6deFAAAA HTTP/1.1" 200 -
+2025-05-28 20:11:30,571 - mute_streamer_overload.web.web_server - INFO - Performing server health check...
+2025-05-28 20:11:30,571 - mute_streamer_overload.web.web_server - INFO - Attempting to connect to http://127.0.0.1:5000/health
+2025-05-28 20:11:30,578 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:11:30] "GET /health HTTP/1.1" 200 -
+2025-05-28 20:11:30,579 - mute_streamer_overload.web.web_server - INFO - Health check response: 200 - {"message":"Server is running","status":"ok"}
+
+2025-05-28 20:11:30,579 - mute_streamer_overload.web.web_server - INFO - Server health check passed
+2025-05-28 20:11:30,580 - mute_streamer_overload.web.web_server - INFO - Server thread started successfully
+2025-05-28 20:11:32,027 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:11:32] "GET /socket.io/?EIO=4&transport=polling&t=PSNuBMt HTTP/1.1" 200 -
+2025-05-28 20:11:32,032 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:11:32] "POST /socket.io/?EIO=4&transport=polling&t=PSNuBMy&sid=0xKxQnrkkUnqrmJZAAAC HTTP/1.1" 200 -
+2025-05-28 20:11:32,033 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:11:32] "GET /socket.io/?EIO=4&transport=polling&t=PSNuBMy.0&sid=0xKxQnrkkUnqrmJZAAAC HTTP/1.1" 200 -
+2025-05-28 20:11:33,186 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:11:33] "GET /socket.io/?EIO=4&transport=websocket&sid=-uiJTsNrtwkl6deFAAAA HTTP/1.1" 200 -
+2025-05-28 20:11:33,200 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:11:33] "GET / HTTP/1.1" 200 -
+2025-05-28 20:11:33,254 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:11:33] "GET /socket.io/?EIO=4&transport=polling&t=7cnsze8a HTTP/1.1" 200 -
+2025-05-28 20:11:33,275 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:11:33] "POST /socket.io/?EIO=4&transport=polling&t=7cntcnxw&sid=6PVyVk_8AovEy8wGAAAE HTTP/1.1" 200 -
+2025-05-28 20:11:33,277 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:11:33] "GET /socket.io/?EIO=4&transport=polling&t=7cntd6ye&sid=6PVyVk_8AovEy8wGAAAE HTTP/1.1" 200 -
+2025-05-28 20:11:42,937 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:11:42] "GET /health HTTP/1.1" 200 -
+2025-05-28 20:12:03,271 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:12:03] "GET /health HTTP/1.1" 200 -
+2025-05-28 20:12:12,927 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:12:12] "GET /health HTTP/1.1" 200 -
+2025-05-28 20:12:33,284 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:12:33] "GET /health HTTP/1.1" 200 -
+2025-05-28 20:13:01,248 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web
+2025-05-28 20:13:01,249 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\templates
+2025-05-28 20:13:01,249 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\static
+2025-05-28 20:13:01,251 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:14:50,288 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web
+2025-05-28 20:14:50,288 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\templates
+2025-05-28 20:14:50,288 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\static
+2025-05-28 20:14:50,291 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:20:24,624 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web
+2025-05-28 20:20:24,625 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\templates
+2025-05-28 20:20:24,625 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\static
+2025-05-28 20:20:24,627 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:35,850 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web
+2025-05-28 20:27:35,850 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\templates
+2025-05-28 20:27:35,850 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\web\static
+2025-05-28 20:27:35,887 - mute_streamer_overload.web.web_server - INFO - Creating server thread...
+2025-05-28 20:27:35,888 - mute_streamer_overload.web.web_server - INFO - Starting server thread...
+2025-05-28 20:27:35,888 - mute_streamer_overload.web.web_server - INFO - Starting Flask server...
+2025-05-28 20:27:35,888 - mute_streamer_overload.web.web_server - INFO - Waiting for server to initialize...
+2025-05-28 20:27:35,888 - mute_streamer_overload.web.web_server - INFO - Current working directory: C:\Users\iyave\Desktop\Mute Streamer Overload
+2025-05-28 20:27:35,888 - mute_streamer_overload.web.web_server - INFO - Starting server on http://127.0.0.1:5000
+2025-05-28 20:27:35,888 - mute_streamer_overload.web.web_server - INFO - Creating Flask application...
+2025-05-28 20:27:35,889 - mute_streamer_overload.web.web_server - INFO - Configuring SocketIO with threading...
+2025-05-28 20:27:35,890 - mute_streamer_overload.web.web_server - INFO - SocketIO configured successfully
+2025-05-28 20:27:35,890 - mute_streamer_overload.web.web_server - INFO - Starting Flask development server with threading
+2025-05-28 20:27:35,896 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-28 20:27:35,897 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-28 20:27:36,141 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:27:36] "GET /socket.io/?EIO=4&transport=polling&t=PSNxsJ5 HTTP/1.1" 200 -
+2025-05-28 20:27:36,144 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:27:36] "POST /socket.io/?EIO=4&transport=polling&t=PSNxslF&sid=-Bb1skzZU9VoNFaRAAAA HTTP/1.1" 200 -
+2025-05-28 20:27:36,145 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:27:36] "GET /socket.io/?EIO=4&transport=polling&t=PSNxslF.0&sid=-Bb1skzZU9VoNFaRAAAA HTTP/1.1" 200 -
+2025-05-28 20:27:37,889 - mute_streamer_overload.web.web_server - INFO - Performing server health check...
+2025-05-28 20:27:37,889 - mute_streamer_overload.web.web_server - INFO - Attempting to connect to http://127.0.0.1:5000/health
+2025-05-28 20:27:37,893 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:27:37] "GET /health HTTP/1.1" 200 -
+2025-05-28 20:27:37,893 - mute_streamer_overload.web.web_server - INFO - Health check response: 200 - {"message":"Server is running","status":"ok"}
+
+2025-05-28 20:27:37,894 - mute_streamer_overload.web.web_server - INFO - Server health check passed
+2025-05-28 20:27:37,894 - mute_streamer_overload.web.web_server - INFO - Server thread started successfully
+2025-05-28 20:27:42,265 - mute_streamer_overload.web.web_server - INFO - Stopping Flask server...
+2025-05-28 20:27:42,267 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:27:42] "[35m[1mGET /health HTTP/1.1[0m" 503 -
+2025-05-28 20:27:42,935 - werkzeug - INFO - 127.0.0.1 - - [28/May/2025 20:27:42] "[35m[1mGET /health HTTP/1.1[0m" 503 -
+2025-05-28 20:27:47,272 - mute_streamer_overload.web.web_server - WARNING - Server thread did not stop gracefully
+2025-05-28 20:27:47,272 - mute_streamer_overload.web.web_server - INFO - Flask server stopped
+2025-05-28 20:27:47,272 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,272 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,273 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,273 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,273 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,273 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,273 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,273 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,273 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,274 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,274 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,274 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,274 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,274 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,274 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,274 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,275 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,275 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,275 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,275 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,275 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,275 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,275 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,276 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,276 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,276 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,276 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,276 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,276 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,276 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,277 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,277 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,277 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,277 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,277 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,277 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,277 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,277 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,277 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,278 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,278 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,278 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,278 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,278 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,278 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,279 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,279 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,279 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,279 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,279 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,279 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,280 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,280 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,280 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,280 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,280 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,280 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,280 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,281 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,281 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,281 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,281 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,281 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,281 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,281 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,281 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,281 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,281 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,281 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,282 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,282 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,282 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,282 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,282 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,282 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,282 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,283 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,283 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,283 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,283 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,283 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,283 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,283 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,284 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,284 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,284 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,284 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,284 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,284 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,285 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,285 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,285 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,285 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,285 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,285 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,286 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,286 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,286 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,286 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,286 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,286 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,286 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,287 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,287 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,287 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,287 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,287 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,287 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,287 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,288 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,288 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,288 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,288 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,288 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,288 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,289 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,289 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,289 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,289 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,289 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,289 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,289 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,290 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,290 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,290 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,290 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,290 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,290 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,290 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,291 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,291 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,291 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,291 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,291 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,291 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,291 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,292 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,292 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,292 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,292 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,293 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,293 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,293 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,293 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,293 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,293 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,294 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,294 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,294 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,294 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,294 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,294 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,295 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,295 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,295 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,295 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,295 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,295 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,295 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,296 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,296 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,296 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,296 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,296 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,296 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,297 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,297 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,297 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,297 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,297 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,297 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,297 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,298 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,298 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,298 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,298 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,298 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,298 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,298 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,299 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,299 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,299 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,299 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,299 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,299 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,299 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,299 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,299 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,299 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,299 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,300 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,300 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,300 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,301 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,301 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,301 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,301 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,301 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,301 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,301 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,301 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,301 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,301 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,302 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,302 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,302 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,302 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,302 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,302 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,302 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,303 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,303 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,303 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,303 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,303 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,303 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,303 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,303 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,303 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,305 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,305 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,305 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,305 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,305 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,305 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,305 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,306 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,306 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,306 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,306 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,306 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,307 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,307 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,307 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,307 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,307 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,308 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,308 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,308 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,308 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,308 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,308 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,308 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,309 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,309 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,309 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,309 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,309 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,309 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,309 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,310 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,310 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,310 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,310 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,310 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,310 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,310 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,310 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,311 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,311 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,311 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,311 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,311 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,311 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,311 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,312 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,312 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,312 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,312 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,312 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,312 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,312 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,312 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,313 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,313 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,313 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,313 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,313 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,313 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,314 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,314 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,314 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,314 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,314 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,314 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,314 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,315 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,315 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,315 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,315 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,315 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,315 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,315 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,316 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,316 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,316 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,316 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,316 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,316 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,316 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,316 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,317 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,317 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,317 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,317 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,317 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,317 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,317 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,318 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,318 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,318 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,318 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,318 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,318 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,319 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,319 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,319 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,319 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,319 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,319 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,319 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,320 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,320 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,320 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,320 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,320 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,320 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,321 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,321 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,321 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,321 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,321 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,322 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,322 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,322 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,322 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,322 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,322 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,322 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,323 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,323 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,323 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,323 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,323 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,323 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,324 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,324 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,324 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,324 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,324 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,324 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,324 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,324 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,325 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,325 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,325 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,325 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,325 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,325 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,325 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,326 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,326 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,326 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,326 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,326 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,326 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,326 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,327 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,327 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,327 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,327 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,327 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,327 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,327 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,328 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,328 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,328 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,328 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,328 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,328 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,329 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,329 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,329 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,329 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,329 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,329 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,329 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,330 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,330 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,330 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,330 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,330 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,330 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,330 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,330 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,331 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,331 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,331 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,331 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,331 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,331 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,331 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,331 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,331 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,331 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,331 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,332 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,332 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,332 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,332 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,332 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,332 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,332 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,333 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,333 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,333 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,333 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,333 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,333 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,333 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,334 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,334 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,334 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,334 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,334 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,334 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,334 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,335 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,335 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,335 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,335 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,335 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,335 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,336 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,336 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,336 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,336 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,336 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,336 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,336 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,337 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,337 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,337 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,337 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,337 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,337 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,337 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,337 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,338 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,338 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,338 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,338 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,338 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,338 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,338 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,339 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,339 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,339 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,339 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,339 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,340 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,340 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,340 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,340 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,340 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,340 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,340 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,340 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,341 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,341 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,341 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,341 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,341 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,341 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,342 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,342 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,342 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,342 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,342 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,342 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,342 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,343 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,343 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,343 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,343 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,343 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,343 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,343 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,344 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,344 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 20:27:47,344 - mute_streamer_overload.web.web_server - INFO - Server is not running

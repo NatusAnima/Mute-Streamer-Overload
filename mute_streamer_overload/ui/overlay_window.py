@@ -1,11 +1,12 @@
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton, QMainWindow
 from PyQt6.QtCore import Qt, QPoint
-from PyQt6.QtGui import QWindow
+from PyQt6.QtGui import QWindow, QIcon
+from pathlib import Path
 import re
 
 from mute_streamer_overload.core.text_animator import TextAnimator
 from mute_streamer_overload.utils.constants import (TITLE_BAR_STYLE, CLOSE_BUTTON_STYLE, 
-                        MESSAGE_LABEL_STYLE, CONTENT_WIDGET_STYLE)
+                      MESSAGE_LABEL_STYLE, CONTENT_WIDGET_STYLE)
 from mute_streamer_overload.web.web_server import update_message
 
 class OverlayWindow(QMainWindow):
@@ -19,6 +20,12 @@ class OverlayWindow(QMainWindow):
             Qt.WindowType.WindowStaysOnTopHint |  # Keep on top
             Qt.WindowType.NoDropShadowWindowHint  # Remove drop shadow
         )
+        
+        # Set window icon (16x16 is appropriate for overlay)
+        assets_dir = Path(__file__).parent.parent.parent / 'assets'
+        icon_path = assets_dir / 'icon_16x16.ico'
+        if icon_path.exists():
+            self.setWindowIcon(QIcon(str(icon_path)))
         
         # Set window attributes for proper capture
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)

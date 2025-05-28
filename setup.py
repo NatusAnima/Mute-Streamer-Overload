@@ -11,7 +11,9 @@ setup(
         "flask-socketio",
         "simple-websocket",
         "gunicorn",
-        "pyttsx3",
+        "eventlet",
+        "cairosvg",
+        "pillow",
     ],
     extras_require={
         'dev': [
