@@ -122,27 +122,6 @@ The executable will be created in the `dist` directory as `MuteStreamerOverload.
 - Python 3.8 or later
 - Administrator privileges (required for keyboard hooks)
 
-### Distribution
-
-To distribute the application:
-
-1. Build the executable using the steps above
-2. Copy `MuteStreamerOverload.exe` from the `dist` directory
-3. Share the executable with users
-
-Users can run the application by:
-1. Double-clicking `MuteStreamerOverload.exe`
-2. Granting administrator privileges when prompted
-3. Using the application as described in the Usage section
-
-Note: The first run might be blocked by Windows Defender. Users may need to:
-1. Right-click the executable
-2. Select "Properties"
-3. Check "Unblock" at the bottom of the properties window
-4. Click "Apply"
-
-## Development
-
 ### Project Structure
 
 ```
