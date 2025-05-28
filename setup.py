@@ -9,6 +9,9 @@ setup(
         "keyboard",
         "flask",
         "flask-socketio",
+        "simple-websocket",
+        "gunicorn",
+        "pyttsx3",
     ],
     extras_require={
         'dev': [

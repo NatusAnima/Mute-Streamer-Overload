@@ -247,14 +247,41 @@ def start_server():
             # Run the server with shutdown support
             while not shutdown_event.is_set():
                 try:
-                    # Start the server in a way that can be interrupted
-                    socketio.run(app, 
-                               host='127.0.0.1', 
-                               port=5000, 
-                               debug=False, 
-                               use_reloader=False,
-                               log_output=True,
-                               allow_unsafe_werkzeug=True)
+                    if os.environ.get('FLASK_ENV') == 'production':
+                        # Use Gunicorn in production
+                        import gunicorn.app.base
+                        
+                        class StandaloneApplication(gunicorn.app.base.BaseApplication):
+                            def __init__(self, app, options=None):
+                                self.options = options or {}
+                                self.application = app
+                                super().__init__()
+
+                            def load_config(self):
+                                for key, value in self.options.items():
+                                    self.cfg.set(key, value)
+
+                            def load(self):
+                                return self.application
+
+                        options = {
+                            'bind': '127.0.0.1:5000',
+                            'worker_class': 'eventlet',
+                            'workers': 1,
+                            'timeout': 30,
+                            'graceful_timeout': 30,
+                        }
+                        
+                        StandaloneApplication(app, options).run()
+                    else:
+                        # Use Flask development server for development
+                        socketio.run(app, 
+                                   host='127.0.0.1', 
+                                   port=5000, 
+                                   debug=False, 
+                                   use_reloader=False,
+                                   log_output=True,
+                                   allow_unsafe_werkzeug=True)
                     break  # Exit if server stops normally
                 except Exception as e:
                     if not shutdown_event.is_set():
@@ -296,6 +323,8 @@ def stop_server():
                 if response.status_code == 200:
                     # Server is still running, send shutdown request
                     requests.post('http://127.0.0.1:5000/shutdown', timeout=1)
+                    # Give the server a moment to shut down gracefully
+                    time.sleep(2)
             except:
                 pass  # Server might already be down
         except:

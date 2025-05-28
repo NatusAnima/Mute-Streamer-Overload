@@ -34,3 +34,7 @@
 2025-05-28 19:31:01,876 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
 2025-05-28 19:31:01,876 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\static
 2025-05-28 19:31:01,879 - mute_streamer_overload.web.web_server - INFO - Server is not running
+2025-05-28 19:36:21,421 - mute_streamer_overload.web.web_server - INFO - Base directory: C:\Users\iyave\Desktop\Mute Streamer Overload
+2025-05-28 19:36:21,421 - mute_streamer_overload.web.web_server - INFO - Template directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\templates
+2025-05-28 19:36:21,421 - mute_streamer_overload.web.web_server - INFO - Static directory: C:\Users\iyave\Desktop\Mute Streamer Overload\web\static
+2025-05-28 19:36:21,425 - mute_streamer_overload.web.web_server - INFO - Server is not running
