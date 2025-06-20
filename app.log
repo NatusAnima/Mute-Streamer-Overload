@@ -1,0 +1,29 @@
+2025-06-20 03:23:05,534 - __main__ - INFO - ==================================================
+2025-06-20 03:23:05,535 - __main__ - INFO - Logging Initialized
+2025-06-20 03:23:05,535 - __main__ - INFO - Log file: C:\Users\iyave\Desktop\Mute Streamer Overload\app.log
+2025-06-20 03:23:05,535 - __main__ - INFO - ==================================================
+2025-06-20 03:23:05,550 - __main__ - INFO - Starting web server...
+2025-06-20 03:23:05,551 - mute_streamer_overload.web.web_server - INFO - Creating server thread...
+2025-06-20 03:23:05,551 - mute_streamer_overload.web.web_server - INFO - Starting server thread...
+2025-06-20 03:23:05,552 - mute_streamer_overload.web.web_server - INFO - Waiting for server to initialize...
+2025-06-20 03:23:05,563 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-20 03:23:05,563 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-20 03:23:07,553 - mute_streamer_overload.web.web_server - INFO - Performing server health check...
+2025-06-20 03:23:07,553 - mute_streamer_overload.web.web_server - INFO - Attempting to connect to http://127.0.0.1:5000/health
+2025-06-20 03:23:07,561 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 03:23:07] "GET /health HTTP/1.1" 200 -
+2025-06-20 03:23:07,563 - mute_streamer_overload.web.web_server - INFO - Health check response: 200 - {"status":"ok"}
+
+2025-06-20 03:23:07,564 - mute_streamer_overload.web.web_server - INFO - Server health check passed
+2025-06-20 03:23:07,564 - mute_streamer_overload.web.web_server - INFO - Server thread started successfully
+2025-06-20 03:23:07,564 - __main__ - INFO - Creating main window...
+2025-06-20 03:23:08,019 - __main__ - INFO - Starting application event loop...
+2025-06-20 03:23:10,214 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 03:23:10] "GET /socket.io/?EIO=4&transport=polling&t=2ggoyki9 HTTP/1.1" 200 -
+2025-06-20 03:23:10,220 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 03:23:10] "POST /socket.io/?EIO=4&transport=polling&t=2ggp5f6u&sid=S4ASvauTOWt--hnjAAAA HTTP/1.1" 200 -
+2025-06-20 03:23:10,224 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 03:23:10] "GET /socket.io/?EIO=4&transport=polling&t=2ggp6p71&sid=S4ASvauTOWt--hnjAAAA HTTP/1.1" 200 -
+2025-06-20 03:23:10,228 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 03:23:10] "GET /socket.io/?EIO=4&transport=polling&t=2ggpfd2n&sid=S4ASvauTOWt--hnjAAAA HTTP/1.1" 200 -
+2025-06-20 03:23:11,074 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 03:23:11] "POST /shutdown HTTP/1.1" 200 -
+2025-06-20 03:23:16,091 - root - INFO - Application exited with code: 0
+2025-06-20 03:23:33,479 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 03:23:33] "[35m[1mGET /health HTTP/1.1[0m" 503 -
+2025-06-20 03:24:03,752 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 03:24:03] "[35m[1mGET /health HTTP/1.1[0m" 503 -
+2025-06-20 03:24:34,022 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 03:24:34] "[35m[1mGET /health HTTP/1.1[0m" 503 -

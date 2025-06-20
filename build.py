@@ -2,189 +2,127 @@ import os
 import sys
 import shutil
 import time
-from cairosvg import svg2png
-from PIL import Image
-import PyInstaller.__main__
 import logging
+import PyInstaller.__main__
+import PyQt6
 
-# Configure logging
+# --- Configuration ---
+
+# Configure basic logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
 
-def safe_remove_directory(directory, max_retries=3, retry_delay=1):
-    """Safely remove a directory with retries"""
-    for attempt in range(max_retries):
+# --- Helper Functions ---
+
+def safe_remove_directory(path):
+    """Safely remove a directory with retries to handle file locks."""
+    for attempt in range(3):
+        if not os.path.exists(path):
+            logger.info(f"Directory '{path}' does not exist, skipping removal.")
+            return True
         try:
-            if os.path.exists(directory):
-                shutil.rmtree(directory)
-                logger.info(f"Successfully removed {directory}")
-                return True
-        except PermissionError as e:
-            if attempt < max_retries - 1:
-                logger.warning(f"Permission denied when removing {directory}. Retrying in {retry_delay} seconds...")
-                time.sleep(retry_delay)
-            else:
-                logger.error(f"Failed to remove {directory} after {max_retries} attempts: {e}")
-                return False
-        except Exception as e:
-            logger.error(f"Error removing {directory}: {e}")
-            return False
-    return True
+            shutil.rmtree(path)
+            logger.info(f"Successfully removed directory: {path}")
+            return True
+        except OSError as e:
+            logger.warning(f"Error removing '{path}' on attempt {attempt + 1}: {e}. Retrying...")
+            time.sleep(1)
+    logger.error(f"Failed to remove directory '{path}' after multiple attempts.")
+    return False
 
-def check_required_files():
-    """Check if all required files exist"""
-    required_files = [
-        'mute_streamer_overload/web/templates/overlay.html',
-        'assets/icon.svg'
-    ]
+def get_data_files():
+    """Get all data files that need to be bundled with the executable."""
+    data_files = []
     
-    missing_files = []
-    for file in required_files:
-        if not os.path.exists(file):
-            missing_files.append(file)
-    
-    if missing_files:
-        logger.error("Missing required files:")
-        for file in missing_files:
-            logger.error(f"  - {file}")
-        return False
-    return True
+    # Helper to create platform-independent data tuples
+    def add_data_tuple(source, destination):
+        return (os.path.join(*source.split('/')), os.path.join(*destination.split('/')))
 
-def convert_svg_to_ico():
-    """Convert SVG icon to ICO format"""
-    logger.info("Converting icon from SVG to ICO...")
-    
-    # Create assets directory if it doesn't exist
-    os.makedirs('assets', exist_ok=True)
-    
-    # Use the 256x256 icon for the executable
-    ico_path = 'assets/icon_256x256.ico'
-    
-    if not os.path.exists(ico_path):
-        logger.error(f"Executable icon not found at {ico_path}")
-        return None
-        
-    logger.info("Using existing icon for executable")
-    return ico_path
-
-def build_exe():
-    """Build the executable"""
-    if not check_required_files():
-        logger.error("Build aborted due to missing files")
-        return False
-
-    # Convert icon first
-    icon_path = convert_svg_to_ico()
-    
-    # Clean previous build with retries
-    logger.info("Cleaning previous build...")
-    if not safe_remove_directory('dist'):
-        logger.error("Failed to clean dist directory. Please ensure the executable is not running.")
-        return False
-    if not safe_remove_directory('build'):
-        logger.error("Failed to clean build directory.")
-        return False
-    
-    # Add templates and static files
-    add_data = [
-        '--add-data=mute_streamer_overload/web/templates;mute_streamer_overload/web/templates',
-    ]
-    
-    # Add static files if they exist
+    # Add web templates and static files
+    data_files.append(add_data_tuple('mute_streamer_overload/web/templates', 'mute_streamer_overload/web/templates'))
     static_dir = 'mute_streamer_overload/web/static'
     if os.path.exists(static_dir):
-        add_data.append('--add-data=mute_streamer_overload/web/static;mute_streamer_overload/web/static')
+        data_files.append(add_data_tuple(static_dir, static_dir))
+
+    # Add PyQt6 plugins (crucial for styles, platform support, etc.)
+    pyqt_plugins_path = os.path.join(os.path.dirname(PyQt6.__file__), "Qt6", "plugins")
+    if os.path.exists(pyqt_plugins_path):
+        data_files.append((pyqt_plugins_path, 'PyQt6/Qt6/plugins'))
+    else:
+        logger.warning(f"PyQt6 plugins directory not found at: {pyqt_plugins_path}")
+        
+    # Add assets directory
+    if os.path.exists('assets'):
+        data_files.append(('assets', 'assets'))
+
+    return [f"--add-data={src}{os.pathsep}{dest}" for src, dest in data_files]
+
+def get_hidden_imports():
+    """Get all hidden imports that PyInstaller might miss."""
+    imports = [
+        # PyQt6 essentials
+        'PyQt6', 'PyQt6.sip', 'PyQt6.QtCore', 'PyQt6.QtGui', 'PyQt6.QtWidgets', 'PyQt6.QtSvg',
+        # Flask & Web Server
+        'flask', 'flask_socketio', 'engineio.async_drivers.threading', 'werkzeug', 'jinja2',
+        # Common dependencies
+        'requests', 'keyboard'
+    ]
+    return [f"--hidden-import={imp}" for imp in imports]
+
+# --- Main Build Function ---
+
+def build():
+    """Orchestrate the entire build process."""
+    logger.info("--- Starting Mute Streamer Overload Build ---")
+
+    # 1. Clean previous build artifacts
+    logger.info("Step 1: Cleaning previous build directories...")
+    if not safe_remove_directory('dist') or not safe_remove_directory('build'):
+        logger.error("Build failed: Could not clean old build directories.")
+        return False
     
-    # Define PyInstaller arguments
-    args = [
+    # 2. Define PyInstaller arguments
+    logger.info("Step 2: Configuring PyInstaller...")
+    
+    # Start with console mode for debugging. Change to '--windowed' for release.
+    # mode = '--console' 
+    mode = '--windowed'
+    
+    pyinstaller_args = [
         'main.py',
         '--name=MuteStreamerOverload',
         '--onefile',
-        '--windowed',
+        mode,
         '--clean',
         '--noconfirm',
-        *add_data,
-        # Flask and dependencies
-        '--hidden-import=flask',
-        '--hidden-import=flask_socketio',
-        '--hidden-import=engineio.async_drivers.threading',
-        '--hidden-import=eventlet.hubs.epolls',
-        '--hidden-import=eventlet.hubs.kqueue',
-        '--hidden-import=eventlet.hubs.selects',
-        '--hidden-import=dns',
-        # Requests library for health checks
-        '--hidden-import=requests',
-        '--hidden-import=urllib3',
-        '--hidden-import=idna',
-        '--hidden-import=chardet',
-        '--hidden-import=certifi',
-        # Jinja2 and dependencies
-        '--hidden-import=jinja2',
-        '--hidden-import=jinja2.ext',
-        '--hidden-import=jinja2.loaders',
-        '--hidden-import=jinja2.environment',
-        '--hidden-import=jinja2.utils',
-        '--hidden-import=jinja2.filters',
-        '--hidden-import=jinja2.runtime',
-        '--hidden-import=jinja2.async_utils',
-        '--hidden-import=jinja2.bccache',
-        '--hidden-import=jinja2.debug',
-        '--hidden-import=jinja2.exceptions',
-        '--hidden-import=jinja2.nodes',
-        '--hidden-import=jinja2.optimizer',
-        '--hidden-import=jinja2.parser',
-        '--hidden-import=jinja2.sandbox',
-        '--hidden-import=jinja2.visitor',
-        # Additional dependencies
-        '--hidden-import=werkzeug',
-        '--hidden-import=werkzeug.serving',
-        '--hidden-import=werkzeug.middleware',
-        '--hidden-import=werkzeug.debug',
-        '--hidden-import=werkzeug.security',
-        '--hidden-import=werkzeug.wsgi',
-        '--hidden-import=werkzeug.http',
-        '--hidden-import=werkzeug.datastructures',
-        '--hidden-import=werkzeug.formparser',
-        '--hidden-import=werkzeug.local',
-        '--hidden-import=werkzeug.routing',
-        '--hidden-import=werkzeug.test',
-        '--hidden-import=werkzeug.urls',
-        '--hidden-import=werkzeug.utils',
-        '--hidden-import=werkzeug.wrappers',
-        '--hidden-import=werkzeug.wrappers.json',
-        '--hidden-import=werkzeug.wrappers.response',
-        '--hidden-import=werkzeug.wrappers.request',
-        '--hidden-import=werkzeug.wrappers.base_response',
-        '--hidden-import=werkzeug.wrappers.base_request',
-        '--hidden-import=werkzeug.wrappers.accept',
-        '--hidden-import=werkzeug.wrappers.etag',
-        '--hidden-import=werkzeug.wrappers.cors',
+        f'--icon={os.path.join("assets", "icon_256x256.ico")}'
     ]
     
-    # Add icon if conversion was successful
-    if icon_path and os.path.exists(icon_path):
-        args.append(f'--icon={icon_path}')
+    pyinstaller_args.extend(get_data_files())
+    pyinstaller_args.extend(get_hidden_imports())
     
-    # Add platform-specific options
     if sys.platform == 'win32':
-        args.extend([
-            '--uac-admin',  # Request admin privileges on Windows
-        ])
-    
+        pyinstaller_args.append('--uac-admin')
+
+    logger.info("PyInstaller arguments configured.")
+    logger.debug(f"Arguments: {' '.join(pyinstaller_args)}")
+
+    # 3. Run PyInstaller
+    logger.info("Step 3: Running PyInstaller build...")
     try:
-        # Run PyInstaller
-        logger.info("Starting PyInstaller build...")
-        PyInstaller.__main__.run(args)
-        logger.info("\nBuild completed! The executable can be found in the 'dist' directory.")
-        logger.info("Note: You may need to run the executable as administrator on Windows.")
+        PyInstaller.__main__.run(pyinstaller_args)
+        logger.info("--- Build Completed Successfully! ---")
+        logger.info(f"Executable is located in: {os.path.join(os.getcwd(), 'dist')}")
         return True
     except Exception as e:
-        logger.error(f"Build failed: {e}")
+        logger.error(f"An unexpected error occurred during the PyInstaller build: {e}", exc_info=True)
         return False
 
 if __name__ == '__main__':
-    success = build_exe()
-    sys.exit(0 if success else 1) 
+    if build():
+        sys.exit(0)
+    else:
+        sys.exit(1)

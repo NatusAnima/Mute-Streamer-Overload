@@ -14,6 +14,7 @@ setup(
         "eventlet",
         "cairosvg",
         "pillow",
+        "requests",
     ],
     extras_require={
         'dev': [
