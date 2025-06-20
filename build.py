@@ -88,8 +88,7 @@ def build():
     logger.info("Step 2: Configuring PyInstaller...")
     
     # Start with console mode for debugging. Change to '--windowed' for release.
-    # mode = '--console' 
-    mode = '--windowed'
+    mode = '--console'
     
     pyinstaller_args = [
         'main.py',
