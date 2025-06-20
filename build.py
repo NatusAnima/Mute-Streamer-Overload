@@ -68,7 +68,9 @@ def get_hidden_imports():
         # Flask & Web Server
         'flask', 'flask_socketio', 'engineio.async_drivers.threading', 'werkzeug', 'jinja2',
         # Common dependencies
-        'requests', 'keyboard'
+        'requests', 'keyboard',
+        # Required for freeze_support
+        'multiprocessing'
     ]
     return [f"--hidden-import={imp}" for imp in imports]
 
@@ -88,7 +90,7 @@ def build():
     logger.info("Step 2: Configuring PyInstaller...")
     
     # Start with console mode for debugging. Change to '--windowed' for release.
-    mode = '--console'
+    mode = '--windowed'
     
     pyinstaller_args = [
         'main.py',

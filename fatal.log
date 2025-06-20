@@ -1,4 +1,0 @@
-  File "C:\Users\iyave\Desktop\Mute Streamer Overload\mute_streamer_overload\ui\main_window.py", line 423, in showEvent
-    self.activateWindow()
-
-KeyboardInterrupt: 

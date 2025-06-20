@@ -2,6 +2,7 @@ import sys
 import logging
 from pathlib import Path
 from PyQt6.QtWidgets import QApplication
+import multiprocessing
 
 from mute_streamer_overload.ui.main_window import MuteStreamerOverload
 from mute_streamer_overload.web.web_server import run_server, stop_server
@@ -40,8 +41,8 @@ def setup_logging(is_frozen):
     logger.info("="*50)
     return logger
 
-def main():
-    """Application entry point."""
+def run_app():
+    """Create and run the main application components."""
     is_frozen = getattr(sys, 'frozen', False)
     logger = setup_logging(is_frozen)
     
@@ -69,6 +70,9 @@ def main():
         return 1
 
 if __name__ == '__main__':
-    exit_code = main()
+    # This is crucial for PyInstaller compatibility on Windows
+    multiprocessing.freeze_support()
+    
+    exit_code = run_app()
     logging.info(f"Application exited with code: {exit_code}")
     sys.exit(exit_code) 

@@ -114,9 +114,9 @@ class OverlayWindow(QMainWindow):
         self.activateWindow()
         
         # Force window to be a proper window for capture
-        if self.windowHandle():
-            window = self.windowHandle()
-            window.setFlags(
+        window_handle = self.windowHandle()
+        if window_handle:
+            window_handle.setFlags(
                 Qt.WindowType.Window |
                 Qt.WindowType.FramelessWindowHint |
                 Qt.WindowType.WindowStaysOnTopHint
@@ -126,14 +126,11 @@ class OverlayWindow(QMainWindow):
         """Update the displayed message and start animation"""
         if message:  # Only update if there's a message
             self.current_message = message
-            # Get animation timing from text animator
-            words = re.findall(r'\S+|\s+', message)
-            next_words, _ = self.text_animator._get_next_words(words, 0)
-            delay = 60.0 / self.text_animator.words_per_minute
             
-            # Start animation in both displays with exact timing
+            # Start animation in the overlay window
             self.text_animator.start_animation(message)
-            update_message(message, len(next_words), delay)
+            # Update the web overlay (now simplified)
+            update_message(message)
             
     def _update_animated_text(self, text):
         """Update the label with animated text"""
