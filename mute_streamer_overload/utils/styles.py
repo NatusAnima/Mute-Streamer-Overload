@@ -61,6 +61,20 @@ def get_stylesheet():
         #OverlayButton:pressed {
             background-color: #244b77;
         }
+        #SettingsButton {
+            background-color: #4a4a4a;
+            border: 1px solid #5a5a5a;
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 12px;
+        }
+        #SettingsButton:hover {
+            background-color: #5a5a5a;
+            border: 1px solid #6a6a6a;
+        }
+        #SettingsButton:pressed {
+            background-color: #3a3a3a;
+        }
 
         /* --- Input Fields --- */
         QTextEdit, QSpinBox {
@@ -83,6 +97,29 @@ def get_stylesheet():
         }
         QSpinBox::up-button:hover, QSpinBox::down-button:hover {
             background: #4d4d4d;
+        }
+
+        /* --- Tab Widget --- */
+        QTabWidget::pane {
+            border: 1px solid #3f3f3f;
+            background-color: #333333;
+        }
+        QTabBar::tab {
+            background-color: #4a4a4a;
+            color: black;
+            padding: 8px 16px;
+            margin-right: 2px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            font-weight: bold;
+        }
+        QTabBar::tab:selected {
+            background-color: #5a5a5a;
+            color: black;
+        }
+        QTabBar::tab:hover {
+            background-color: #555555;
+            color: black;
         }
 
         /* --- Dynamic Status Label --- */

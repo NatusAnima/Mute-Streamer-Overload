@@ -32,6 +32,11 @@
             padding: 20px;
             max-width: 90%;
             word-wrap: break-word;
+            opacity: 1;
+            transition: opacity 2.5s ease;
+        }
+        #message.fade-out {
+            opacity: 0;
         }
     </style>
 </head>
@@ -59,7 +64,16 @@
         socket.on('text_update', (data) => {
             if (data && data.text) {
                 messageElement.textContent = data.text;
+                messageElement.classList.remove('fade-out'); // Reset fade on new text
             }
+        });
+
+        // Handle fade out
+        socket.on('fade_out', () => {
+            // Force reflow to ensure transition works even if class is already present
+            messageElement.classList.remove('fade-out');
+            void messageElement.offsetWidth; // Trigger reflow
+            messageElement.classList.add('fade-out');
         });
 
         // Handle errors

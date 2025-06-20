@@ -1,0 +1,58 @@
+{
+  "overlay": {
+    "initial_width": 300,
+    "initial_height": 200,
+    "min_width": 150,
+    "min_height": 100,
+    "start_visible": false,
+    "always_on_top": true,
+    "opacity": 0.9
+  },
+  "animation": {
+    "words_per_minute": 320,
+    "min_characters": 10,
+    "max_characters": 100,
+    "animation_delay_ms": 100
+  },
+  "web_server": {
+    "host": "127.0.0.1",
+    "port": 5000,
+    "auto_start": true
+  },
+  "ui": {
+    "theme": "dark",
+    "window_width": 800,
+    "window_height": 600,
+    "window_x": 751,
+    "window_y": 228
+  },
+  "input": {
+    "start_hotkey": [
+      "F4"
+    ],
+    "submit_hotkey": [
+      "F4"
+    ],
+    "suppress_hotkey": true,
+    "start_hotkeys": [
+      "F3"
+    ],
+    "submit_hotkeys": [
+      "F3"
+    ],
+    "hotkey": "F3"
+  },
+  "general": {
+    "auto_save_config": true,
+    "log_level": "INFO",
+    "check_for_updates": true
+  },
+  "twitch": {
+    "client_id": null,
+    "client_secret": null,
+    "access_token": null,
+    "refresh_token": null,
+    "username": null,
+    "channel": null
+  }
+}

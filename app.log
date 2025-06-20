@@ -1,34 +1,20 @@
-2025-06-20 04:13:51,695 - __main__ - INFO - ==================================================
-2025-06-20 04:13:51,695 - __main__ - INFO - Logging Initialized
-2025-06-20 04:13:51,695 - __main__ - INFO - Log file: C:\Users\iyave\Desktop\Mute Streamer Overload\app.log
-2025-06-20 04:13:51,696 - __main__ - INFO - ==================================================
-2025-06-20 04:13:51,712 - __main__ - INFO - Starting web server...
-2025-06-20 04:13:51,712 - mute_streamer_overload.web.web_server - INFO - Creating and starting server thread...
-2025-06-20 04:13:51,714 - mute_streamer_overload.web.web_server - INFO - SERVER THREAD: Starting Flask-SocketIO server...
-2025-06-20 04:13:51,761 - mute_streamer_overload.web.web_server - INFO - SERVER THREAD: Attempting to run socketio.run() on port 5000
-2025-06-20 04:13:51,768 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2025-06-20 06:16:50,459 - __main__ - INFO - ==================================================
+2025-06-20 06:16:50,459 - __main__ - INFO - Logging Initialized
+2025-06-20 06:16:50,459 - __main__ - INFO - Log file: C:\Users\iyave\Desktop\Mute Streamer Overload\app.log
+2025-06-20 06:16:50,459 - __main__ - INFO - ==================================================
+2025-06-20 06:16:50,475 - __main__ - INFO - Starting web server...
+2025-06-20 06:16:50,476 - mute_streamer_overload.web.web_server - INFO - Creating and starting server thread...
+2025-06-20 06:16:50,477 - mute_streamer_overload.web.web_server - INFO - SERVER THREAD: Starting Flask-SocketIO server...
+2025-06-20 06:16:50,523 - mute_streamer_overload.web.web_server - INFO - SERVER THREAD: Attempting to run socketio.run() on 127.0.0.1:5000
+2025-06-20 06:16:50,531 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
-2025-06-20 04:13:51,769 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
-2025-06-20 04:13:51,815 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 04:13:51] "GET /socket.io/?EIO=4&transport=polling&t=49n0co9p HTTP/1.1" 200 -
-2025-06-20 04:13:51,825 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 04:13:51] "GET /socket.io/?EIO=4&transport=polling&t=49nm3xwb&sid=gMsiSjap3MAA7KJLAAAA HTTP/1.1" 200 -
-2025-06-20 04:13:52,061 - mute_streamer_overload.web.web_server - INFO - Client connected to web overlay.
-2025-06-20 04:13:52,062 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 04:13:52] "POST /socket.io/?EIO=4&transport=polling&t=49nm332g&sid=gMsiSjap3MAA7KJLAAAA HTTP/1.1" 200 -
-2025-06-20 04:13:53,714 - __main__ - INFO - Creating main window...
-2025-06-20 04:13:53,716 - mute_streamer_overload.ui.main_window - DEBUG - Initializing main window...
-2025-06-20 04:13:54,169 - __main__ - INFO - Starting application event loop...
-2025-06-20 04:13:59,092 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 04:13:59] "GET /socket.io/?EIO=4&transport=websocket&sid=gMsiSjap3MAA7KJLAAAA HTTP/1.1" 200 -
-2025-06-20 04:13:59,116 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 04:13:59] "GET / HTTP/1.1" 200 -
-2025-06-20 04:13:59,176 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 04:13:59] "GET /socket.io/?EIO=4&transport=polling&t=49taa87q HTTP/1.1" 200 -
-2025-06-20 04:13:59,200 - mute_streamer_overload.web.web_server - INFO - Client connected to web overlay.
-2025-06-20 04:13:59,200 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 04:13:59] "POST /socket.io/?EIO=4&transport=polling&t=49tamicu&sid=59bSAPmCnzUbRlmEAAAC HTTP/1.1" 200 -
-2025-06-20 04:13:59,204 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 04:13:59] "GET /socket.io/?EIO=4&transport=polling&t=49tan7t5&sid=59bSAPmCnzUbRlmEAAAC HTTP/1.1" 200 -
-2025-06-20 04:13:59,211 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 04:13:59] "GET /socket.io/?EIO=4&transport=polling&t=49tbd9rd&sid=59bSAPmCnzUbRlmEAAAC HTTP/1.1" 200 -
-2025-06-20 04:13:59,723 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 04:13:59] "GET /socket.io/?EIO=4&transport=websocket&sid=59bSAPmCnzUbRlmEAAAC HTTP/1.1" 200 -
-2025-06-20 04:13:59,733 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 04:13:59] "GET / HTTP/1.1" 200 -
-2025-06-20 04:13:59,789 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 04:13:59] "GET /socket.io/?EIO=4&transport=polling&t=49trbrq7 HTTP/1.1" 200 -
-2025-06-20 04:13:59,809 - mute_streamer_overload.web.web_server - INFO - Client connected to web overlay.
-2025-06-20 04:13:59,810 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 04:13:59] "POST /socket.io/?EIO=4&transport=polling&t=49trms5w&sid=mcsCM7JQyeD9fyXoAAAE HTTP/1.1" 200 -
-2025-06-20 04:13:59,811 - werkzeug - INFO - 127.0.0.1 - - [20/Jun/2025 04:13:59] "GET /socket.io/?EIO=4&transport=polling&t=49trmn9h&sid=mcsCM7JQyeD9fyXoAAAE HTTP/1.1" 200 -
-2025-06-20 04:14:00,989 - mute_streamer_overload.web.web_server - INFO - Main application is shutting down. Server daemon thread will exit automatically.
-2025-06-20 04:14:00,995 - mute_streamer_overload.web.web_server - INFO - Main application is shutting down. Server daemon thread will exit automatically.
-2025-06-20 04:14:01,005 - root - INFO - Application exited with code: 0
+2025-06-20 06:16:50,531 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-20 06:16:52,478 - __main__ - INFO - Creating main window...
+2025-06-20 06:16:52,480 - mute_streamer_overload.ui.main_window - DEBUG - Initializing main window...
+2025-06-20 06:16:52,669 - mute_streamer_overload.ui.main_window - INFO - Start hotkeys: ['F4'], Submit hotkeys: ['F4'], suppress=True
+2025-06-20 06:16:52,680 - mute_streamer_overload.utils.config - INFO - Configuration saved to C:\Users\iyave\Desktop\Mute Streamer Overload\profile.json
+2025-06-20 06:16:52,681 - mute_streamer_overload.utils.config - INFO - Configuration saved to C:\Users\iyave\Desktop\Mute Streamer Overload\profile.json
+2025-06-20 06:16:52,681 - mute_streamer_overload.utils.config - INFO - Configuration saved to C:\Users\iyave\Desktop\Mute Streamer Overload\profile.json
+2025-06-20 06:16:52,682 - mute_streamer_overload.utils.config - INFO - Configuration saved to C:\Users\iyave\Desktop\Mute Streamer Overload\profile.json
+2025-06-20 06:16:52,683 - mute_streamer_overload.utils.config - INFO - Configuration saved to C:\Users\iyave\Desktop\Mute Streamer Overload\profile.json
+2025-06-20 06:16:53,170 - __main__ - INFO - Starting application event loop...

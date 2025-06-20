@@ -11,6 +11,8 @@ A tool for creating animated text overlays for streamers, with both a desktop ov
 - Dark theme UI
 - Draggable overlay window
 - Synchronized animation between desktop and web displays
+- **Comprehensive configuration system** with user-friendly settings dialog
+- **Persistent settings** that are saved and restored between sessions
 
 ## Installation
 
@@ -50,6 +52,19 @@ mute-streamer-overload
    python main.py
    ```
 
+### Configuration and Settings
+
+The application includes a comprehensive settings system accessible via the "⚙ Settings" button in the main window. You can configure:
+
+- **Overlay Settings**: Size, position, opacity, and behavior
+- **Animation Settings**: Speed, character limits, and timing
+- **Web Server Settings**: Host, port, and auto-start options
+- **UI Settings**: Theme and window preferences
+- **Input Settings**: Hotkey configuration
+- **General Settings**: Auto-save, logging, and update preferences
+
+All settings are automatically saved and restored between application sessions. For detailed configuration documentation, see [CONFIGURATION.md](mute_streamer_overload/docs/CONFIGURATION.md).
+
 ### Using the Desktop Overlay
 
 1. Launch the application
@@ -69,7 +84,7 @@ The application includes a local web server that provides a web-based overlay. H
    - Select "Browser Source"
    - Name it (e.g., "Message Overlay")
    - Check "Local file" and click "Browse"
-   - Enter the URL: `http://localhost:5000`
+   - Enter the URL: `http://localhost:5000` (or your configured host/port)
    - Set the width and height to match your desired overlay size
    - Check "Shutdown source when not visible" if you want to save resources
    - Click "OK"
@@ -81,7 +96,7 @@ The application includes a local web server that provides a web-based overlay. H
 
 ### Customizing the Animation
 
-You can customize the text animation using the controls in the main window:
+You can customize the text animation using the controls in the main window or through the settings dialog:
 
 - **Min Characters**: Minimum number of characters to display at once
 - **Max Characters**: Maximum number of characters to display at once
@@ -131,12 +146,17 @@ mute_streamer_overload/
 │   └── input_handler.py
 ├── ui/                # User interface components
 │   ├── main_window.py
-│   └── overlay_window.py
+│   ├── overlay_window.py
+│   └── config_dialog.py
 ├── utils/             # Utility functions and constants
-│   └── constants.py
+│   ├── constants.py
+│   ├── styles.py
+│   └── config.py
 ├── web/               # Web server and templates
 │   ├── web_server.py
 │   └── templates/
+├── docs/              # Documentation
+│   └── CONFIGURATION.md
 └── tests/             # Test files
 ```
 

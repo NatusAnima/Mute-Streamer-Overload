@@ -194,4 +194,22 @@ SIZE_CONTROL_STYLE = """
     QSpinBox::up-button:hover, QSpinBox::down-button:hover {
         background: #4d4d4d;
     }
+"""
+
+SETTINGS_BUTTON_STYLE = """
+    QPushButton {
+        background-color: #4a4a4a;
+        color: white;
+        border: 1px solid #5a5a5a;
+        border-radius: 4px;
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+    QPushButton:hover {
+        background-color: #5a5a5a;
+        border: 1px solid #6a6a6a;
+    }
+    QPushButton:pressed {
+        background-color: #3a3a3a;
+    }
 """ 

@@ -7,14 +7,23 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QKeySequence, QShortcut, QIcon, QPixmap, QPainter
 from PyQt6.QtSvg import QSvgRenderer
 from pathlib import Path
+from functools import partial
+import time
+import threading
 
 from mute_streamer_overload.core.input_handler import InputHandler
 from mute_streamer_overload.ui.overlay_window import OverlayWindow
+from mute_streamer_overload.ui.config_dialog import ConfigDialog
 from mute_streamer_overload.web.web_server import update_message, update_animation_settings, stop_server
 from mute_streamer_overload.utils.constants import (MIN_OVERLAY_WIDTH, MIN_OVERLAY_HEIGHT,
                                                   INITIAL_OVERLAY_WIDTH, INITIAL_OVERLAY_HEIGHT)
+from mute_streamer_overload.utils.config import get_config, set_config, save_config
+from mute_streamer_overload.twitch_oauth import send_message_to_twitch_chat
 
 logger = logging.getLogger(__name__)
+
+def _normalize_hotkey(key):
+    return key.strip().lower().replace(' ', '')
 
 class MuteStreamerOverload(QMainWindow):
     def __init__(self):
@@ -22,11 +31,17 @@ class MuteStreamerOverload(QMainWindow):
         logger.debug("Initializing main window...")
         
         self.setWindowTitle("Mute Streamer Overload")
-        self.setMinimumSize(800, 600)
+        # Use config defaults for minimum size
+        min_width = get_config("ui.window_width", 600)
+        min_height = get_config("ui.window_height", 500)
+        self.setMinimumSize(min_width, min_height)
+        self.current_start_hotkeys = get_config("input.start_hotkey", ["F4"])
+        self.current_submit_hotkeys = get_config("input.submit_hotkey", ["F4"])
         self.center_window()
         self.setup_icon()
         self.setup_ui()
         self.setup_logic()
+        self.load_config_values()
 
     def setup_icon(self):
         """Find and set the window icon."""
@@ -48,11 +63,21 @@ class MuteStreamerOverload(QMainWindow):
         main_layout = QVBoxLayout(central_widget)
         main_layout.setSpacing(10)
         
-        # --- Title ---
+        # --- Title and Settings Button ---
+        title_layout = QHBoxLayout()
+        
         title_label = QLabel("Mute Streamer Overload")
         title_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         title_label.setObjectName("TitleLabel")
-        main_layout.addWidget(title_label)
+        title_layout.addWidget(title_label)
+        
+        self.settings_button = QPushButton("⚙ Settings")
+        self.settings_button.setObjectName("SettingsButton")
+        self.settings_button.clicked.connect(self.open_settings)
+        self.settings_button.setMaximumWidth(100)
+        title_layout.addWidget(self.settings_button)
+        
+        main_layout.addLayout(title_layout)
 
         # --- Size Control ---
         size_group = self.create_size_controls()
@@ -153,15 +178,104 @@ class MuteStreamerOverload(QMainWindow):
         self.current_message = ""
         self.overlay_visible = False
         
-        self.input_handler.f4_pressed_signal.connect(self.handle_f4_toggle)
+        self.input_handler.start_typing_signal.connect(self.handle_start_typing)
+        self.input_handler.submit_signal.connect(self.handle_submit)
         self.input_handler.text_updated.connect(self.update_text_display)
         self.input_handler.input_state_changed.connect(self.update_input_state)
         
-        self.f4_shortcut = QShortcut(QKeySequence("F4"), self)
-        self.f4_shortcut.activated.connect(self.submit_message)
-        
-        keyboard.on_press_key("f4", self.input_handler.on_f4_press, suppress=True)
+        self.overlay_window.text_animator.fade_out.connect(self.on_fade_out)
+        self.qt_start_shortcuts = []
+        self.qt_submit_shortcuts = []
+        self.bind_hotkeys()
         self.update_input_state(False)
+
+    def bind_hotkeys(self):
+        # Unbind all previous
+        try:
+            keyboard.unhook_all()
+        except Exception:
+            pass
+        for shortcut in getattr(self, 'qt_start_shortcuts', []):
+            shortcut.setKey(QKeySequence())
+        for shortcut in getattr(self, 'qt_submit_shortcuts', []):
+            shortcut.setKey(QKeySequence())
+        self.qt_start_shortcuts = []
+        self.qt_submit_shortcuts = []
+        suppress = get_config("input.suppress_hotkey", False)
+        # Bind start hotkeys
+        self.start_hotkeys = get_config("input.start_hotkey", ["F4"])
+        self.submit_hotkeys = get_config("input.submit_hotkey", ["F4"])
+        for key in self.start_hotkeys:
+            norm_key = _normalize_hotkey(key)
+            print(f"[DEBUG] Registering start hotkey: {norm_key}")
+            sc = QShortcut(QKeySequence(key), self)
+            sc.activated.connect(self.handle_start_typing)
+            self.qt_start_shortcuts.append(sc)
+            keyboard.on_press_key(norm_key, lambda event, action='start', key=norm_key: self.input_handler.on_hotkey_press(event, action, key), suppress=suppress)
+        for key in self.submit_hotkeys:
+            norm_key = _normalize_hotkey(key)
+            print(f"[DEBUG] Registering submit hotkey: {norm_key}")
+            sc = QShortcut(QKeySequence(key), self)
+            sc.activated.connect(self.handle_submit)
+            self.qt_submit_shortcuts.append(sc)
+            keyboard.on_press_key(norm_key, lambda event, action='submit', key=norm_key: self.input_handler.on_hotkey_press(event, action, key), suppress=suppress)
+        logger.info(f"Start hotkeys: {self.start_hotkeys}, Submit hotkeys: {self.submit_hotkeys}, suppress={suppress}")
+
+    def rebind_hotkey(self):
+        self.bind_hotkeys()
+
+    def on_config_changed(self):
+        """Handle configuration changes."""
+        self.load_config_values()
+        self.rebind_hotkey()
+        logger.info("Configuration updated and applied")
+
+    def load_config_values(self):
+        """Load configuration values into the UI."""
+        # Load overlay size
+        initial_width = get_config("overlay.initial_width", 300)
+        initial_height = get_config("overlay.initial_height", 200)
+        self.width_input.setValue(initial_width)
+        self.height_input.setValue(initial_height)
+        
+        # Load animation settings
+        wpm = get_config("animation.words_per_minute", 200)
+        min_chars = get_config("animation.min_characters", 10)
+        max_chars = get_config("animation.max_characters", 50)
+        
+        self.wpm_input.setValue(wpm)
+        self.min_chars_input.setValue(min_chars)
+        self.max_chars_input.setValue(max_chars)
+        
+        # Load window size
+        window_width = get_config("ui.window_width", 600)
+        window_height = get_config("ui.window_height", 500)
+        self.resize(window_width, window_height)
+        
+        # Apply settings to overlay
+        if self.overlay_window:
+            self.overlay_window.resize(initial_width, initial_height)
+            self.overlay_window.text_animator.set_words_per_minute(wpm)
+            self.overlay_window.text_animator.set_character_limits(min_chars, max_chars)
+        
+        # Update web server settings
+        update_animation_settings(wpm=wpm, min_chars=min_chars, max_chars=max_chars)
+        
+        # Show overlay on startup if configured
+        if get_config("overlay.start_visible", False):
+            self.toggle_overlay()
+
+        # Reflect first start hotkey in status label and submit button
+        start_hotkeys = get_config("input.start_hotkey", ["F4"])
+        first_hotkey = start_hotkeys[0] if start_hotkeys else "F4"
+        self.status_label.setText(f"Press {first_hotkey} to start typing")
+        self.submit_button.setText(f"Submit ({first_hotkey})")
+
+    def open_settings(self):
+        """Open the configuration dialog."""
+        dialog = ConfigDialog(self)
+        dialog.config_changed.connect(self.on_config_changed)
+        dialog.exec()
 
     def update_character_limits(self):
         min_chars = self.min_chars_input.value()
@@ -169,19 +283,35 @@ class MuteStreamerOverload(QMainWindow):
         if max_chars < min_chars:
             self.max_chars_input.setValue(min_chars)
             max_chars = min_chars
+        
+        # Save to config
+        set_config("animation.min_characters", min_chars)
+        set_config("animation.max_characters", max_chars)
+        
         if self.overlay_window:
             self.overlay_window.text_animator.set_character_limits(min_chars, max_chars)
         update_animation_settings(min_chars=min_chars, max_chars=max_chars)
             
     def update_wpm(self):
         wpm = self.wpm_input.value()
+        
+        # Save to config
+        set_config("animation.words_per_minute", wpm)
+        
         if self.overlay_window:
             self.overlay_window.text_animator.set_words_per_minute(wpm)
         update_animation_settings(wpm=wpm)
             
     def update_overlay_size(self):
+        width = self.width_input.value()
+        height = self.height_input.value()
+        
+        # Save to config
+        set_config("overlay.initial_width", width)
+        set_config("overlay.initial_height", height)
+        
         if self.overlay_window:
-            self.overlay_window.resize(self.width_input.value(), self.height_input.value())
+            self.overlay_window.resize(width, height)
             self.overlay_window.adjust_font_size()
     
     def toggle_overlay(self):
@@ -197,26 +327,27 @@ class MuteStreamerOverload(QMainWindow):
             self.update_overlay_size()
         self.overlay_visible = not self.overlay_visible
     
-    def handle_f4_toggle(self):
+    def handle_start_typing(self):
         if not self.input_handler.is_active:
             self.input_handler.toggle_input()
             if self.input_handler.is_active:
                 self.activateWindow()
                 self.raise_()
-        else:
+
+    def handle_submit(self):
+        if self.input_handler.is_active:
             current_text = self.input_handler.get_current_text()
             if current_text.strip():
                 self.current_message = current_text
                 self.overlay_window.set_message(self.current_message)
                 self.message_input.setText(self.current_message)
-            
-            self.input_handler.clear_text()
+                self.input_handler.clear_text()
+                update_message(self.current_message)
             self.input_handler.is_active = False
             self.input_handler.f4_pressed = False
             self.input_handler.input_state_changed.emit(False)
-            
             keyboard.unhook_all()
-            keyboard.on_press_key("f4", self.input_handler.on_f4_press, suppress=True)
+            self.bind_hotkeys()
     
     def update_text_display(self, text):
         self.message_input.setText(text)
@@ -258,6 +389,13 @@ class MuteStreamerOverload(QMainWindow):
             update_message(self.current_message)
     
     def closeEvent(self, event):
+        # Save window position and size to config
+        set_config("ui.window_width", self.width())
+        set_config("ui.window_height", self.height())
+        set_config("ui.window_x", self.x())
+        set_config("ui.window_y", self.y())
+        save_config()
+        
         keyboard.unhook_all()
         if hasattr(self, 'input_handler'):
             self.input_handler.timer.stop()
@@ -270,13 +408,30 @@ class MuteStreamerOverload(QMainWindow):
         screen = QApplication.primaryScreen()
         if not screen:
             return
-        screen_geometry = screen.geometry()
-        size = self.geometry()
-        x = (screen_geometry.width() - size.width()) // 2
-        y = (screen_geometry.height() - size.height()) // 2
-        self.move(x, y)
+        
+        # Check if we have saved window position
+        saved_x = get_config("ui.window_x")
+        saved_y = get_config("ui.window_y")
+        
+        if saved_x is not None and saved_y is not None:
+            # Use saved position
+            self.move(saved_x, saved_y)
+        else:
+            # Center the window
+            screen_geometry = screen.geometry()
+            size = self.geometry()
+            x = (screen_geometry.width() - size.width()) // 2
+            y = (screen_geometry.height() - size.height()) // 2
+            self.move(x, y)
     
     def showEvent(self, event):
         super().showEvent(event)
         self.activateWindow()
-        self.raise_() 
+        self.raise_()
+
+    def on_fade_out(self):
+        message = self.current_message
+        def send_after_delay():
+            time.sleep(2)
+            send_message_to_twitch_chat(message)
+        threading.Thread(target=send_after_delay, daemon=True).start() 

@@ -35,4 +35,7 @@ ENV/
 
 # OS
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# Twitch secret (do not commit)
+twitch_secret.json 

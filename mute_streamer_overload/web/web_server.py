@@ -7,6 +7,8 @@ import re
 from flask import Flask, render_template
 from flask_socketio import SocketIO
 
+from mute_streamer_overload.utils.config import get_config
+
 # --- Logging Setup ---
 logger = logging.getLogger(__name__)
 
@@ -20,9 +22,9 @@ def get_project_root():
     Determines the project root path, which is crucial for finding data files
     in both development and bundled (PyInstaller) environments.
     """
-    if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
+    if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):  # type: ignore
         # Running as a PyInstaller bundle. The root is the temporary folder.
-        return Path(sys._MEIPASS)
+        return Path(sys._MEIPASS)  # type: ignore
     # Running from source. The root is the project's top-level directory.
     return Path(__file__).resolve().parent.parent.parent
 
@@ -37,7 +39,11 @@ class WebTextAnimator:
         self.current_message = ""
         self.animation_thread = None
         self._stop_animation_flag = False
-        self.settings = {'wpm': 200, 'min_chars': 10, 'max_chars': 50}
+        self.settings = {
+            'wpm': get_config("animation.words_per_minute", 200),
+            'min_chars': get_config("animation.min_characters", 10),
+            'max_chars': get_config("animation.max_characters", 50)
+        }
 
     def update_settings(self, wpm=None, min_chars=None, max_chars=None):
         if wpm is not None: self.settings['wpm'] = wpm
@@ -72,16 +78,36 @@ class WebTextAnimator:
         global socketio
         if not self.current_message or not socketio: return
         words = re.findall(r'\S+|\s+', self.current_message)
-        current_index = 0
+        i = 0
+        n = len(words)
         delay = 60.0 / self.settings['wpm']
-        while not self._stop_animation_flag and current_index < len(words):
-            next_words, current_index = self._get_next_words(words, current_index)
-            if next_words:
-                text = ''.join(next_words)
-                socketio.emit('text_update', {'text': text})
+        last_sentence = ''
+        while i < n and not self._stop_animation_flag:
+            # Start a new sentence
+            sentence_words = []
+            char_count = 0
+            # Build up the sentence word by word, additive
+            while i < n:
+                word = words[i]
+                next_count = char_count + len(word) + (1 if sentence_words else 0)
+                if next_count > self.settings['max_chars']:
+                    break
+                if sentence_words:
+                    char_count += 1  # space
+                sentence_words.append(word.strip())
+                char_count += len(word.strip())
+                # Emit the additive build-up
+                last_sentence = ' '.join(sentence_words)
+                socketio.emit('text_update', {'text': last_sentence})
                 time.sleep(delay)
+                i += 1
+            # After reaching max_chars, pause before next sentence
+            if i < n:
+                time.sleep(delay)
+        # At the end, keep the last sentence and then fade out
         if not self._stop_animation_flag:
-            socketio.emit('text_update', {'text': self.current_message})
+            time.sleep(1.0)  # Show the final sentence for 1 second
+            socketio.emit('fade_out', {})
 
     def stop_animation(self):
         self._stop_animation_flag = True
@@ -118,8 +144,12 @@ def start_server_task():
             if text_animator.current_message and socketio:
                 socketio.emit('text_update', {'text': text_animator.current_message})
 
-        logger.info("SERVER THREAD: Attempting to run socketio.run() on port 5000")
-        socketio.run(app, host='127.0.0.1', port=5000, allow_unsafe_werkzeug=True, log_output=False)
+        # Get server settings from config
+        host = get_config("web_server.host", "127.0.0.1")
+        port = get_config("web_server.port", 5000)
+        
+        logger.info(f"SERVER THREAD: Attempting to run socketio.run() on {host}:{port}")
+        socketio.run(app, host=host, port=port, allow_unsafe_werkzeug=True, log_output=False)
         logger.info("SERVER THREAD: Server has shut down.")
     except Exception as e:
         logger.error(f"SERVER THREAD: A critical error occurred: {e}", exc_info=True)
@@ -129,6 +159,12 @@ def start_server_task():
 def run_server():
     """Creates and starts the server thread."""
     global server_thread
+    
+    # Check if auto-start is enabled
+    if not get_config("web_server.auto_start", True):
+        logger.info("Web server auto-start is disabled in configuration.")
+        return None
+    
     if server_thread and server_thread.is_alive():
         logger.warning("Server thread is already running.")
         return server_thread

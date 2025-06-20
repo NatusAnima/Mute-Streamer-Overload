@@ -8,18 +8,24 @@ from mute_streamer_overload.core.text_animator import TextAnimator
 from mute_streamer_overload.utils.constants import (TITLE_BAR_STYLE, CLOSE_BUTTON_STYLE, 
                       MESSAGE_LABEL_STYLE, CONTENT_WIDGET_STYLE)
 from mute_streamer_overload.web.web_server import update_message
+from mute_streamer_overload.utils.config import get_config
 
 class OverlayWindow(QMainWindow):
     def __init__(self):
         super().__init__(None)  # No parent window
         
         # Set window flags for proper window behavior
-        self.setWindowFlags(
+        window_flags = (
             Qt.WindowType.Window |  # Make it a proper window
             Qt.WindowType.FramelessWindowHint |  # Remove window frame
-            Qt.WindowType.WindowStaysOnTopHint |  # Keep on top
             Qt.WindowType.NoDropShadowWindowHint  # Remove drop shadow
         )
+        
+        # Add always on top if configured
+        if get_config("overlay.always_on_top", True):
+            window_flags |= Qt.WindowType.WindowStaysOnTopHint
+            
+        self.setWindowFlags(window_flags)
         
         # Set window icon (16x16 is appropriate for overlay)
         assets_dir = Path(__file__).parent.parent.parent / 'assets'
@@ -86,24 +92,33 @@ class OverlayWindow(QMainWindow):
         # Initialize position tracking
         self.old_pos = None
         
-        # Set initial size
-        self.resize(400, 200)
+        # Set initial size from config
+        initial_width = get_config("overlay.initial_width", 400)
+        initial_height = get_config("overlay.initial_height", 200)
+        self.resize(initial_width, initial_height)
+        
+        # Set opacity from config
+        opacity = get_config("overlay.opacity", 0.9)
+        self.setWindowOpacity(opacity)
         
         # Store the current message for font size calculations
         self.current_message = ""
         
-        # Create text animator with character limits
+        # Create text animator with config values
+        wpm = get_config("animation.words_per_minute", 200)
+        min_chars = get_config("animation.min_characters", 10)
+        max_chars = get_config("animation.max_characters", 50)
+        
         self.text_animator = TextAnimator(
-            words_per_minute=200,
-            min_chars=10,  # Default minimum characters
-            max_chars=50   # Default maximum characters
+            words_per_minute=wpm,
+            min_chars=min_chars,
+            max_chars=max_chars
         )
         self.text_animator.text_updated.connect(self._update_animated_text)
         self.text_animator.animation_finished.connect(self._on_animation_finished)
         
         # Set window title and properties for better capture
         self.setWindowTitle("Message Overlay")
-        self.setWindowOpacity(1.0)
         
     def showEvent(self, event):
         """Handle window show event to ensure proper window state"""
