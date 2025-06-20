@@ -10,7 +10,7 @@ from pathlib import Path
 
 from mute_streamer_overload.core.input_handler import InputHandler
 from mute_streamer_overload.ui.overlay_window import OverlayWindow
-from mute_streamer_overload.core.web_bridge import web_update_message, web_update_animation
+from mute_streamer_overload.web.web_server import update_message, update_animation_settings, stop_server
 from mute_streamer_overload.utils.constants import (MIN_OVERLAY_WIDTH, MIN_OVERLAY_HEIGHT,
                                                   INITIAL_OVERLAY_WIDTH, INITIAL_OVERLAY_HEIGHT)
 
@@ -171,17 +171,13 @@ class MuteStreamerOverload(QMainWindow):
             max_chars = min_chars
         if self.overlay_window:
             self.overlay_window.text_animator.set_character_limits(min_chars, max_chars)
-        
-        # Use the web_bridge to send updates
-        web_update_animation(settings={'min_chars': min_chars, 'max_chars': max_chars})
+        update_animation_settings(min_chars=min_chars, max_chars=max_chars)
             
     def update_wpm(self):
         wpm = self.wpm_input.value()
         if self.overlay_window:
             self.overlay_window.text_animator.set_words_per_minute(wpm)
-        
-        # Use the web_bridge to send updates
-        web_update_animation(settings={'wpm': wpm})
+        update_animation_settings(wpm=wpm)
             
     def update_overlay_size(self):
         if self.overlay_window:
@@ -259,9 +255,7 @@ class MuteStreamerOverload(QMainWindow):
             self.overlay_window.set_message(self.current_message)
             self.message_input.clear()
             self.input_handler.clear_text()
-            
-            # Use the web_bridge to send updates
-            web_update_message(self.current_message)
+            update_message(self.current_message)
     
     def closeEvent(self, event):
         keyboard.unhook_all()
@@ -269,9 +263,7 @@ class MuteStreamerOverload(QMainWindow):
             self.input_handler.timer.stop()
         if hasattr(self, 'overlay_window'):
             self.overlay_window.close()
-        
-        # The server is now stopped via the app.aboutToQuit signal in main.py
-        
+        stop_server()
         event.accept()
     
     def center_window(self):
