@@ -65,6 +65,24 @@ The application includes a comprehensive settings system accessible via the "⚙
 
 All settings are automatically saved and restored between application sessions. For detailed configuration documentation, see [CONFIGURATION.md](mute_streamer_overload/docs/CONFIGURATION.md).
 
+#### Initial Setup
+
+1. **Copy the template configuration**:
+   ```bash
+   cp profile.template.json profile.json
+   ```
+
+2. **Edit the configuration file** to add your Twitch credentials:
+   - Replace `YOUR_CLIENT_ID_HERE` with your Twitch application client ID
+   - Replace `YOUR_USERNAME_HERE` with your Twitch username
+   - Replace `YOUR_DISPLAY_NAME_HERE` with your Twitch display name
+
+3. **Set up Twitch OAuth** (optional):
+   - Follow the [Twitch OAuth Guide](TWITCH_OAUTH_GUIDE.md) to get your access token
+   - The application will automatically handle token refresh
+
+**⚠️ Security Note**: Never commit your `profile.json` file to version control as it contains sensitive information. The `.gitignore` file is configured to exclude this file automatically.
+
 ### Using the Desktop Overlay
 
 1. Launch the application

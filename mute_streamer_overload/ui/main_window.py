@@ -2,7 +2,7 @@ import keyboard
 import logging
 from PyQt6.QtWidgets import (QMainWindow, QWidget, QVBoxLayout, QTextEdit,
                             QPushButton, QLabel, QHBoxLayout, QSpinBox, QApplication,
-                            QGroupBox, QGridLayout)
+                            QGroupBox, QGridLayout, QCheckBox)
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QKeySequence, QShortcut, QIcon, QPixmap, QPainter
 from PyQt6.QtSvg import QSvgRenderer
@@ -158,6 +158,12 @@ class MuteStreamerOverload(QMainWindow):
         self.message_input.setMaximumHeight(100)
         layout.addWidget(self.message_input)
         
+        # Add Twitch chat toggle
+        self.send_to_twitch_checkbox = QCheckBox("Send to Twitch Chat")
+        self.send_to_twitch_checkbox.setChecked(get_config("twitch.send_messages", True))
+        self.send_to_twitch_checkbox.toggled.connect(self.on_twitch_toggle_changed)
+        layout.addWidget(self.send_to_twitch_checkbox)
+        
         button_layout = QHBoxLayout()
         self.submit_button = QPushButton("Submit (F4)")
         self.submit_button.clicked.connect(self.submit_message)
@@ -246,6 +252,10 @@ class MuteStreamerOverload(QMainWindow):
         self.wpm_input.setValue(wpm)
         self.min_chars_input.setValue(min_chars)
         self.max_chars_input.setValue(max_chars)
+        
+        # Load Twitch settings
+        send_to_twitch = get_config("twitch.send_messages", True)
+        self.send_to_twitch_checkbox.setChecked(send_to_twitch)
         
         # Load window size
         window_width = get_config("ui.window_width", 600)
@@ -387,6 +397,10 @@ class MuteStreamerOverload(QMainWindow):
             self.message_input.clear()
             self.input_handler.clear_text()
             update_message(self.current_message)
+            
+            # Send to Twitch chat if enabled and timing is 'immediate'
+            if self.send_to_twitch_checkbox.isChecked() and get_config("twitch.send_timing", "immediate") == "immediate":
+                send_message_to_twitch_chat(message)
     
     def closeEvent(self, event):
         # Save window position and size to config
@@ -433,5 +447,13 @@ class MuteStreamerOverload(QMainWindow):
         message = self.current_message
         def send_after_delay():
             time.sleep(2)
-            send_message_to_twitch_chat(message)
-        threading.Thread(target=send_after_delay, daemon=True).start() 
+            # Only send to Twitch chat if the toggle is enabled and timing is 'after_animation'
+            if self.send_to_twitch_checkbox.isChecked() and get_config("twitch.send_timing", "immediate") == "after_animation":
+                send_message_to_twitch_chat(message)
+        threading.Thread(target=send_after_delay, daemon=True).start()
+
+    def on_twitch_toggle_changed(self, checked):
+        """Handle Twitch chat toggle state change."""
+        set_config("twitch.send_messages", checked)
+        save_config()
+        logger.info(f"Twitch chat sending {'enabled' if checked else 'disabled'}") 

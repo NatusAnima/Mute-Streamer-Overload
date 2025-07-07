@@ -23,23 +23,15 @@
     "theme": "dark",
     "window_width": 800,
     "window_height": 600,
-    "window_x": 751,
-    "window_y": 228
+    "window_x": null,
+    "window_y": null
   },
   "input": {
-    "start_hotkey": [
-      "F4"
-    ],
-    "submit_hotkey": [
-      "F4"
-    ],
+    "start_hotkey": ["F4"],
+    "submit_hotkey": ["F4"],
     "suppress_hotkey": true,
-    "start_hotkeys": [
-      "F3"
-    ],
-    "submit_hotkeys": [
-      "F3"
-    ],
+    "start_hotkeys": ["F3"],
+    "submit_hotkeys": ["F3"],
     "hotkey": "F3"
   },
   "general": {
@@ -48,11 +40,22 @@
     "check_for_updates": true
   },
   "twitch": {
-    "client_id": null,
+    "client_id": "YOUR_CLIENT_ID_HERE",
     "client_secret": null,
     "access_token": null,
     "refresh_token": null,
-    "username": null,
-    "channel": null
+    "username": "YOUR_USERNAME_HERE",
+    "channel": null,
+    "display_name": "YOUR_DISPLAY_NAME_HERE",
+    "send_messages": true,
+    "send_timing": "immediate"
+  },
+  "tts": {
+    "enabled": true,
+    "voice": "nova",
+    "speed": 1.2,
+    "pitch": 1.0,
+    "volume": 1.0,
+    "sync_with_text": true
   }
-}
+} 

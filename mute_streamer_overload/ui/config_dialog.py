@@ -312,40 +312,85 @@ class ConfigDialog(QDialog):
         widget = QWidget()
         layout = QVBoxLayout(widget)
         
-        # Client ID
-        client_id_layout = QHBoxLayout()
-        client_id_layout.addWidget(QLabel("Client ID:"))
-        self.twitch_client_id_edit = QLineEdit()
-        client_id_layout.addWidget(self.twitch_client_id_edit)
-        layout.addLayout(client_id_layout)
+        # Information section
+        info_group = QGroupBox("Twitch Integration")
+        info_layout = QVBoxLayout(info_group)
         
-        # Client Secret
-        client_secret_layout = QHBoxLayout()
-        client_secret_layout.addWidget(QLabel("Client Secret:"))
-        self.twitch_client_secret_edit = QLineEdit()
-        self.twitch_client_secret_edit.setEchoMode(QLineEdit.EchoMode.Password)
-        client_secret_layout.addWidget(self.twitch_client_secret_edit)
-        layout.addLayout(client_secret_layout)
+        info_text = QLabel(
+            "Connect your Twitch account to send messages to your chat.\n"
+            "Click 'Login with Twitch' to authorize this application.\n\n"
+            "Note: Make sure you have configured the Client ID in the application."
+        )
+        info_text.setWordWrap(True)
+        info_layout.addWidget(info_text)
         
-        # Status
-        self.twitch_status_label = QLabel()
-        layout.addWidget(self.twitch_status_label)
+        layout.addWidget(info_group)
         
-        # Channel
-        channel_layout = QHBoxLayout()
-        channel_layout.addWidget(QLabel("Channel:"))
-        self.twitch_channel_edit = QLineEdit()
-        channel_layout.addWidget(self.twitch_channel_edit)
-        layout.addLayout(channel_layout)
+        # Status section
+        status_group = QGroupBox("Connection Status")
+        status_layout = QVBoxLayout(status_group)
         
-        # Login/Logout buttons
+        self.twitch_status_label = QLabel("Not connected")
+        self.twitch_status_label.setStyleSheet("color: #ff6b6b; font-weight: bold;")
+        status_layout.addWidget(self.twitch_status_label)
+        
+        layout.addWidget(status_group)
+        
+        # Message send timing option
+        timing_group = QGroupBox("Twitch Message Send Timing")
+        timing_layout = QVBoxLayout(timing_group)
+        timing_label = QLabel("Choose when messages are sent to Twitch chat:")
+        timing_layout.addWidget(timing_label)
+        self.twitch_send_timing_combo = QComboBox()
+        self.twitch_send_timing_combo.addItem("Immediately", "immediate")
+        self.twitch_send_timing_combo.addItem("After animation", "after_animation")
+        timing_layout.addWidget(self.twitch_send_timing_combo)
+        layout.addWidget(timing_group)
+        
+        # Buttons
+        button_layout = QHBoxLayout()
+        
         self.twitch_login_button = QPushButton("Login with Twitch")
+        self.twitch_login_button.setStyleSheet("""
+            QPushButton {
+                background-color: #9147ff;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+            QPushButton:hover {
+                background-color: #7c3aed;
+            }
+            QPushButton:disabled {
+                background-color: #6b7280;
+            }
+        """)
         self.twitch_login_button.clicked.connect(self.twitch_login)
-        layout.addWidget(self.twitch_login_button)
-        self.twitch_logout_button = QPushButton("Logout")
-        self.twitch_logout_button.clicked.connect(self.twitch_logout)
-        layout.addWidget(self.twitch_logout_button)
+        button_layout.addWidget(self.twitch_login_button)
         
+        self.twitch_logout_button = QPushButton("Logout")
+        self.twitch_logout_button.setStyleSheet("""
+            QPushButton {
+                background-color: #dc2626;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+            QPushButton:hover {
+                background-color: #b91c1c;
+            }
+            QPushButton:disabled {
+                background-color: #6b7280;
+            }
+        """)
+        self.twitch_logout_button.clicked.connect(self.twitch_logout)
+        button_layout.addWidget(self.twitch_logout_button)
+        
+        layout.addLayout(button_layout)
         layout.addStretch()
         return widget
     
@@ -399,23 +444,26 @@ class ConfigDialog(QDialog):
             self.log_level_combo.setCurrentIndex(index)
         
         # Twitch settings
-        twitch = get_config("twitch", {})
-        access_token = twitch.get("access_token")
-        username = twitch.get("username")
-        channel = twitch.get("channel")
-        client_id = twitch.get("client_id")
-        client_secret = twitch.get("client_secret")
-        self.twitch_client_id_edit.setText(client_id or "")
-        self.twitch_client_secret_edit.setText(client_secret or "")
-        if access_token and username:
-            self.twitch_status_label.setText(f"Logged in as <b>{username}</b>")
+        from mute_streamer_overload.twitch_oauth import get_twitch_user_info
+        user_info = get_twitch_user_info()
+        send_timing = get_config("twitch.send_timing", "immediate")
+        idx = self.twitch_send_timing_combo.findData(send_timing)
+        if idx != -1:
+            self.twitch_send_timing_combo.setCurrentIndex(idx)
+        else:
+            self.twitch_send_timing_combo.setCurrentIndex(0)
+        
+        if user_info['authenticated']:
+            display_name = user_info.get('display_name', user_info['username'])
+            self.twitch_status_label.setText(f"Connected as <b>{display_name}</b>")
+            self.twitch_status_label.setStyleSheet("color: #10b981; font-weight: bold;")
             self.twitch_login_button.setEnabled(False)
             self.twitch_logout_button.setEnabled(True)
         else:
-            self.twitch_status_label.setText("Not logged in")
+            self.twitch_status_label.setText("Not connected")
+            self.twitch_status_label.setStyleSheet("color: #ff6b6b; font-weight: bold;")
             self.twitch_login_button.setEnabled(True)
             self.twitch_logout_button.setEnabled(False)
-        self.twitch_channel_edit.setText(channel or "")
     
     def save_current_config(self):
         """Save current UI values to configuration."""
@@ -455,10 +503,8 @@ class ConfigDialog(QDialog):
         set_config("general.check_for_updates", self.check_updates_check.isChecked())
         set_config("general.log_level", self.log_level_combo.currentText())
         
-        # Twitch settings
-        set_config("twitch.client_id", self.twitch_client_id_edit.text().strip())
-        set_config("twitch.client_secret", self.twitch_client_secret_edit.text().strip())
-        set_config("twitch.channel", self.twitch_channel_edit.text().strip())
+        # Twitch message send timing
+        set_config("twitch.send_timing", self.twitch_send_timing_combo.currentData())
         
         # Save to file
         save_config()
@@ -521,10 +567,6 @@ class ConfigDialog(QDialog):
         start_twitch_oauth_flow(self)
     
     def twitch_logout(self):
-        from mute_streamer_overload.utils.config import set_config, save_config
-        set_config("twitch.access_token", None)
-        set_config("twitch.refresh_token", None)
-        set_config("twitch.username", None)
-        set_config("twitch.channel", None)
-        save_config()
+        from mute_streamer_overload.twitch_oauth import logout_twitch
+        logout_twitch()
         self.load_current_config() 
