@@ -1,0 +1,14 @@
+{
+  "name": "tts_service",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Minimal Node.js service to generate TTS audio using lobehub/tts.",
+  "main": "generate_tts.mjs",
+  "scripts": {
+    "start": "node generate_tts.mjs"
+  },
+  "dependencies": {
+    "@lobehub/tts": "^2.0.1",
+    "ws": "^8.15.1"
+  }
+} 

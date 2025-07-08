@@ -166,7 +166,7 @@ class MuteStreamerOverload(QMainWindow):
         
         button_layout = QHBoxLayout()
         self.submit_button = QPushButton("Submit (F4)")
-        self.submit_button.clicked.connect(self.submit_message)
+        self.submit_button.clicked.connect(self.handle_submit)
         button_layout.addWidget(self.submit_button)
         
         self.toggle_overlay_button = QPushButton("Show Overlay")
@@ -208,23 +208,24 @@ class MuteStreamerOverload(QMainWindow):
         self.qt_start_shortcuts = []
         self.qt_submit_shortcuts = []
         suppress = get_config("input.suppress_hotkey", False)
-        # Bind start hotkeys
         self.start_hotkeys = get_config("input.start_hotkey", ["F4"])
         self.submit_hotkeys = get_config("input.submit_hotkey", ["F4"])
+        # Register QShortcut and global hotkey for start hotkey
         for key in self.start_hotkeys:
             norm_key = _normalize_hotkey(key)
             print(f"[DEBUG] Registering start hotkey: {norm_key}")
+            # QShortcut (window-focused)
             sc = QShortcut(QKeySequence(key), self)
-            sc.activated.connect(self.handle_start_typing)
+            def start_typing_debug():
+                logger.debug(f"[HOTKEY] QShortcut start_typing activated for key: {norm_key}")
+                self.handle_start_typing()
+            sc.activated.connect(start_typing_debug)
             self.qt_start_shortcuts.append(sc)
-            keyboard.on_press_key(norm_key, lambda event, action='start', key=norm_key: self.input_handler.on_hotkey_press(event, action, key), suppress=suppress)
-        for key in self.submit_hotkeys:
-            norm_key = _normalize_hotkey(key)
-            print(f"[DEBUG] Registering submit hotkey: {norm_key}")
-            sc = QShortcut(QKeySequence(key), self)
-            sc.activated.connect(self.handle_submit)
-            self.qt_submit_shortcuts.append(sc)
-            keyboard.on_press_key(norm_key, lambda event, action='submit', key=norm_key: self.input_handler.on_hotkey_press(event, action, key), suppress=suppress)
+            # Global hotkey
+            def global_start_hotkey(event, action='start', key=norm_key):
+                logger.debug(f"[HOTKEY] keyboard.on_press_key start activated for key: {key}, event: {event}")
+                return self.input_handler.on_hotkey_press(event, action, key)
+            keyboard.on_press_key(norm_key, global_start_hotkey, suppress=suppress)
         logger.info(f"Start hotkeys: {self.start_hotkeys}, Submit hotkeys: {self.submit_hotkeys}, suppress={suppress}")
 
     def rebind_hotkey(self):
@@ -343,21 +344,40 @@ class MuteStreamerOverload(QMainWindow):
             if self.input_handler.is_active:
                 self.activateWindow()
                 self.raise_()
+                # No need to register submit hotkey here; InputHandler handles it
 
     def handle_submit(self):
+        logger.debug(f"[SUBMIT] handle_submit called. is_active={self.input_handler.is_active}")
+        # Accept submission from both button and hotkey
         if self.input_handler.is_active:
             current_text = self.input_handler.get_current_text()
+            logger.debug(f"[SUBMIT] handle_submit (typing mode): current_text='{current_text}'")
             if current_text.strip():
                 self.current_message = current_text
+                logger.debug(f"[SUBMIT] handle_submit: set_message called with '{self.current_message}'")
                 self.overlay_window.set_message(self.current_message)
                 self.message_input.setText(self.current_message)
                 self.input_handler.clear_text()
-                update_message(self.current_message)
+                # Send to Twitch chat if enabled and timing is 'immediate'
+                if self.send_to_twitch_checkbox.isChecked() and get_config("twitch.send_timing", "immediate") == "immediate":
+                    send_message_to_twitch_chat(current_text)
             self.input_handler.is_active = False
             self.input_handler.f4_pressed = False
             self.input_handler.input_state_changed.emit(False)
-            keyboard.unhook_all()
-            self.bind_hotkeys()
+            keyboard.unhook_all()  # Unregister submit hotkey after submission
+            self.bind_hotkeys()  # Re-register start hotkey
+        else:
+            # Submission from button (not hotkey mode)
+            message = self.message_input.toPlainText().strip()
+            logger.debug(f"[SUBMIT] handle_submit (button mode): message='{message}'")
+            if message:
+                self.current_message = message
+                logger.debug(f"[SUBMIT] handle_submit: set_message called with '{self.current_message}' (button mode)")
+                self.overlay_window.set_message(self.current_message)
+                self.message_input.clear()
+                self.input_handler.clear_text()
+                if self.send_to_twitch_checkbox.isChecked() and get_config("twitch.send_timing", "immediate") == "immediate":
+                    send_message_to_twitch_chat(message)
     
     def update_text_display(self, text):
         self.message_input.setText(text)
@@ -388,19 +408,6 @@ class MuteStreamerOverload(QMainWindow):
         x = (screen_geometry.width() - self.overlay_window.width()) // 2
         y = (screen_geometry.height() - self.overlay_window.height()) // 2
         self.overlay_window.move(x, y)
-    
-    def submit_message(self):
-        message = self.message_input.toPlainText().strip()
-        if message:
-            self.current_message = message
-            self.overlay_window.set_message(self.current_message)
-            self.message_input.clear()
-            self.input_handler.clear_text()
-            update_message(self.current_message)
-            
-            # Send to Twitch chat if enabled and timing is 'immediate'
-            if self.send_to_twitch_checkbox.isChecked() and get_config("twitch.send_timing", "immediate") == "immediate":
-                send_message_to_twitch_chat(message)
     
     def closeEvent(self, event):
         # Save window position and size to config

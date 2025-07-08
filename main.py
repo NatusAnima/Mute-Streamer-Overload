@@ -70,9 +70,9 @@ def run_app():
         return 1
 
 if __name__ == '__main__':
-    # This is crucial for PyInstaller compatibility on Windows
     multiprocessing.freeze_support()
-    
-    exit_code = run_app()
-    logging.info(f"Application exited with code: {exit_code}")
-    sys.exit(exit_code) 
+    # Only run the app in the main process
+    if multiprocessing.current_process().name == 'MainProcess':
+        exit_code = run_app()
+        logging.info(f"Application exited with code: {exit_code}")
+        sys.exit(exit_code) 

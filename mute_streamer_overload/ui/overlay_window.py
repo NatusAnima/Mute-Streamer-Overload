@@ -3,6 +3,7 @@ from PyQt6.QtCore import Qt, QPoint
 from PyQt6.QtGui import QWindow, QIcon
 from pathlib import Path
 import re
+import logging
 
 from mute_streamer_overload.core.text_animator import TextAnimator
 from mute_streamer_overload.utils.constants import (TITLE_BAR_STYLE, CLOSE_BUTTON_STYLE, 
@@ -139,10 +140,12 @@ class OverlayWindow(QMainWindow):
         
     def set_message(self, message):
         """Update the displayed message and start animation"""
+        logger = logging.getLogger(__name__)
+        logger.debug(f"[ANIMATION] set_message called with: '{message}'")
         if message:  # Only update if there's a message
             self.current_message = message
-            
             # Start animation in the overlay window
+            logger.debug(f"[ANIMATION] text_animator.start_animation called with: '{message}'")
             self.text_animator.start_animation(message)
             # Update the web overlay (now simplified)
             update_message(message)

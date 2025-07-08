@@ -62,6 +62,7 @@
 
         // Handle text updates
         socket.on('text_update', (data) => {
+            console.log('[OVERLAY] text_update received:', data);
             if (data && data.text) {
                 messageElement.textContent = data.text;
                 messageElement.classList.remove('fade-out'); // Reset fade on new text
@@ -70,6 +71,7 @@
 
         // Handle fade out
         socket.on('fade_out', () => {
+            console.log('[OVERLAY] fade_out received');
             // Force reflow to ensure transition works even if class is already present
             messageElement.classList.remove('fade-out');
             void messageElement.offsetWidth; // Trigger reflow

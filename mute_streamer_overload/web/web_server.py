@@ -6,6 +6,7 @@ import time
 import re
 from flask import Flask, render_template
 from flask_socketio import SocketIO
+import multiprocessing
 
 from mute_streamer_overload.utils.config import get_config
 
@@ -124,6 +125,9 @@ def index():
     return render_template('overlay.html')
 
 def update_message(text):
+    if multiprocessing.current_process().name != 'MainProcess':
+        return
+    logger.info(f"[SERVER] update_message called with: {text!r}")
     if text:
         text_animator.start_animation(text)
 
@@ -157,6 +161,7 @@ def start_server_task():
         logger.info("SERVER THREAD: Task finished.")
 
 def run_server():
+    logger.info("[SERVER] run_server called")
     """Creates and starts the server thread."""
     global server_thread
     
@@ -181,4 +186,10 @@ def stop_server():
     when the main application exits. This avoids the request context error.
     """
     logger.info("Main application is shutting down. Server daemon thread will exit automatically.")
-    pass 
+    pass
+
+if __name__ == '__main__':
+    if multiprocessing.current_process().name == 'MainProcess':
+        logger.info("Starting web server...")
+        server_thread = run_server()
+        ... 

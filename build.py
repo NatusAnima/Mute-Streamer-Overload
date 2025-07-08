@@ -5,6 +5,7 @@ import time
 import logging
 import PyInstaller.__main__
 import PyQt6
+import subprocess
 
 # --- Configuration ---
 
@@ -79,6 +80,15 @@ def get_hidden_imports():
 def build():
     """Orchestrate the entire build process."""
     logger.info("--- Starting Mute Streamer Overload Build ---")
+
+    # 0. Ensure all dependencies are installed
+    logger.info("Step 0: Installing Python dependencies from requirements.txt...")
+    try:
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', os.path.join('mute_streamer_overload', 'requirements.txt')])
+        logger.info("All dependencies installed successfully.")
+    except Exception as e:
+        logger.error(f"Failed to install dependencies: {e}")
+        return False
 
     # 1. Clean previous build artifacts
     logger.info("Step 1: Cleaning previous build directories...")
