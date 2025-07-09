@@ -4,7 +4,7 @@ from pathlib import Path
 import threading
 import time
 import re
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
 from flask_socketio import SocketIO
 import multiprocessing
 
@@ -16,6 +16,8 @@ logger = logging.getLogger(__name__)
 # --- Global State ---
 socketio = None
 server_thread = None
+fade_out_callback = None
+animation_in_progress = False
 
 # --- Path Configuration ---
 def get_project_root():
@@ -41,7 +43,7 @@ class WebTextAnimator:
         self.animation_thread = None
         self._stop_animation_flag = False
         self.settings = {
-            'wpm': get_config("animation.words_per_minute", 200),
+            'wpm': get_config("animation.words_per_minute", 500),
             'min_chars': get_config("animation.min_characters", 10),
             'max_chars': get_config("animation.max_characters", 50)
         }
@@ -67,13 +69,26 @@ class WebTextAnimator:
         return result, i
 
     def start_animation(self, message):
+        global animation_in_progress
+        print(f"[WEB ANIMATOR] start_animation called with: '{message}'")
+        
+        # Prevent duplicate animations
+        if animation_in_progress:
+            print(f"[WEB ANIMATOR] Animation already in progress, skipping")
+            return
+            
+        animation_in_progress = True
+        print(f"[WEB ANIMATOR] Starting new animation")
+        
         if self.animation_thread and self.animation_thread.is_alive():
+            print(f"[WEB ANIMATOR] Stopping existing animation")
             self._stop_animation_flag = True
             self.animation_thread.join()
         self.current_message = message
         self._stop_animation_flag = False
         self.animation_thread = threading.Thread(target=self._animate_text, daemon=True)
         self.animation_thread.start()
+        print(f"[WEB ANIMATOR] Animation thread started")
 
     def _animate_text(self):
         global socketio
@@ -82,6 +97,7 @@ class WebTextAnimator:
         i = 0
         n = len(words)
         delay = 60.0 / self.settings['wpm']
+        print(f'[DEBUG] Starting animation with WPM: {self.settings["wpm"]}, delay: {delay}')
         last_sentence = ''
         while i < n and not self._stop_animation_flag:
             # Start a new sentence
@@ -109,6 +125,14 @@ class WebTextAnimator:
         if not self._stop_animation_flag:
             time.sleep(1.0)  # Show the final sentence for 1 second
             socketio.emit('fade_out', {})
+            # Notify main window if callback is set
+            if fade_out_callback:
+                fade_out_callback()
+        
+        # Reset animation progress flag
+        global animation_in_progress
+        animation_in_progress = False
+        print(f"[WEB ANIMATOR] Animation finished, flag reset")
 
     def stop_animation(self):
         self._stop_animation_flag = True
@@ -124,6 +148,23 @@ app = Flask(__name__, template_folder=str(template_dir), static_folder=str(stati
 def index():
     return render_template('overlay.html')
 
+@app.route('/start_tts_animation', methods=['POST'])
+def start_tts_animation():
+    data = request.get_json()
+    text = data.get('text', '')
+    wpm = data.get('wpm', 180)
+    update_animation_settings(wpm=wpm)
+    update_message(text)
+    return jsonify({'status': 'ok'})
+
+@app.route('/set_overlay_wpm', methods=['POST'])
+def set_overlay_wpm():
+    data = request.get_json()
+    wpm = data.get('wpm', 500)
+    update_animation_settings(wpm=wpm)
+    # Don't restart animation - just update the settings for future animations
+    return jsonify({'status': 'ok'})
+
 def update_message(text):
     if multiprocessing.current_process().name != 'MainProcess':
         return
@@ -133,6 +174,11 @@ def update_message(text):
 
 def update_animation_settings(wpm=None, min_chars=None, max_chars=None):
     text_animator.update_settings(wpm, min_chars, max_chars)
+
+def set_fade_out_callback(callback):
+    """Set a callback function to be called when fade_out occurs."""
+    global fade_out_callback
+    fade_out_callback = callback
 
 def start_server_task():
     """The target function for the server thread."""

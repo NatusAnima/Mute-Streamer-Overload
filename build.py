@@ -58,6 +58,10 @@ def get_data_files():
     # Add assets directory
     if os.path.exists('assets'):
         data_files.append(('assets', 'assets'))
+    
+    # Add TTS service directory
+    if os.path.exists('tts_service'):
+        data_files.append(('tts_service', 'tts_service'))
 
     return [f"--add-data={src}{os.pathsep}{dest}" for src, dest in data_files]
 
@@ -69,17 +73,59 @@ def get_hidden_imports():
         # Flask & Web Server
         'flask', 'flask_socketio', 'engineio.async_drivers.threading', 'werkzeug', 'jinja2',
         # Common dependencies
-        'requests', 'keyboard',
+        'requests', 'keyboard', 'pygame',
         # Required for freeze_support
-        'multiprocessing'
+        'multiprocessing',
+        # TTS Service
+        'tts_service', 'tts_service.tts_integration',
+        # Additional PyQt6 modules
+        'PyQt6.QtNetwork', 'PyQt6.QtMultimedia'
     ]
     return [f"--hidden-import={imp}" for imp in imports]
 
 # --- Main Build Function ---
 
+def check_python_version():
+    """Check if Python version is compatible."""
+    if sys.version_info < (3, 8):
+        logger.error("Python 3.8 or higher is required.")
+        return False
+    logger.info(f"Python version: {sys.version}")
+    return True
+
+def check_required_files():
+    """Check if all required files exist."""
+    required_files = [
+        'main.py',
+        'mute_streamer_overload/requirements.txt',
+        'assets/icon_256x256.ico',
+        'mute_streamer_overload/web/templates/overlay.html',
+        'mute_streamer_overload/web/static'
+    ]
+    
+    missing_files = []
+    for file_path in required_files:
+        if not os.path.exists(file_path):
+            missing_files.append(file_path)
+    
+    if missing_files:
+        logger.error(f"Missing required files: {missing_files}")
+        return False
+    
+    logger.info("All required files found.")
+    return True
+
 def build():
     """Orchestrate the entire build process."""
     logger.info("--- Starting Mute Streamer Overload Build ---")
+    
+    # Check Python version
+    if not check_python_version():
+        return False
+    
+    # Check required files
+    if not check_required_files():
+        return False
 
     # 0. Ensure all dependencies are installed
     logger.info("Step 0: Installing Python dependencies from requirements.txt...")
@@ -109,6 +155,9 @@ def build():
         mode,
         '--clean',
         '--noconfirm',
+        '--collect-all=pygame',
+        '--collect-all=flask',
+        '--collect-all=flask_socketio',
         f'--icon={os.path.join("assets", "icon_256x256.ico")}'
     ]
     

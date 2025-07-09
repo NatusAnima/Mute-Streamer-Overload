@@ -9,6 +9,7 @@ from PyQt6.QtGui import QIcon
 
 from mute_streamer_overload.utils.config import get_config, set_config, save_config, reset_config
 from mute_streamer_overload.utils.styles import get_stylesheet
+from mute_streamer_overload.utils.azure_voices import azure_voices
 
 logger = logging.getLogger(__name__)
 
@@ -41,6 +42,7 @@ class ConfigDialog(QDialog):
         self.tab_widget.addTab(self.create_input_tab(), "Input")
         self.tab_widget.addTab(self.create_general_tab(), "General")
         self.tab_widget.addTab(self.create_twitch_tab(), "Twitch")
+        self.tab_widget.addTab(self.create_tts_tab(), "TTS")
         
         # Buttons
         button_layout = QHBoxLayout()
@@ -394,6 +396,252 @@ class ConfigDialog(QDialog):
         layout.addStretch()
         return widget
     
+    def create_tts_tab(self):
+        widget = QWidget()
+        layout = QVBoxLayout(widget)
+
+        tts_group = QGroupBox("Text-to-Speech Settings")
+        tts_layout = QGridLayout(tts_group)
+
+        # Volume
+        tts_layout.addWidget(QLabel("Volume:"), 0, 0)
+        self.tts_volume_spin = QDoubleSpinBox()
+        self.tts_volume_spin.setRange(0.1, 10.0)
+        self.tts_volume_spin.setSingleStep(0.1)
+        self.tts_volume_spin.setValue(1.0)
+        tts_layout.addWidget(self.tts_volume_spin, 0, 1)
+
+        # Pitch
+        tts_layout.addWidget(QLabel("Pitch:"), 1, 0)
+        self.tts_pitch_spin = QDoubleSpinBox()
+        self.tts_pitch_spin.setRange(0.5, 2.0)
+        self.tts_pitch_spin.setSingleStep(0.1)
+        self.tts_pitch_spin.setValue(1.0)
+        tts_layout.addWidget(self.tts_pitch_spin, 1, 1)
+
+        # Speed
+        tts_layout.addWidget(QLabel("Speed:"), 2, 0)
+        self.tts_speed_spin = QDoubleSpinBox()
+        self.tts_speed_spin.setRange(0.5, 2.0)
+        self.tts_speed_spin.setSingleStep(0.1)
+        self.tts_speed_spin.setValue(1.0)
+        tts_layout.addWidget(self.tts_speed_spin, 2, 1)
+
+        # Voice
+        tts_layout.addWidget(QLabel("Voice:"), 3, 0)
+        self.tts_voice_combo = QComboBox()
+        
+        # Sort and group voices by language
+        sorted_voices = self._get_sorted_voices()
+        for voice in sorted_voices:
+            self.tts_voice_combo.addItem(f"{voice['display_name']} ({voice['name']})", voice['name'])
+        
+        tts_layout.addWidget(self.tts_voice_combo, 3, 1)
+
+        # Sync overlay WPM with TTS
+        self.sync_overlay_wpm_check = QCheckBox("Sync overlay speed with TTS")
+        self.sync_overlay_wpm_check.setChecked(get_config("tts.sync_overlay_wpm_with_tts", True))
+        tts_layout.addWidget(self.sync_overlay_wpm_check, 4, 0, 1, 2)
+
+        layout.addWidget(tts_group)
+        layout.addStretch()
+        return widget
+    
+    def _get_sorted_voices(self):
+        """Sort and group voices by language, then alphabetically within each language."""
+        # Group voices by language (extract language from locale)
+        language_groups = {}
+        
+        for voice in azure_voices:
+            # Extract language from locale (e.g., "en-US" -> "English")
+            locale = voice['locale']
+            if locale.startswith('en'):
+                language = "English"
+            elif locale.startswith('es'):
+                language = "Spanish"
+            elif locale.startswith('fr'):
+                language = "French"
+            elif locale.startswith('de'):
+                language = "German"
+            elif locale.startswith('it'):
+                language = "Italian"
+            elif locale.startswith('pt'):
+                language = "Portuguese"
+            elif locale.startswith('ru'):
+                language = "Russian"
+            elif locale.startswith('ja'):
+                language = "Japanese"
+            elif locale.startswith('ko'):
+                language = "Korean"
+            elif locale.startswith('zh'):
+                language = "Chinese"
+            elif locale.startswith('ar'):
+                language = "Arabic"
+            elif locale.startswith('hi'):
+                language = "Hindi"
+            elif locale.startswith('th'):
+                language = "Thai"
+            elif locale.startswith('vi'):
+                language = "Vietnamese"
+            elif locale.startswith('tr'):
+                language = "Turkish"
+            elif locale.startswith('pl'):
+                language = "Polish"
+            elif locale.startswith('cs'):
+                language = "Czech"
+            elif locale.startswith('hu'):
+                language = "Hungarian"
+            elif locale.startswith('ro'):
+                language = "Romanian"
+            elif locale.startswith('bg'):
+                language = "Bulgarian"
+            elif locale.startswith('hr'):
+                language = "Croatian"
+            elif locale.startswith('sr'):
+                language = "Serbian"
+            elif locale.startswith('sk'):
+                language = "Slovak"
+            elif locale.startswith('uk'):
+                language = "Ukrainian"
+            elif locale.startswith('he'):
+                language = "Hebrew"
+            elif locale.startswith('ms'):
+                language = "Malay"
+            elif locale.startswith('id'):
+                language = "Indonesian"
+            elif locale.startswith('fil'):
+                language = "Filipino"
+            elif locale.startswith('sw'):
+                language = "Swahili"
+            elif locale.startswith('af'):
+                language = "Afrikaans"
+            elif locale.startswith('am'):
+                language = "Amharic"
+            elif locale.startswith('ha'):
+                language = "Hausa"
+            elif locale.startswith('yo'):
+                language = "Yoruba"
+            elif locale.startswith('zu'):
+                language = "Zulu"
+            elif locale.startswith('fa'):
+                language = "Persian"
+            elif locale.startswith('ur'):
+                language = "Urdu"
+            elif locale.startswith('bn'):
+                language = "Bengali"
+            elif locale.startswith('ta'):
+                language = "Tamil"
+            elif locale.startswith('te'):
+                language = "Telugu"
+            elif locale.startswith('kn'):
+                language = "Kannada"
+            elif locale.startswith('ml'):
+                language = "Malayalam"
+            elif locale.startswith('gu'):
+                language = "Gujarati"
+            elif locale.startswith('mr'):
+                language = "Marathi"
+            elif locale.startswith('si'):
+                language = "Sinhala"
+            elif locale.startswith('km'):
+                language = "Khmer"
+            elif locale.startswith('lo'):
+                language = "Lao"
+            elif locale.startswith('my'):
+                language = "Burmese"
+            elif locale.startswith('mn'):
+                language = "Mongolian"
+            elif locale.startswith('ne'):
+                language = "Nepali"
+            elif locale.startswith('nl'):
+                language = "Dutch"
+            elif locale.startswith('sv'):
+                language = "Swedish"
+            elif locale.startswith('da'):
+                language = "Danish"
+            elif locale.startswith('nb'):
+                language = "Norwegian"
+            elif locale.startswith('fi'):
+                language = "Finnish"
+            elif locale.startswith('el'):
+                language = "Greek"
+            elif locale.startswith('eu'):
+                language = "Basque"
+            elif locale.startswith('ca'):
+                language = "Catalan"
+            elif locale.startswith('gl'):
+                language = "Galician"
+            elif locale.startswith('cy'):
+                language = "Welsh"
+            elif locale.startswith('ga'):
+                language = "Irish"
+            elif locale.startswith('gd'):
+                language = "Scottish Gaelic"
+            elif locale.startswith('is'):
+                language = "Icelandic"
+            elif locale.startswith('lb'):
+                language = "Luxembourgish"
+            elif locale.startswith('sl'):
+                language = "Slovenian"
+            elif locale.startswith('lv'):
+                language = "Latvian"
+            elif locale.startswith('lt'):
+                language = "Lithuanian"
+            elif locale.startswith('et'):
+                language = "Estonian"
+            elif locale.startswith('hy'):
+                language = "Armenian"
+            elif locale.startswith('ka'):
+                language = "Georgian"
+            elif locale.startswith('uz'):
+                language = "Uzbek"
+            elif locale.startswith('kk'):
+                language = "Kazakh"
+            elif locale.startswith('az'):
+                language = "Azerbaijani"
+            elif locale.startswith('tt'):
+                language = "Tatar"
+            elif locale.startswith('ba'):
+                language = "Bashkir"
+            elif locale.startswith('cv'):
+                language = "Chuvash"
+            elif locale.startswith('ce'):
+                language = "Chechen"
+            elif locale.startswith('os'):
+                language = "Ossetian"
+            elif locale.startswith('sah'):
+                language = "Yakut"
+            elif locale.startswith('kl'):
+                language = "Greenlandic"
+            elif locale.startswith('mi'):
+                language = "Maori"
+            elif locale.startswith('sm'):
+                language = "Samoan"
+            elif locale.startswith('to'):
+                language = "Tongan"
+            elif locale.startswith('fj'):
+                language = "Fijian"
+            elif locale.startswith('ty'):
+                language = "Tahitian"
+            else:
+                # For any other languages, use the locale as the language name
+                language = locale.upper()
+            
+            if language not in language_groups:
+                language_groups[language] = []
+            language_groups[language].append(voice)
+        
+        # Sort languages alphabetically
+        sorted_languages = sorted(language_groups.keys())
+        
+        # Sort voices within each language by display name
+        sorted_voices = []
+        for language in sorted_languages:
+            voices_in_language = sorted(language_groups[language], key=lambda x: x['display_name'])
+            sorted_voices.extend(voices_in_language)
+        
+        return sorted_voices
+    
     def load_current_config(self):
         """Load current configuration values into the UI."""
         # Overlay settings
@@ -409,7 +657,7 @@ class ConfigDialog(QDialog):
         self.opacity_spin.setValue(int(opacity * 100))
         
         # Animation settings
-        self.wpm_spin.setValue(get_config("animation.words_per_minute", 200))
+        self.wpm_spin.setValue(get_config("animation.words_per_minute", 500))
         self.min_chars_spin.setValue(get_config("animation.min_characters", 10))
         self.max_chars_spin.setValue(get_config("animation.max_characters", 50))
         self.animation_delay_spin.setValue(get_config("animation.animation_delay_ms", 100))
@@ -464,6 +712,16 @@ class ConfigDialog(QDialog):
             self.twitch_status_label.setStyleSheet("color: #ff6b6b; font-weight: bold;")
             self.twitch_login_button.setEnabled(True)
             self.twitch_logout_button.setEnabled(False)
+        
+        # TTS tab
+        self.tts_volume_spin.setValue(get_config("tts.volume", 1.0))
+        self.tts_pitch_spin.setValue(get_config("tts.pitch", 1.0))
+        self.tts_speed_spin.setValue(get_config("tts.speed", 1.0))
+        voice = get_config("tts.voice", "en-GB-SoniaNeural")
+        idx = self.tts_voice_combo.findData(voice)
+        if idx != -1:
+            self.tts_voice_combo.setCurrentIndex(idx)
+        self.sync_overlay_wpm_check.setChecked(get_config("tts.sync_overlay_wpm_with_tts", True))
     
     def save_current_config(self):
         """Save current UI values to configuration."""
@@ -505,6 +763,13 @@ class ConfigDialog(QDialog):
         
         # Twitch message send timing
         set_config("twitch.send_timing", self.twitch_send_timing_combo.currentData())
+        
+        # TTS tab
+        set_config("tts.volume", self.tts_volume_spin.value())
+        set_config("tts.pitch", self.tts_pitch_spin.value())
+        set_config("tts.speed", self.tts_speed_spin.value())
+        set_config("tts.voice", self.tts_voice_combo.currentData())
+        set_config("tts.sync_overlay_wpm_with_tts", self.sync_overlay_wpm_check.isChecked())
         
         # Save to file
         save_config()

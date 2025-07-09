@@ -137,9 +137,13 @@ You can customize the text animation using the controls in the main window or th
 
 To create a standalone executable:
 
-1. Install development dependencies:
+1. Install dependencies:
 ```bash
-pip install -e ".[dev]"
+# For basic build
+pip install -r mute_streamer_overload/requirements.txt
+
+# For development (includes testing tools)
+pip install -r requirements-dev.txt
 ```
 
 2. Run the build script:
@@ -148,6 +152,16 @@ python build.py
 ```
 
 The executable will be created in the `dist` directory as `MuteStreamerOverload.exe`.
+
+### Build Features
+
+- **Automatic dependency installation** from requirements.txt
+- **File existence validation** before building
+- **Python version checking** (requires 3.8+)
+- **Complete PyQt6 plugin bundling** for proper UI rendering
+- **TTS service integration** with pygame audio support
+- **Web server templates** and static files included
+- **Asset files** (icons, etc.) bundled automatically
 
 ### Building Requirements
 

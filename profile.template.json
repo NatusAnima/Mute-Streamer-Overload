@@ -9,7 +9,7 @@
     "opacity": 0.9
   },
   "animation": {
-    "words_per_minute": 320,
+    "words_per_minute": 500,
     "min_characters": 10,
     "max_characters": 100,
     "animation_delay_ms": 100

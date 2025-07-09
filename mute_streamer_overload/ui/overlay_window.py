@@ -106,7 +106,7 @@ class OverlayWindow(QMainWindow):
         self.current_message = ""
         
         # Create text animator with config values
-        wpm = get_config("animation.words_per_minute", 200)
+        wpm = get_config("animation.words_per_minute", 500)
         min_chars = get_config("animation.min_characters", 10)
         max_chars = get_config("animation.max_characters", 50)
         
@@ -147,8 +147,19 @@ class OverlayWindow(QMainWindow):
             # Start animation in the overlay window
             logger.debug(f"[ANIMATION] text_animator.start_animation called with: '{message}'")
             self.text_animator.start_animation(message)
-            # Update the web overlay (now simplified)
+            # Only update web overlay if no animation is in progress (to prevent duplicates)
+            # We'll let trigger_web_animation handle web server animation
+            # update_message(message)  # Commented out to prevent duplicates
+            print(f"[OVERLAY] set_message completed - local animation only")
+    
+    def trigger_web_animation(self, message):
+        """Trigger only the web server animation without starting local overlay animation"""
+        logger = logging.getLogger(__name__)
+        logger.debug(f"[ANIMATION] trigger_web_animation called with: '{message}'")
+        if message:  # Only update if there's a message
+            # Only update the web overlay, don't start local animation
             update_message(message)
+            print(f"[OVERLAY] trigger_web_animation completed - web server animation only")
             
     def _update_animated_text(self, text):
         """Update the label with animated text"""

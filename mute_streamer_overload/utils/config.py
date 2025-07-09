@@ -42,7 +42,7 @@ class ConfigManager:
             
             # Animation Settings
             "animation": {
-                "words_per_minute": 200,
+                "words_per_minute": 500,
                 "min_characters": 10,
                 "max_characters": 50,
                 "animation_delay_ms": 100
@@ -85,8 +85,21 @@ class ConfigManager:
                 "access_token": None,
                 "refresh_token": None,
                 "username": None,
-                "channel": None
+                "channel": None,
+                "display_name": None,
+                "send_messages": True,
+                "send_timing": "immediate"
             },
+
+            # TTS Settings
+            "tts": {
+                "enabled": True,
+                "voice": "en-GB-SoniaNeural",
+                "speed": 1.0,
+                "pitch": 1.0,
+                "volume": 1.0,
+                "sync_with_text": True
+            }
         }
     
     def load_config(self) -> None:
@@ -207,4 +220,10 @@ def save_config() -> None:
 
 def reset_config() -> None:
     """Reset configuration to defaults."""
-    config_manager.reset_to_defaults() 
+    config_manager.reset_to_defaults()
+
+# --- New: Auto-update WPM in config when TTS speed changes ---
+def auto_update_wpm_for_tts_speed(speed: float):
+    wpm = int(500 * speed)
+    set_config('animation.words_per_minute', wpm)
+    save_config() 

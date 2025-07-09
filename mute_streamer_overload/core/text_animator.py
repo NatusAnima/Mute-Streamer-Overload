@@ -56,6 +56,7 @@ class TextAnimator(QObject):
     def _animate_text(self):
         if not self.current_message:
             return
+        print(f"[ANIMATOR] Starting animation for: '{self.current_message}'")
         words = re.findall(r'\S+|\s+', self.current_message)
         i = 0
         n = len(words)
@@ -84,6 +85,7 @@ class TextAnimator(QObject):
                 time.sleep(delay)
         # Fade out at the end
         if not self.stop_animation:
+            print(f"[ANIMATOR] Animation finished, emitting fade_out signal")
             self.animation_finished.emit()
             self.fade_out.emit()
         self.is_animating = False

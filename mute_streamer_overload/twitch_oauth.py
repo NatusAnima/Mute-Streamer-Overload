@@ -259,7 +259,7 @@ def start_twitch_oauth_flow(parent=None):
         logger.error(f"Failed to start Twitch OAuth flow: {e}")
 
 def send_message_to_twitch_chat(message):
-    """Send a message to the user's Twitch chat."""
+    """Send a message to the user's own Twitch channel."""
     twitch = get_config('twitch', {})
     access_token = twitch.get('access_token')
     username = twitch.get('username')
@@ -269,7 +269,7 @@ def send_message_to_twitch_chat(message):
         return False
     
     try:
-        # Get user ID first
+        # Get user info (this includes the user's channel ID)
         headers = {
             'Authorization': f'Bearer {access_token}',
             'Client-Id': CLIENT_ID
@@ -285,12 +285,14 @@ def send_message_to_twitch_chat(message):
             logger.error("No user data received")
             return False
             
-        user_id = data['data'][0]['id']
+        user_info = data['data'][0]
+        user_id = user_info['id']
+        user_login = user_info['login']
         
-        # Send message to chat
+        # Send message to the user's own channel
         chat_url = 'https://api.twitch.tv/helix/chat/messages'
         payload = {
-            'broadcaster_id': user_id,
+            'broadcaster_id': user_id,  # Send to user's own channel
             'sender_id': user_id,
             'message': message
         }
@@ -298,10 +300,15 @@ def send_message_to_twitch_chat(message):
         resp = requests.post(chat_url, headers=headers, json=payload)
         
         if resp.ok:
-            logger.info(f"Message sent to Twitch chat: {message}")
+            logger.info(f"Message sent to Twitch chat in #{user_login}: {message}")
             return True
         else:
             logger.error(f"Failed to send message: {resp.status_code} - {resp.text}")
+            # Log more details for debugging
+            if resp.status_code == 403:
+                logger.error("Access denied. Make sure you have the 'chat:edit' scope.")
+            elif resp.status_code == 400:
+                logger.error("Bad request. Check if the message format is valid.")
             return False
             
     except Exception as e:

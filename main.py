@@ -8,6 +8,9 @@ from mute_streamer_overload.ui.main_window import MuteStreamerOverload
 from mute_streamer_overload.web.web_server import run_server, stop_server
 from mute_streamer_overload.utils.styles import get_stylesheet
 
+import os
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+
 def setup_logging(is_frozen):
     """Configure logging for development and bundled environments."""
     if is_frozen:
@@ -73,6 +76,11 @@ if __name__ == '__main__':
     multiprocessing.freeze_support()
     # Only run the app in the main process
     if multiprocessing.current_process().name == 'MainProcess':
+        try:
+            from tts_service.tts_integration import speak
+            speak("Text To Speech is up and running, this is a test message.")
+        except ImportError as e:
+            print(f"TTS integration not available: {e}")
         exit_code = run_app()
         logging.info(f"Application exited with code: {exit_code}")
         sys.exit(exit_code) 

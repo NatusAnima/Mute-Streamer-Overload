@@ -10,15 +10,17 @@ from pathlib import Path
 from functools import partial
 import time
 import threading
+import requests
 
 from mute_streamer_overload.core.input_handler import InputHandler
 from mute_streamer_overload.ui.overlay_window import OverlayWindow
 from mute_streamer_overload.ui.config_dialog import ConfigDialog
-from mute_streamer_overload.web.web_server import update_message, update_animation_settings, stop_server
+from mute_streamer_overload.web.web_server import update_message, update_animation_settings, stop_server, set_fade_out_callback
 from mute_streamer_overload.utils.constants import (MIN_OVERLAY_WIDTH, MIN_OVERLAY_HEIGHT,
                                                   INITIAL_OVERLAY_WIDTH, INITIAL_OVERLAY_HEIGHT)
 from mute_streamer_overload.utils.config import get_config, set_config, save_config
 from mute_streamer_overload.twitch_oauth import send_message_to_twitch_chat
+from tts_service.tts_integration import speak
 
 logger = logging.getLogger(__name__)
 
@@ -42,6 +44,9 @@ class MuteStreamerOverload(QMainWindow):
         self.setup_ui()
         self.setup_logic()
         self.load_config_values()
+        
+        # Flag to prevent duplicate Twitch message sends
+        self.twitch_message_sent = False
 
     def setup_icon(self):
         """Find and set the window icon."""
@@ -145,6 +150,12 @@ class MuteStreamerOverload(QMainWindow):
         self.wpm_input.valueChanged.connect(self.update_wpm)
         layout.addWidget(QLabel("Words per Minute:"), 2, 0)
         layout.addWidget(self.wpm_input, 2, 1)
+
+        # Sync overlay WPM with TTS
+        self.sync_overlay_wpm_check = QCheckBox("Sync overlay speed with TTS")
+        self.sync_overlay_wpm_check.setChecked(get_config("tts.sync_overlay_wpm_with_tts", True))
+        self.sync_overlay_wpm_check.toggled.connect(self.on_sync_overlay_wpm_toggled)
+        layout.addWidget(self.sync_overlay_wpm_check, 3, 0, 1, 2)
         
         return group
 
@@ -190,6 +201,9 @@ class MuteStreamerOverload(QMainWindow):
         self.input_handler.input_state_changed.connect(self.update_input_state)
         
         self.overlay_window.text_animator.fade_out.connect(self.on_fade_out)
+        
+        # Set up web server fade_out callback
+        set_fade_out_callback(self.on_fade_out)
         self.qt_start_shortcuts = []
         self.qt_submit_shortcuts = []
         self.bind_hotkeys()
@@ -246,7 +260,7 @@ class MuteStreamerOverload(QMainWindow):
         self.height_input.setValue(initial_height)
         
         # Load animation settings
-        wpm = get_config("animation.words_per_minute", 200)
+        wpm = get_config("animation.words_per_minute", 500)
         min_chars = get_config("animation.min_characters", 10)
         max_chars = get_config("animation.max_characters", 50)
         
@@ -282,6 +296,10 @@ class MuteStreamerOverload(QMainWindow):
         self.status_label.setText(f"Press {first_hotkey} to start typing")
         self.submit_button.setText(f"Submit ({first_hotkey})")
 
+        # Load TTS sync settings
+        self.sync_overlay_wpm_check.setChecked(get_config("tts.sync_overlay_wpm_with_tts", True))
+        self.wpm_input.setEnabled(not self.sync_overlay_wpm_check.isChecked())
+
     def open_settings(self):
         """Open the configuration dialog."""
         dialog = ConfigDialog(self)
@@ -312,6 +330,12 @@ class MuteStreamerOverload(QMainWindow):
         if self.overlay_window:
             self.overlay_window.text_animator.set_words_per_minute(wpm)
         update_animation_settings(wpm=wpm)
+        # If not syncing with TTS, update the web overlay immediately
+        if not self.sync_overlay_wpm_check.isChecked():
+            try:
+                requests.post('http://127.0.0.1:5000/set_overlay_wpm', json={'wpm': wpm})
+            except Exception as e:
+                print(f"Failed to update overlay WPM: {e}")
             
     def update_overlay_size(self):
         width = self.width_input.value()
@@ -348,6 +372,9 @@ class MuteStreamerOverload(QMainWindow):
 
     def handle_submit(self):
         logger.debug(f"[SUBMIT] handle_submit called. is_active={self.input_handler.is_active}")
+        # Reset Twitch message sent flag for new submission
+        self.twitch_message_sent = False
+        
         # Accept submission from both button and hotkey
         if self.input_handler.is_active:
             current_text = self.input_handler.get_current_text()
@@ -355,12 +382,19 @@ class MuteStreamerOverload(QMainWindow):
             if current_text.strip():
                 self.current_message = current_text
                 logger.debug(f"[SUBMIT] handle_submit: set_message called with '{self.current_message}'")
-                self.overlay_window.set_message(self.current_message)
+                # Always start web server animation (for Twitch timing)
+                self.overlay_window.trigger_web_animation(self.current_message)  # This triggers only web server animation
                 self.message_input.setText(self.current_message)
                 self.input_handler.clear_text()
+                # TTS: Speak the submitted message in a background thread
+                threading.Thread(target=speak, args=(current_text,), daemon=True).start()
                 # Send to Twitch chat if enabled and timing is 'immediate'
                 if self.send_to_twitch_checkbox.isChecked() and get_config("twitch.send_timing", "immediate") == "immediate":
+                    logger.info(f"[TWITCH] Sending message immediately: {current_text}")
                     send_message_to_twitch_chat(current_text)
+                    self.twitch_message_sent = True
+                else:
+                    logger.info(f"[TWITCH] Not sending immediately - checkbox: {self.send_to_twitch_checkbox.isChecked()}, timing: {get_config('twitch.send_timing', 'immediate')}")
             self.input_handler.is_active = False
             self.input_handler.f4_pressed = False
             self.input_handler.input_state_changed.emit(False)
@@ -373,11 +407,18 @@ class MuteStreamerOverload(QMainWindow):
             if message:
                 self.current_message = message
                 logger.debug(f"[SUBMIT] handle_submit: set_message called with '{self.current_message}' (button mode)")
-                self.overlay_window.set_message(self.current_message)
+                # Always start web server animation (for Twitch timing)
+                self.overlay_window.trigger_web_animation(self.current_message)  # This triggers only web server animation
                 self.message_input.clear()
                 self.input_handler.clear_text()
+                # TTS: Speak the submitted message in a background thread
+                threading.Thread(target=speak, args=(message,), daemon=True).start()
                 if self.send_to_twitch_checkbox.isChecked() and get_config("twitch.send_timing", "immediate") == "immediate":
+                    logger.info(f"[TWITCH] Sending message immediately (button mode): {message}")
                     send_message_to_twitch_chat(message)
+                    self.twitch_message_sent = True
+                else:
+                    logger.info(f"[TWITCH] Not sending immediately (button mode) - checkbox: {self.send_to_twitch_checkbox.isChecked()}, timing: {get_config('twitch.send_timing', 'immediate')}")
     
     def update_text_display(self, text):
         self.message_input.setText(text)
@@ -452,11 +493,18 @@ class MuteStreamerOverload(QMainWindow):
 
     def on_fade_out(self):
         message = self.current_message
+        logger.info(f"[TWITCH] on_fade_out called with message: {message}")
         def send_after_delay():
             time.sleep(2)
-            # Only send to Twitch chat if the toggle is enabled and timing is 'after_animation'
-            if self.send_to_twitch_checkbox.isChecked() and get_config("twitch.send_timing", "immediate") == "after_animation":
+            # Only send to Twitch chat if the toggle is enabled, timing is 'after_animation', and message hasn't been sent yet
+            if (self.send_to_twitch_checkbox.isChecked() and 
+                get_config("twitch.send_timing", "immediate") == "after_animation" and 
+                not self.twitch_message_sent):
+                logger.info(f"[TWITCH] Sending message after animation: {message}")
                 send_message_to_twitch_chat(message)
+                self.twitch_message_sent = True
+            else:
+                logger.info(f"[TWITCH] Not sending after animation - checkbox: {self.send_to_twitch_checkbox.isChecked()}, timing: {get_config('twitch.send_timing', 'immediate')}, already sent: {self.twitch_message_sent}")
         threading.Thread(target=send_after_delay, daemon=True).start()
 
     def on_twitch_toggle_changed(self, checked):
@@ -464,3 +512,7 @@ class MuteStreamerOverload(QMainWindow):
         set_config("twitch.send_messages", checked)
         save_config()
         logger.info(f"Twitch chat sending {'enabled' if checked else 'disabled'}") 
+
+    def on_sync_overlay_wpm_toggled(self, checked):
+        set_config("tts.sync_overlay_wpm_with_tts", checked)
+        self.wpm_input.setEnabled(not checked) 

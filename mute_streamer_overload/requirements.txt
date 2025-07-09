@@ -1,3 +1,4 @@
+# Core application dependencies
 PyQt6==6.6.1
 PyQt6-Qt6==6.6.1
 PyQt6-sip==13.6.0
@@ -6,4 +7,10 @@ flask==2.3.3
 flask-socketio==5.3.4
 python-socketio==5.8.0
 python-engineio==4.5.1
-requests==2.31.0 
+requests==2.31.0
+pygame==2.6.1
+
+# Build dependency (included for convenience)
+pyinstaller==6.4.0
+
+# Note: For development dependencies, see requirements-dev.txt 
