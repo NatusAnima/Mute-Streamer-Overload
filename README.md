@@ -16,6 +16,13 @@ A tool for creating animated text overlays for streamers, with both a desktop ov
 
 ## Installation
 
+Before running or building the application, you must install two additional system dependencies:
+
+- **Bun**: [https://bun.sh/](https://bun.sh/)
+- **ffmpeg**: [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)
+
+After installing, ensure both are added to your system PATH so they can be called from the command line.
+
 1. Clone the repository:
 ```bash
 git clone https://github.com/yourusername/mute-streamer-overload.git
@@ -168,6 +175,8 @@ The executable will be created in the `dist` directory as `MuteStreamerOverload.
 - Windows 10 or later
 - Python 3.8 or later
 - Administrator privileges (required for keyboard hooks)
+- **Bun** (https://bun.sh/) must be installed and in your PATH
+- **ffmpeg** (https://ffmpeg.org/download.html) must be installed and in your PATH
 
 ### Project Structure
 
