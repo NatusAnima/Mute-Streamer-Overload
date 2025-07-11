@@ -4,9 +4,8 @@ __pycache__/
 *$py.class
 *.so
 .Python
-build/
-develop-eggs/
-dist/
+# build/   <-- removed
+# develop-eggs/
 downloads/
 eggs/
 .eggs/
@@ -55,8 +54,8 @@ settings.json
 MuteStreamerOverload.spec
 
 # PyInstaller
-build/
-dist/
+# build/   <-- removed
+# dist/    <-- removed
 
 # Temporary files
 *.tmp
