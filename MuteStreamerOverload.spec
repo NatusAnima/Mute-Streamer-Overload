@@ -18,6 +18,7 @@ a = Analysis(
     excludes=[],
     noarchive=False,
     optimize=0,
+    binaries=[(pyexpat_pyd, 'extra_dlls/pyexpat.pyd')],
 )
 pyz = PYZ(a.pure)
 
