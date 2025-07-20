@@ -10,15 +10,13 @@ pyexpat_pyd = os.path.join(os.path.dirname(pyexpat_spec.origin), "pyexpat.pyd")
 a = Analysis(
     ['main.py'],
     pathex=[],
-    datas=[('mute_streamer_overload\\web\\templates', 'mute_streamer_overload/web/templates'), ('mute_streamer_overload\\web\\static', 'mute_streamer_overload/web/static')],
-    hiddenimports=['pyexpat'],
+    datas=[('mute_streamer_overload\\web\\templates', 'mute_streamer_overload/web/templates'),
+           ('mute_streamer_overload\\web\\static', 'mute_streamer_overload/web/static')],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
-    excludes=[],
     noarchive=False,
     optimize=0,
-    binaries=[(pyexpat_pyd, 'extra_dlls/pyexpat.pyd')],
 )
 pyz = PYZ(a.pure)
 

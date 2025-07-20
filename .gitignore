@@ -126,3 +126,8 @@ MuteStreamerOverload.spec
 MuteStreamerOverload.spec
 # Ignore bun.exe binary
 mute_streamer_overload/bin/bun.exe
+
+   !dist/
+   !dist/MuteStreamerOverload/
+   !dist/MuteStreamerOverload/_internal/
+   !dist/MuteStreamerOverload/_internal/**
