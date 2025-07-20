@@ -15,6 +15,23 @@ logger = logging.getLogger(__name__)
 
 # --- Helper Functions ---
 
+def safe_remove_directory_contents(path):
+    """Safely remove all contents of a directory, but not the directory itself."""
+    if not os.path.exists(path):
+        logger.info(f"Directory '{path}' does not exist, skipping content removal.")
+        return True
+    for filename in os.listdir(path):
+        file_path = os.path.join(path, filename)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)
+        except Exception as e:
+            logger.warning(f"Failed to delete {file_path}. Reason: {e}")
+    logger.info(f"Cleaned contents of directory: {path}")
+    return True
+
 def safe_remove_directory(path):
     """Safely remove a directory with retries to handle file locks."""
     for attempt in range(3):
@@ -35,11 +52,18 @@ def safe_remove_directory(path):
 # --- Pre-Build Clean Step ---
 
 def pre_build_cleanup():
-    # Remove build and dist directories
-    for folder in ['build', 'dist', os.path.join('tts_service', '__pycache__')]:
+    # Remove dist directory and tts_service/__pycache__, but only clean build/ contents
+    for folder in ['dist', os.path.join('tts_service', '__pycache__')]:
         if os.path.exists(folder):
             print(f"Removing folder: {folder}")
             shutil.rmtree(folder)
+    # Ensure build/ exists and clean its contents
+    build_dir = 'build'
+    if not os.path.exists(build_dir):
+        os.makedirs(build_dir)
+        logger.info(f"Created build directory: {build_dir}")
+    else:
+        safe_remove_directory_contents(build_dir)
 
 pre_build_cleanup()
 
@@ -79,8 +103,8 @@ def build():
         return False
     # Clean previous build artifacts
     logger.info("Cleaning previous build directories...")
-    if not safe_remove_directory('dist') or not safe_remove_directory('build'):
-        logger.error("Build failed: Could not clean old build directories.")
+    if not safe_remove_directory('dist'):
+        logger.error("Build failed: Could not clean old dist directory.")
         return False
     # PyInstaller arguments for minimal launcher
     logger.info("Configuring PyInstaller for minimal launcher...")
@@ -90,6 +114,9 @@ def build():
         '--windowed',
         '--noconfirm',
         f'--icon={os.path.join("assets", "icon_256x256.ico")}',
+        f'--add-data={os.path.join("mute_streamer_overload", "web", "templates")}{os.pathsep}mute_streamer_overload/web/templates',
+        f'--add-data={os.path.join("mute_streamer_overload", "web", "static")}{os.pathsep}mute_streamer_overload/web/static',
+        # Add more as needed
     ]
     logger.info("PyInstaller arguments configured.")
     logger.debug(f"Arguments: {' '.join(pyinstaller_args)}")
@@ -98,7 +125,8 @@ def build():
     try:
         PyInstaller.__main__.run(pyinstaller_args)
         logger.info("--- Build Completed Successfully! ---")
-        logger.info(f"Executable is located in: {os.path.join(os.getcwd(), 'dist')}")
+        exe_path = os.path.join('dist', 'MuteStreamerOverload', 'MuteStreamerOverload.exe')
+        logger.info(f"Executable is located in: {exe_path}")
         return True
     except Exception as e:
         logger.error(f"An unexpected error occurred during the PyInstaller build: {e}", exc_info=True)

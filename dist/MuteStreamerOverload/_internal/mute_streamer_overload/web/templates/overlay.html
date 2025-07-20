@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Overlay</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        #message-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 9999;
+        }
+        #message-text {
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            max-width: 80%;
+            word-wrap: break-word;
+            line-height: 1.2;
+            opacity: 0;
+            /* transition: opacity 0.1s ease-in-out; Reduced from 0.3s to 0.1s for quicker fade-in */
+        }
+        #message-text.visible {
+            opacity: 1;
+        }
+        #message-text.fade-out {
+            opacity: 0;
+            transition: opacity 1s ease-out;
+        }
+        #debug-panel {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-family: monospace;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body>
+    <div id="message-container">
+        <div id="message-text"></div>
+    </div>
+    
+    <div id="debug-panel">
+        <div>Status: <span id="status">Connecting...</span></div>
+        <div>Last Update: <span id="last-update">Never</span></div>
+        <div>Message Count: <span id="message-count">0</span></div>
+        <div>Active: <span id="animation-active">No</span></div>
+    </div>
+
+    <script>
+        let messageCount = 0;
+        let lastText = '';
+        let pollInterval;
+        
+        // Function to update the display
+        function updateDisplay(text, active) {
+            const messageElement = document.getElementById('message-text');
+            const statusElement = document.getElementById('status');
+            const lastUpdateElement = document.getElementById('last-update');
+            const messageCountElement = document.getElementById('message-count');
+            const animationActiveElement = document.getElementById('animation-active');
+            
+            if (text && text !== lastText) {
+                messageElement.textContent = text;
+                messageElement.classList.add('visible');
+                messageElement.classList.remove('fade-out');
+                lastText = text;
+                messageCount++;
+                
+                console.log(`[OVERLAY] Text updated: "${text}"`);
+            }
+            
+            if (!active && lastText) {
+                // Animation finished, fade out
+                setTimeout(() => {
+                    messageElement.classList.add('fade-out');
+                    setTimeout(() => {
+                        messageElement.classList.remove('visible');
+                        lastText = '';
+                    }, 1000);
+                }, 1000);
+            }
+            
+            // Update debug panel
+            statusElement.textContent = 'Connected';
+            lastUpdateElement.textContent = new Date().toLocaleTimeString();
+            messageCountElement.textContent = messageCount;
+            animationActiveElement.textContent = active ? 'Yes' : 'No';
+        }
+        
+        // Function to poll for updates
+        async function pollForUpdates() {
+            try {
+                const response = await fetch('/api/current_text');
+                if (response.ok) {
+                    const data = await response.json();
+                    updateDisplay(data.text, data.active);
+                } else {
+                    console.error('[OVERLAY] Failed to fetch current text:', response.status);
+                    document.getElementById('status').textContent = 'Error';
+                }
+            } catch (error) {
+                console.error('[OVERLAY] Polling error:', error);
+                document.getElementById('status').textContent = 'Disconnected';
+            }
+        }
+        
+        // Function to check server health
+        async function checkHealth() {
+            try {
+                const response = await fetch('/health');
+                if (response.ok) {
+                    document.getElementById('status').textContent = 'Connected';
+                } else {
+                    document.getElementById('status').textContent = 'Health Check Failed';
+                }
+            } catch (error) {
+                document.getElementById('status').textContent = 'Disconnected';
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('[OVERLAY] Page loaded, starting polling...');
+            
+            // Start polling for text updates (every 500ms for better performance)
+            pollInterval = setInterval(pollForUpdates, 500);
+            
+            // Check server health every 10 seconds
+            setInterval(checkHealth, 10000);
+            
+            // Initial health check
+            checkHealth();
+        });
+        
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', function() {
+            if (pollInterval) {
+                clearInterval(pollInterval);
+            }
+        });
+    </script>
+</body>
+</html> 

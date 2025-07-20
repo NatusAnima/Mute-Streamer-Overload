@@ -51,12 +51,25 @@ class MuteStreamerOverload(QMainWindow):
     def setup_icon(self):
         """Find and set the window icon."""
         try:
-            assets_dir = Path(__file__).resolve().parent.parent.parent / 'assets'
-            icon_path = assets_dir / 'icon_32x32.ico'
-            if icon_path.exists():
-                self.setWindowIcon(QIcon(str(icon_path)))
+            import sys
+            from pathlib import Path
+            icon_paths = []
+            if getattr(sys, 'frozen', False):
+                # PyInstaller: check _MEIPASS/assets
+                meipass = getattr(sys, '_MEIPASS', None)
+                if meipass:
+                    icon_paths.append(Path(meipass) / 'assets' / 'icon_32x32.ico')
+                # Also check project root assets (two up from exe)
+                exe_dir = Path(sys.executable).resolve().parent
+                icon_paths.append(exe_dir.parent.parent / 'assets' / 'icon_32x32.ico')
             else:
-                logger.warning(f"Icon not found at '{icon_path}', using default.")
+                # Dev: check project root assets
+                icon_paths.append(Path(__file__).resolve().parent.parent.parent / 'assets' / 'icon_32x32.ico')
+            for icon_path in icon_paths:
+                if icon_path.exists():
+                    self.setWindowIcon(QIcon(str(icon_path)))
+                    return
+            logger.warning(f"Icon not found at any of: {[str(p) for p in icon_paths]}, using default.")
         except Exception as e:
             logger.error(f"Failed to set window icon: {e}", exc_info=True)
 

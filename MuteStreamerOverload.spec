@@ -5,7 +5,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('mute_streamer_overload\\web\\templates', 'mute_streamer_overload/web/templates'), ('mute_streamer_overload\\web\\static', 'mute_streamer_overload/web/static')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

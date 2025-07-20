@@ -5,9 +5,6 @@ import path from 'path';
 import WebSocket from 'ws';
 import { execSync } from 'child_process';
 
-// Polyfill WebSocket for Node.js
-global.WebSocket = WebSocket;
-
 function parseArgs() {
   const args = process.argv.slice(2);
   let text = null;

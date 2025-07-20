@@ -11,9 +11,9 @@ import tempfile
 
 def resource_path(relative_path):
     """Get absolute path to resource, works for dev and for PyInstaller."""
-    if hasattr(sys, '_MEIPASS'):
-        return os.path.join(sys._MEIPASS, relative_path)  # type: ignore[attr-defined]
-    return os.path.join(os.path.dirname(__file__), relative_path)
+    # Always use the tts_service folder next to the executable or main.py
+    base_dir = os.path.dirname(sys.executable if getattr(sys, 'frozen', False) else __file__)
+    return os.path.join(base_dir, 'tts_service', relative_path)
 
 logging.basicConfig(filename='tts_debug.log', level=logging.DEBUG)
 def tts_log(msg):
@@ -25,69 +25,89 @@ def generate_tts(text, voice, speed, pitch, volume):
     Calls the generate_tts.mjs script using bun to generate speech.mp3 from the given text and settings.
     Returns True if successful, False otherwise.
     """
-    # Determine script path and log directory contents for debugging
-    if hasattr(sys, '_MEIPASS'):
-        tts_log(f"sys._MEIPASS: {sys._MEIPASS}")  # type: ignore[attr-defined]
-        tts_log(f"Files in sys._MEIPASS: {os.listdir(sys._MEIPASS)}")  # type: ignore[attr-defined]
-        tts_service_dir = os.path.join(sys._MEIPASS, 'tts_service')  # type: ignore[attr-defined]
-        if os.path.exists(tts_service_dir):
-            tts_log(f"Files in tts_service: {os.listdir(tts_service_dir)}")
-            script_path = os.path.join(tts_service_dir, 'generate_tts.mjs')
-            # Fallback: if script_path is a directory, look for generate_tts.mjs inside it
-            if os.path.isdir(script_path):
-                fallback_path = os.path.join(script_path, 'generate_tts.mjs')
-                if os.path.isfile(fallback_path):
-                    tts_log(f"Fallback: using nested generate_tts.mjs at {fallback_path}")
-                    # Copy the file up one directory
-                    fixed_path = os.path.join(tts_service_dir, 'generate_tts_fixed.mjs')
-                    shutil.copy2(fallback_path, fixed_path)
-                    tts_log(f"Copied {fallback_path} to {fixed_path}")
-                    script_path = fixed_path
-            cwd = tts_service_dir
-        else:
-            script_path = os.path.join(sys._MEIPASS, 'generate_tts.mjs')  # type: ignore[attr-defined]  # fallback
-            cwd = sys._MEIPASS  # type: ignore[attr-defined]
-        tts_log(f"cwd: {cwd}")
-        tts_log(f"Files in cwd: {os.listdir(cwd)}")
+    # Handle paths for both development and PyInstaller bundle
+    if getattr(sys, 'frozen', False):
+        exe_dir = os.path.dirname(os.path.abspath(sys.executable))
+        print(f"[DEBUG] exe_dir: {exe_dir}")
+        bun_path = os.path.abspath(os.path.join(exe_dir, '..', '..', 'mute_streamer_overload', 'bin', 'bun.exe'))
+        print(f"[DEBUG] bun_path: {bun_path}")
+        tts_service_dir = os.path.abspath(os.path.join(exe_dir, '..', '..', 'tts_service'))
+        script_path = os.path.join(tts_service_dir, 'generate_tts.mjs')
     else:
-        script_path = resource_path('generate_tts.mjs')
-        tts_log(f"Files in tts_service: {os.listdir(os.path.dirname(__file__))}")
-        cwd = os.path.dirname(__file__)
-    tts_log(f"TTS call args: {text}, {voice}, {speed}, {pitch}, {volume}")
-    if shutil.which('bun') is None:
-        tts_log("Error: 'bun' is not installed or not in PATH.")
+        # Running from source
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        # Go up one level from tts_service to the project root
+        base_dir = os.path.dirname(base_dir)
+        bun_path = os.path.join(base_dir, 'mute_streamer_overload', 'bin', 'bun.exe')
+        tts_service_dir = os.path.join(base_dir, 'tts_service')
+        script_path = os.path.join(tts_service_dir, 'generate_tts.mjs')
+    
+    # Check if files exist
+    if not os.path.exists(bun_path):
+        tts_log(f'TTS ERROR: bun.exe not found at {bun_path}')
         return False
-    # --- Removed temp directory logic. Run Bun in place. ---
-    # script_path is always 'generate_tts.mjs' in cwd
-    script_path = 'generate_tts.mjs'
-    tts_log(f'Running Bun in {cwd}')
+    if not os.path.exists(script_path):
+        tts_log(f'TTS ERROR: generate_tts.mjs not found at {script_path}')
+        return False
+    if not os.path.exists(tts_service_dir):
+        tts_log(f'TTS ERROR: tts_service directory not found at {tts_service_dir}')
+        return False
+    
+    tts_log(f'Using bun at: {bun_path}')
+    tts_log(f'Using tts_service_dir: {tts_service_dir}')
+    
+    # Build the command
     subprocess_args = [
-        'bun', script_path, text,
-        '--voice', str(voice),
+        bun_path,
+        script_path,
+        text,
+        '--voice', voice,
         '--speed', str(speed),
         '--pitch', str(pitch),
         '--volume', str(volume)
     ]
+    
+    tts_log(f'TTS call args: {text}, {voice}, {speed}, {pitch}, {volume}')
+    
+    # Set up subprocess kwargs
     kwargs = {
+        'cwd': tts_service_dir,
         'capture_output': True,
-        'text': True,
-        'cwd': cwd
+        'text': True
+        # Removed timeout from here since it's passed separately to subprocess.run()
     }
-    if sys.platform == 'win32':
+    # Prevent console window on Windows
+    if os.name == 'nt':
         kwargs['creationflags'] = subprocess.CREATE_NO_WINDOW
-    tts_log(f"Running command: {' '.join(subprocess_args)} in cwd: {cwd}")
+
+    tts_log(f"Running command: {' '.join(subprocess_args)} in cwd: {kwargs['cwd']}")
     try:
-        result = subprocess.run(subprocess_args, **kwargs, timeout=10)
+        result = subprocess.run(subprocess_args, **kwargs, timeout=60)  # Increased timeout to 60 seconds
     except subprocess.TimeoutExpired:
-        tts_log('TTS subprocess timed out!')
+        tts_log('TTS subprocess timed out after 60 seconds!')
         return False
+    except FileNotFoundError:
+        tts_log(f'TTS subprocess failed: bun.exe not found at {bun_path}')
+        return False
+    except Exception as e:
+        tts_log(f'TTS subprocess failed with exception: {e}')
+        return False
+        
     tts_log('TTS subprocess stdout:')
     tts_log(result.stdout)
     if result.returncode != 0:
         tts_log('TTS subprocess stderr:')
         tts_log(result.stderr)
-        tts_log(f"TTS generation failed: {result.stderr}")
+        tts_log(f"TTS generation failed with return code {result.returncode}")
         return False
+    
+    # Check if the output file was created
+    output_file = os.path.join(tts_service_dir, 'speech.mp3')
+    if not os.path.exists(output_file):
+        tts_log(f'TTS ERROR: Output file not found at {output_file}')
+        return False
+    
+    tts_log(f'TTS generation successful: {output_file}')
     return True
 
 def notify_overlay_start(text, wpm):
@@ -100,7 +120,14 @@ def play_tts(text, speed):
     """
     Plays the generated speech.mp3 file and notifies the overlay to start animation.
     """
-    mp3_path = os.path.join(os.path.dirname(__file__), 'speech.mp3')
+    # Always use the tts_service folder next to the executable or main.py
+    if getattr(sys, 'frozen', False):
+        exe_dir = os.path.dirname(os.path.abspath(sys.executable))
+        # Go up two directories to project root, then to tts_service
+        tts_service_dir = os.path.abspath(os.path.join(exe_dir, '..', '..', 'tts_service'))
+    else:
+        tts_service_dir = os.path.dirname(__file__)
+    mp3_path = os.path.join(tts_service_dir, 'speech.mp3')
     if not os.path.exists(mp3_path):
         tts_log(f"MP3 file not found: {mp3_path}")
         return

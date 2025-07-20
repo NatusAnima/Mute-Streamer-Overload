@@ -5,7 +5,7 @@ import threading
 import time
 import re
 from flask import Flask, render_template, request, jsonify
-from flask_socketio import SocketIO
+# Remove Flask-SocketIO import
 import multiprocessing
 
 from mute_streamer_overload.utils.config import get_config
@@ -14,10 +14,15 @@ from mute_streamer_overload.utils.config import get_config
 logger = logging.getLogger(__name__)
 
 # --- Global State ---
-socketio = None
+# Remove socketio global
 server_thread = None
 fade_out_callback = None
 animation_in_progress = False
+
+# Add simple state management for HTTP polling
+current_display_text = ""
+last_update_time = 0
+animation_active = False
 
 # --- Path Configuration ---
 def get_project_root():
@@ -69,7 +74,7 @@ class WebTextAnimator:
         return result, i
 
     def start_animation(self, message):
-        global animation_in_progress
+        global animation_in_progress, current_display_text, last_update_time, animation_active
         print(f"[WEB ANIMATOR] start_animation called with: '{message}'")
         
         # Prevent duplicate animations
@@ -78,6 +83,7 @@ class WebTextAnimator:
             return
             
         animation_in_progress = True
+        animation_active = True
         print(f"[WEB ANIMATOR] Starting new animation")
         
         if self.animation_thread and self.animation_thread.is_alive():
@@ -91,8 +97,10 @@ class WebTextAnimator:
         print(f"[WEB ANIMATOR] Animation thread started")
 
     def _animate_text(self):
-        global socketio
-        if not self.current_message or not socketio: return
+        global current_display_text, last_update_time, animation_active
+        if not self.current_message: 
+            print(f"[WEB ANIMATOR] No message available")
+            return
         words = re.findall(r'\S+|\s+', self.current_message)
         i = 0
         n = len(words)
@@ -113,9 +121,11 @@ class WebTextAnimator:
                     char_count += 1  # space
                 sentence_words.append(word.strip())
                 char_count += len(word.strip())
-                # Emit the additive build-up
+                # Update the global state for HTTP polling
                 last_sentence = ' '.join(sentence_words)
-                socketio.emit('text_update', {'text': last_sentence})
+                current_display_text = last_sentence
+                last_update_time = time.time()
+                print(f"[WEB ANIMATOR] Updated text: '{last_sentence}'")
                 time.sleep(delay)
                 i += 1
             # After reaching max_chars, pause before next sentence
@@ -124,10 +134,14 @@ class WebTextAnimator:
         # At the end, keep the last sentence and then fade out
         if not self._stop_animation_flag:
             time.sleep(1.0)  # Show the final sentence for 1 second
-            socketio.emit('fade_out', {})
+            animation_active = False
+            print(f"[WEB ANIMATOR] Animation finished")
             # Notify main window if callback is set
             if fade_out_callback:
                 fade_out_callback()
+            # Clear the display text after fade out
+            current_display_text = ""
+            last_update_time = time.time()
         
         # Reset animation progress flag
         global animation_in_progress
@@ -141,12 +155,27 @@ class WebTextAnimator:
 
 text_animator = WebTextAnimator()
 
-# --- Flask & SocketIO Setup ---
+# --- Flask Setup (No SocketIO) ---
 app = Flask(__name__, template_folder=str(template_dir), static_folder=str(static_dir))
 
 @app.route('/')
 def index():
     return render_template('overlay.html')
+
+@app.route('/health')
+def health_check():
+    """Health check endpoint for the web overlay."""
+    return jsonify({'status': 'ok', 'timestamp': time.time()})
+
+@app.route('/api/current_text')
+def get_current_text():
+    """API endpoint for getting current display text (for polling)."""
+    global current_display_text, last_update_time, animation_active
+    return jsonify({
+        'text': current_display_text,
+        'timestamp': last_update_time,
+        'active': animation_active
+    })
 
 @app.route('/start_tts_animation', methods=['POST'])
 def start_tts_animation():
@@ -181,61 +210,41 @@ def set_fade_out_callback(callback):
     fade_out_callback = callback
 
 def start_server_task():
-    """The target function for the server thread."""
-    global socketio
-    logger.info("SERVER THREAD: Starting Flask-SocketIO server...")
+    logger.info("SERVER THREAD: Starting Flask server...")
     try:
-        socketio = SocketIO(app, cors_allowed_origins="*", async_mode='threading')
-        
-        @socketio.on('connect')
-        def handle_connect():
-            global socketio
-            logger.info("Client connected to web overlay.")
-            if text_animator.current_message and socketio:
-                socketio.emit('text_update', {'text': text_animator.current_message})
-
         # Get server settings from config
         host = get_config("web_server.host", "127.0.0.1")
         port = get_config("web_server.port", 5000)
         
-        logger.info(f"SERVER THREAD: Attempting to run socketio.run() on {host}:{port}")
-        socketio.run(app, host=host, port=port, allow_unsafe_werkzeug=True, log_output=False)
-        logger.info("SERVER THREAD: Server has shut down.")
+        logger.info(f"SERVER THREAD: Starting server on {host}:{port}")
+        app.run(host=host, port=port, debug=False, use_reloader=False, threaded=True)
+        
     except Exception as e:
-        logger.error(f"SERVER THREAD: A critical error occurred: {e}", exc_info=True)
+        logger.error(f"SERVER THREAD: A critical error occurred: {e}")
+        import traceback
+        logger.error(f"SERVER THREAD: Traceback: {traceback.format_exc()}")
     finally:
         logger.info("SERVER THREAD: Task finished.")
 
 def run_server():
-    logger.info("[SERVER] run_server called")
-    """Creates and starts the server thread."""
+    """Start the web server in a separate thread."""
     global server_thread
-    
-    # Check if auto-start is enabled
-    if not get_config("web_server.auto_start", True):
-        logger.info("Web server auto-start is disabled in configuration.")
-        return None
+    logger.info("[SERVER] run_server called")
     
     if server_thread and server_thread.is_alive():
-        logger.warning("Server thread is already running.")
-        return server_thread
-        
+        logger.info("Server thread already running.")
+        return
+    
     logger.info("Creating and starting server thread...")
     server_thread = threading.Thread(target=start_server_task, daemon=True)
     server_thread.start()
-    time.sleep(2) # Give the server a moment to initialize
-    return server_thread
+    logger.info("Server thread started successfully.")
 
 def stop_server():
-    """
-    No explicit stop is needed for a daemon thread. It will be terminated
-    when the main application exits. This avoids the request context error.
-    """
-    logger.info("Main application is shutting down. Server daemon thread will exit automatically.")
-    pass
-
-if __name__ == '__main__':
-    if multiprocessing.current_process().name == 'MainProcess':
-        logger.info("Starting web server...")
-        server_thread = run_server()
-        ... 
+    """Stop the web server."""
+    global server_thread
+    if server_thread and server_thread.is_alive():
+        logger.info("Stopping server thread...")
+        # Flask doesn't have a clean shutdown method, so we'll let it run as daemon
+        # The thread will be terminated when the main process exits
+        logger.info("Server thread marked for termination.") 
