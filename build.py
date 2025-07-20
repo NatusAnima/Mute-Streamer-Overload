@@ -4,6 +4,7 @@ import subprocess
 import shutil
 import logging
 import PyInstaller.__main__
+import importlib.util
 
 # --- Configuration ---
 
