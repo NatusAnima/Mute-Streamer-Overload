@@ -115,7 +115,7 @@ def download_bun(bin_dir):
             print(f"Failed to download bun.exe: {e}")
 
 def ensure_node_modules():
-    """Ensure tts_service/node_modules exists, otherwise run bun install or npm install using bundled binaries if available."""
+    """Ensure tts_service/node_modules exists, otherwise run bun install or npm install using bundled binaries if available. This will be run automatically before any TTS subprocess is started."""
     setup_marker = os.path.join(os.path.dirname(__file__), 'mute_streamer_overload', '.setup_complete')
     if os.path.exists(setup_marker):
         return
@@ -129,7 +129,7 @@ def ensure_node_modules():
         print(f"No package.json found in {tts_dir}, skipping Node.js dependency check.")
         return
     if not os.path.exists(node_modules) or not os.listdir(node_modules):
-        print("Installing Node.js dependencies for tts_service...")
+        print("[AUTO] Installing Node.js dependencies for tts_service using bun install...")
         bin_dir = os.path.join(os.path.dirname(__file__), 'mute_streamer_overload', 'bin')
         bun_path = shutil.which('bun', path=bin_dir + os.pathsep + os.environ.get('PATH', ''))
         if not bun_path:
