@@ -108,16 +108,7 @@ def build():
         return False
     # PyInstaller arguments for minimal launcher
     logger.info("Configuring PyInstaller for minimal launcher...")
-    pyinstaller_args = [
-        'main.py',
-        '--name=MuteStreamerOverload',
-        '--windowed',
-        '--noconfirm',
-        f'--icon={os.path.join("assets", "icon_256x256.ico")}',
-        f'--add-data={os.path.join("mute_streamer_overload", "web", "templates")}{os.pathsep}mute_streamer_overload/web/templates',
-        f'--add-data={os.path.join("mute_streamer_overload", "web", "static")}{os.pathsep}mute_streamer_overload/web/static',
-        # Add more as needed
-    ]
+    pyinstaller_args = ['MuteStreamerOverload.spec']
     logger.info("PyInstaller arguments configured.")
     logger.debug(f"Arguments: {' '.join(pyinstaller_args)}")
     # Run PyInstaller
