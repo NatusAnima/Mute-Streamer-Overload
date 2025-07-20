@@ -11,37 +11,46 @@ A tool for creating animated text overlays for streamers, with both a desktop ov
 - Dark theme UI
 - Draggable overlay window
 - Synchronized animation between desktop and web displays
-- **Comprehensive configuration system** with user-friendly settings dialog
-- **Persistent settings** that are saved and restored between sessions
+- Comprehensive configuration system with user-friendly settings dialog
+- Persistent settings that are saved and restored between sessions
+
+## Requirements
+
+- **Python 3.8+** (Windows 10 or later recommended)
+- **Bun**: [https://bun.sh/](https://bun.sh/) (must be in your PATH)
+- **ffmpeg**: [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html) (must be in your PATH)
+- (For development) Node.js for TTS service dependencies
 
 ## Installation
 
-Before running or building the application, you must install two additional system dependencies:
-
-- **Bun**: [https://bun.sh/](https://bun.sh/)
-- **ffmpeg**: [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)
-
-After installing, ensure both are added to your system PATH so they can be called from the command line.
-
 1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/mute-streamer-overload.git
-cd mute-streamer-overload
-```
+   ```bash
+   git clone https://github.com/yourusername/mute-streamer-overload.git
+   cd mute-streamer-overload
+   ```
 
 2. Create and activate a virtual environment (recommended):
-```bash
-python -m venv .venv
-# On Windows:
-.venv\Scripts\activate
-# On Unix/MacOS:
-source .venv/bin/activate
-```
+   ```bash
+   python -m venv .venv
+   # On Windows:
+   .venv\Scripts\activate
+   # On Unix/MacOS:
+   source .venv/bin/activate
+   ```
 
-3. Install the package:
-```bash
-pip install -e .
-```
+3. Install Python dependencies:
+   ```bash
+   pip install -r mute_streamer_overload/requirements.txt
+   # For development (includes testing tools):
+   pip install -r requirements-dev.txt
+   ```
+
+4. (Optional) Install Node.js dependencies for TTS service:
+   ```bash
+   cd tts_service
+   bun install
+   cd ..
+   ```
 
 ## Usage
 
@@ -50,157 +59,101 @@ pip install -e .
 You can run the application in two ways:
 
 1. Using the installed command:
-```bash
-mute-streamer-overload
-```
+   ```bash
+   mute-streamer-overload
+   ```
 
 2. Running the main script directly:
-```bash
+   ```bash
    python main.py
    ```
 
 ### Configuration and Settings
 
-The application includes a comprehensive settings system accessible via the "⚙ Settings" button in the main window. You can configure:
-
-- **Overlay Settings**: Size, position, opacity, and behavior
-- **Animation Settings**: Speed, character limits, and timing
-- **Web Server Settings**: Host, port, and auto-start options
-- **UI Settings**: Theme and window preferences
-- **Input Settings**: Hotkey configuration
-- **General Settings**: Auto-save, logging, and update preferences
-
-All settings are automatically saved and restored between application sessions. For detailed configuration documentation, see [CONFIGURATION.md](mute_streamer_overload/docs/CONFIGURATION.md).
-
-#### Initial Setup
-
-1. **Copy the template configuration**:
-   ```bash
-   cp profile.template.json profile.json
-   ```
-
-2. **Edit the configuration file** to add your Twitch credentials:
-   - Replace `YOUR_CLIENT_ID_HERE` with your Twitch application client ID
-   - Replace `YOUR_USERNAME_HERE` with your Twitch username
-   - Replace `YOUR_DISPLAY_NAME_HERE` with your Twitch display name
-
-3. **Set up Twitch OAuth** (optional):
-   - Follow the [Twitch OAuth Guide](TWITCH_OAUTH_GUIDE.md) to get your access token
-   - The application will automatically handle token refresh
-
-**⚠️ Security Note**: Never commit your `profile.json` file to version control as it contains sensitive information. The `.gitignore` file is configured to exclude this file automatically.
+- Access the settings via the "⚙ Settings" button in the main window.
+- All settings are saved automatically.
+- For advanced configuration, see [CONFIGURATION.md](mute_streamer_overload/docs/CONFIGURATION.md).
 
 ### Using the Desktop Overlay
 
-1. Launch the application
-2. Click "Show Overlay" to display the overlay window
-3. Adjust the size using the width and height controls
-4. Drag the overlay window to position it where you want
-5. Use F4 to start typing your message
-6. Press F4 again to submit and display the message
+- Launch the application.
+- Click "Show Overlay" to display the overlay window.
+- Adjust the size and position as needed.
+- Use F4 to start typing your message, and F4 again to submit.
 
-### Adding the Web Overlay to OBS
+### Using the Web Overlay in OBS
 
-The application includes a local web server that provides a web-based overlay. Here's how to add it to OBS:
-
-1. Start the application (the web server starts automatically)
-2. In OBS, add a new Browser Source:
-   - Click the + button in the Sources panel
-   - Select "Browser Source"
-   - Name it (e.g., "Message Overlay")
-   - Check "Local file" and click "Browse"
-   - Enter the URL: `http://localhost:5000` (or your configured host/port)
-   - Set the width and height to match your desired overlay size
-   - Check "Shutdown source when not visible" if you want to save resources
-   - Click "OK"
-
-3. Position and size the browser source in your scene:
-   - The overlay will appear in your scene
-   - You can resize and position it like any other source
-   - The overlay will update in real-time as you type messages
+- The application starts a local web server automatically.
+- In OBS, add a new Browser Source with the URL: `http://localhost:5000`
+- Set the width and height to match your overlay.
+- The overlay updates in real-time as you type messages.
 
 ### Customizing the Animation
 
-You can customize the text animation using the controls in the main window or through the settings dialog:
-
-- **Min Characters**: Minimum number of characters to display at once
-- **Max Characters**: Maximum number of characters to display at once
-- **Words per Minute**: Speed of the text animation
-
-### Tips for OBS Setup
-
-1. **Transparency**: The web overlay has a transparent background by default
-2. **Performance**: 
-   - If you experience performance issues, try reducing the browser source's width and height
-   - You can also check "Shutdown source when not visible" in the browser source properties
-3. **Positioning**:
-   - Use the browser source's position and size controls in OBS for precise placement
-   - The overlay will maintain its aspect ratio by default
-4. **Multiple Displays**:
-   - You can add multiple browser sources with different sizes/positions
-   - Each will show the same content but can be styled differently
+- Use the main window or settings dialog to adjust:
+  - Min/Max Characters
+  - Words per Minute (WPM)
+  - Overlay appearance
 
 ## Building the Executable
 
 To create a standalone executable:
 
-1. Install dependencies:
-```bash
-# For basic build
-pip install -r mute_streamer_overload/requirements.txt
-
-# For development (includes testing tools)
-pip install -r requirements-dev.txt
-```
-
+1. Ensure all dependencies are installed (see above).
 2. Run the build script:
-```bash
-python build.py
-```
+   ```bash
+   python build.py
+   ```
+   - This will:
+     - Clean previous builds
+     - Bundle all required files, including web templates and static assets
+     - Set the application icon
+     - Output the executable to `dist/MuteStreamerOverload/MuteStreamerOverload.exe`
 
-The executable will be created in the `dist` directory as `MuteStreamerOverload.exe`.
+3. **Note:**  
+   - The executable will work as long as the `mute_streamer_overload/bin/bun.exe` and `tts_service/` directories remain in their original locations relative to the project root.
+   - The icon is set for both the window and the taskbar, with robust fallback logic for both dev and exe modes.
 
-### Build Features
+## Troubleshooting
 
-- **Automatic dependency installation** from requirements.txt
-- **File existence validation** before building
-- **Python version checking** (requires 3.8+)
-- **Complete PyQt6 plugin bundling** for proper UI rendering
-- **TTS service integration** with pygame audio support
-- **Web server templates** and static files included
-- **Asset files** (icons, etc.) bundled automatically
+- **Missing Bun or ffmpeg:**  
+  Ensure both are installed and in your system PATH.
+- **Web overlay not updating:**  
+  Make sure the web server is running and accessible at `http://localhost:5000`.
+- **Templates not found in exe:**  
+  The build script now bundles templates and static files using `--add-data`. If you add new templates/static files, rebuild the exe.
+- **Icon not showing:**  
+  The app now checks both the bundled and project root assets for the icon.
 
-### Building Requirements
-
-- Windows 10 or later
-- Python 3.8 or later
-- Administrator privileges (required for keyboard hooks)
-- **Bun** (https://bun.sh/) must be installed and in your PATH
-- **ffmpeg** (https://ffmpeg.org/download.html) must be installed and in your PATH
-
-### Project Structure
+## Project Structure
 
 ```
 mute_streamer_overload/
 ├── core/              # Core functionality
-│   ├── text_animator.py
-│   └── input_handler.py
 ├── ui/                # User interface components
-│   ├── main_window.py
-│   ├── overlay_window.py
-│   └── config_dialog.py
 ├── utils/             # Utility functions and constants
-│   ├── constants.py
-│   ├── styles.py
-│   └── config.py
 ├── web/               # Web server and templates
-│   ├── web_server.py
-│   └── templates/
 ├── docs/              # Documentation
-│   └── CONFIGURATION.md
-└── tests/             # Test files
+├── tests/             # Test files
+├── bin/               # Bundled binaries (bun.exe, etc.)
+tts_service/           # TTS service (Node.js/Bun)
+assets/                # Icons and other assets
+build.py               # Build script
+main.py                # Main entry point
 ```
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Bun.exe Download
+
+**bun.exe is not included in this repository due to GitHub file size limits.**
+
+- Download the latest Windows release of Bun from the official site:
+  - [https://bun.sh/](https://bun.sh/) (click "Download" and select Windows)
+  - Or direct link to releases: [https://github.com/oven-sh/bun/releases](https://github.com/oven-sh/bun/releases)
+- Extract or rename the downloaded `bun.exe` and place it in:
+  - `mute_streamer_overload/bin/bun.exe`
+
+The application expects `bun.exe` to be at this exact location. If you update Bun, simply replace the file in this folder.
