@@ -124,3 +124,5 @@ local_settings.py
 node_modules/ 
 MuteStreamerOverload.spec
 MuteStreamerOverload.spec
+# Ignore bun.exe binary
+mute_streamer_overload/bin/bun.exe
