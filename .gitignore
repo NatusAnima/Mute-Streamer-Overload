@@ -131,3 +131,9 @@ mute_streamer_overload/bin/bun.exe
    !dist/MuteStreamerOverload/
    !dist/MuteStreamerOverload/_internal/
    !dist/MuteStreamerOverload/_internal/**
+
+# Ignore JS dependencies and lock/config files in tts_service
+tts_service/node_modules/
+tts_service/bun.lockb
+tts_service/package-lock.json
+tts_service/.bunfig.toml
