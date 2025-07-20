@@ -144,7 +144,16 @@ def ensure_node_modules():
                 print("Neither 'bun' nor 'npm' is installed or bundled. Please install one to continue.")
                 sys.exit(1)
             cmd = [npm_path, 'install']
-        subprocess.check_call(cmd, cwd=tts_dir)
+        print(f"[AUTO] Installing Node.js dependencies for tts_service using: {' '.join(cmd)} (cwd={tts_dir})")
+        try:
+            result = subprocess.run(cmd, cwd=tts_dir, capture_output=True, text=True, check=True)
+            print("[AUTO] bun/npm install stdout:\n" + result.stdout)
+            print("[AUTO] bun/npm install stderr:\n" + result.stderr)
+        except subprocess.CalledProcessError as e:
+            print(f"[ERROR] bun/npm install failed with return code {e.returncode}")
+            print("[ERROR] stdout:\n" + (e.stdout or ""))
+            print("[ERROR] stderr:\n" + (e.stderr or ""))
+            sys.exit(1)
     # Ensure node_modules is present after install
     if not os.path.exists(node_modules) or not os.listdir(node_modules):
         print("Failed to install node_modules. Please check your internet connection and try again.")
